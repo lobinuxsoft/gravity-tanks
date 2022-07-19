@@ -1,24 +1,27 @@
 using UnityEngine;
 using GravityTanks.Enemy.Behaviour;
+using UnityEngine.EventSystems;
 
 namespace GravityTanks.Enemy
 {
     public class EnemyIA : MonoBehaviour
     {
-        [SerializeField] IABehaviour[] behaviour;
+        [SerializeField] IABehaviour[] behaviours;
 
-        int behaviourIndex;
+        IABehaviour behaviour;
 
         private void Awake()
         {
-            Random.InitState(Mathf.RoundToInt(Time.time));
+            Random.InitState(this.GetHashCode());
 
-            behaviourIndex = Random.Range(0, behaviour.Length);
+            behaviour = Object.Instantiate(behaviours[Random.Range(0, behaviours.Length)]);
         }
 
         private void FixedUpdate()
         {
-            if(behaviour != null && behaviour.Length > 0) behaviour[behaviourIndex].DoBehaviour(this.gameObject);
-        }
+            if(behaviour) behaviour.DoBehaviour(this.gameObject);
+}
+
+        private void OnDestroy() => Destroy(behaviour);
     }
 }

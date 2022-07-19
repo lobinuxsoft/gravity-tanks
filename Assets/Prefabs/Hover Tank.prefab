@@ -301,14 +301,6 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: bc1f1077-5be9-4aea-bbeb-f219167b03da
-    m_ActionName: Player/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: dc7f52c3-1d37-4657-b4de-f953b0de8ac4
-    m_ActionName: Player/Look[/XInputControllerWindows/rightStick,/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: f963142c-1737-4eff-b8da-6df7aa5ebb5c
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
@@ -430,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bbfed95af74a640ac9cea6690a4be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 2
+  multiplier: 1.5
   moveForce: 20
   turnTorque: 10
   centerOfMass: {x: 0, y: -2, z: 0}
