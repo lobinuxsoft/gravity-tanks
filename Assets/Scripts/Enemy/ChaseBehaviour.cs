@@ -1,12 +1,8 @@
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
-
 using UnityEngine;
 
 namespace GravityTanks.Enemy.Behaviour
 {
-    [CreateAssetMenu(menuName = "Enemy/Behaviour/Chase Behaviour")]
+    [CreateAssetMenu(menuName = "Enemy/Behaviour/Chase")]
     public class ChaseBehaviour : IABehaviour
     {
         [SerializeField] private float torqueSpeed = 20;
@@ -33,13 +29,6 @@ namespace GravityTanks.Enemy.Behaviour
 
             body.AddTorque(torqueSpeed * targetDir, ForceMode.VelocityChange);
         }
-
-#if UNITY_EDITOR
-        public override void DrawGizmos(GameObject owner)
-        {
-            Handles.ArrowHandleCap(0, owner.transform.position, Quaternion.LookRotation(targetDir), 1, EventType.Repaint);
-        }
-#endif
 
         Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
         {

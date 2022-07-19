@@ -5,6 +5,5 @@ namespace GravityTanks.Enemy.Behaviour
     public abstract class IABehaviour : ScriptableObject
     {
         public abstract void DoBehaviour(GameObject owner);
-        public abstract void DrawGizmos(GameObject owner);
     }
 }

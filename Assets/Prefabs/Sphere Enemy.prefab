@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5128695635110145613}
   - component: {fileID: 5128695635110145612}
   - component: {fileID: 5128695635110145600}
+  - component: {fileID: 6745059596932498452}
   - component: {fileID: 5128695635110145611}
   m_Layer: 0
   m_Name: Sphere Enemy
@@ -115,6 +116,19 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &6745059596932498452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128695635110145610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9480bc64d194a5c41bbe34a5d4e2fadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxGroundAngle: 25
 --- !u!114 &5128695635110145611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviour:
   - {fileID: 11400000, guid: 37d9ba088c9d4424bb4c4a12adbae680, type: 2}
+  - {fileID: 11400000, guid: 061e5cd4cc0e98d4e84a081308c65629, type: 2}
