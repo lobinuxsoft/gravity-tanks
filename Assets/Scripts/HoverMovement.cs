@@ -54,12 +54,9 @@ namespace GravityTanks
             }
         }
 
-        public void MoveInput(InputAction.CallbackContext callbackContext)
-        {
-            Vector2 input = callbackContext.ReadValue<Vector2>();
-            moveInput = input.y;
-            turnInput = input.x;
-        }
+        public void MoveInput(InputAction.CallbackContext callbackContext) => moveInput = callbackContext.ReadValue<float>();
+
+        public void TurnInput(InputAction.CallbackContext callbackContext) => turnInput = callbackContext.ReadValue<float>();
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
