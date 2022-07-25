@@ -1,6 +1,9 @@
 using UnityEngine;
 
-public class GameObjectDestroyer : MonoBehaviour
+namespace GravityTanks.Utils
 {
-    public void DestroyGameobject() => Destroy(gameObject);
+    public class GameObjectDestroyer : MonoBehaviour
+    {
+        public void DestroyGameobject() => Destroy(gameObject);
+    }
 }

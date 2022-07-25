@@ -1,19 +1,22 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Damager))]
-public class CannonControl : MonoBehaviour
+namespace GravityTanks
 {
-    Damager damager;
-
-    ParticleSystem particle;
-
-    private void Awake() 
+    [RequireComponent(typeof(Damager))]
+    public class CannonControl : MonoBehaviour
     {
-        particle = GetComponent<ParticleSystem>();
-        damager = GetComponent<Damager>();
+        Damager damager;
+
+        ParticleSystem particle;
+
+        private void Awake() 
+        {
+            particle = GetComponent<ParticleSystem>();
+            damager = GetComponent<Damager>();
+        }
+
+        public void Shoot() => particle.Emit(1);
+
+        void OnParticleCollision(GameObject other) => damager.DamageTo(other);
     }
-
-    public void Shoot() => particle.Emit(1);
-
-    void OnParticleCollision(GameObject other) => damager.DamageTo(other);
 }

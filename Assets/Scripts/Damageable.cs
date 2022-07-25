@@ -1,38 +1,41 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class Damageable : MonoBehaviour
+namespace GravityTanks
 {
-    [SerializeField] private int health = 5;
-    [SerializeField] private int maxHealth = 5;
-
-    public UnityEvent<int> onHealthChanged;
-    public UnityEvent<int> onMaxHealthChanged;
-    public UnityEvent onDie;
-
-    public int Health 
+    public class Damageable : MonoBehaviour
     {
-        get => health;
-        set 
-        {
-            health = value;
+        [SerializeField] private int health = 5;
+        [SerializeField] private int maxHealth = 5;
 
-            if (health <= 0)
-                onDie?.Invoke();
-            else 
-                onHealthChanged?.Invoke(health);
-        } 
-    }
-    
-    public int MaxHealth 
-    { 
-        get => maxHealth;
-        set 
-        {
-            maxHealth = value;
-            onMaxHealthChanged?.Invoke(maxHealth);
-        } 
-    }
+        public UnityEvent<int> onHealthChanged;
+        public UnityEvent<int> onMaxHealthChanged;
+        public UnityEvent onDie;
 
-    public void SetDamage(int value) => Health -= value;
+        public int Health
+        {
+            get => health;
+            set
+            {
+                health = value;
+
+                if (health <= 0)
+                    onDie?.Invoke();
+                else
+                    onHealthChanged?.Invoke(health);
+            }
+        }
+
+        public int MaxHealth
+        {
+            get => maxHealth;
+            set
+            {
+                maxHealth = value;
+                onMaxHealthChanged?.Invoke(maxHealth);
+            }
+        }
+
+        public void SetDamage(int value) => Health -= value;
+    }
 }

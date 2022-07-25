@@ -1,20 +1,23 @@
 using UnityEngine;
 
-public class Damager : MonoBehaviour
+namespace GravityTanks
 {
-    [SerializeField] private int damageAmount = 1;
-
-    public int DamageAmount
+    public class Damager : MonoBehaviour
     {
-        get => damageAmount;
-        set => damageAmount = value;
-    }
+        [SerializeField] private int damageAmount = 1;
 
-    public void DamageTo(GameObject go)
-    {
-        if(go.TryGetComponent(out Damageable damageable))
+        public int DamageAmount
         {
-            damageable.SetDamage(damageAmount);
+            get => damageAmount;
+            set => damageAmount = value;
+        }
+
+        public void DamageTo(GameObject go)
+        {
+            if(go.TryGetComponent(out Damageable damageable))
+            {
+                damageable.SetDamage(damageAmount);
+            }
         }
     }
 }

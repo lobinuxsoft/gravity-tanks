@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Gameplay" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: flex-start;">
+        <ui:Label text="Destruye todas las bolas antes que termine el tiempo..." display-tooltip-when-elided="true" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.6); flex-wrap: nowrap; -unity-text-align: middle-center; white-space: normal; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px;" />
+        <ui:Label text="99s" display-tooltip-when-elided="true" name="timer-label" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.6); -unity-text-align: middle-center; white-space: normal; -unity-font-style: bold; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+    </ui:VisualElement>
+</ui:UXML>
