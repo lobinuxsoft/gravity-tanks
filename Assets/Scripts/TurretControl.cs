@@ -8,6 +8,7 @@ namespace GravityTanks
     public class TurretControl : MonoBehaviour
     {
         [SerializeField] float rotSpeed = 1f;
+        [SerializeField] float minDistanceToAim = 5f;
         [SerializeField] Transform turret;
         [SerializeField] Transform aim;
 
@@ -37,9 +38,9 @@ namespace GravityTanks
                 pointer3D = hit.point;
 
 
-                if (Vector3.Distance(pointer3D, transform.position) > 1.5f)
+                if (Vector3.Distance(pointer3D, turret.position) > minDistanceToAim)
                 {
-                    dir = (pointer3D - transform.position).normalized;
+                    dir = (pointer3D - turret.position).normalized;
 
                     aim.gameObject.SetActive(true);
                     aim.position = pointer3D + hit.normal * .25f;
@@ -90,11 +91,6 @@ namespace GravityTanks
             Shoot();
         }
 
-        Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
-        {
-            return (direction - normal * Vector3.Dot(direction, normal)).normalized;
-        }
-
         public void ChangedControls(PlayerInput playerInput)
         {
             isMouse = !playerInput.currentControlScheme.Contains("Gamepad");
@@ -103,6 +99,12 @@ namespace GravityTanks
         private void OnDrawGizmos()
         {
             Gizmos.DrawSphere(pointer3D, .25f);
+
+            if (turret)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireSphere(turret.position, minDistanceToAim);
+            }
         }
     }
 }
