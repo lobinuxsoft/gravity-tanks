@@ -8,7 +8,7 @@ namespace GravityTanks
         [SerializeField] private int health = 5;
         [SerializeField] private int maxHealth = 5;
 
-        public UnityEvent<int> onHealthChanged;
+        public UnityAction<int> onHealthChanged;
         public UnityEvent<int> onMaxHealthChanged;
         public UnityEvent onDie;
 
@@ -20,7 +20,10 @@ namespace GravityTanks
                 health = value;
 
                 if (health <= 0)
+                {
+
                     onDie?.Invoke();
+                }
                 else
                     onHealthChanged?.Invoke(health);
             }

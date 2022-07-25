@@ -1,6 +1,17 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="Gameplay" picking-mode="Ignore" style="flex-grow: 1; align-items: center; justify-content: flex-start;">
-        <ui:Label text="Destruye todas las bolas antes que termine el tiempo..." display-tooltip-when-elided="true" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.6); flex-wrap: nowrap; -unity-text-align: middle-center; white-space: normal; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px;" />
-        <ui:Label text="99s" display-tooltip-when-elided="true" name="timer-label" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.6); -unity-text-align: middle-center; white-space: normal; -unity-font-style: bold; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+    <Style src="project://database/Assets/UI%20Toolkit/GenericsStyles.uss?fileID=7433441132597879392&amp;guid=5ea9df3957c11864fa794f233b0cd139&amp;type=3#GenericsStyles" />
+    <ui:VisualElement name="Gameplay" picking-mode="Ignore" style="flex-grow: 1; align-items: flex-start; justify-content: center; flex-direction: row; margin-top: 1%; margin-left: 1%; margin-right: 1%;">
+        <ui:VisualElement name="CountDownPanel" style="flex-grow: 1; align-items: center; justify-content: space-around;">
+            <ui:VisualElement name="Container" class="container" style="flex-direction: row;">
+                <ui:Label text="TIME" display-tooltip-when-elided="true" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); flex-wrap: nowrap; -unity-text-align: middle-center; white-space: normal; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; -unity-font-style: bold;" />
+                <ui:Label text="99s" display-tooltip-when-elided="true" name="timer-label" picking-mode="Ignore" style="font-size: 40%; color: rgb(255, 255, 255); -unity-text-align: middle-center; white-space: normal; -unity-font-style: bold; padding-left: 8px; padding-right: 8px; padding-top: 8px; padding-bottom: 8px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="EnemyCounter">
+            <ui:VisualElement name="Container" class="container">
+                <ui:VisualElement name="Icon" style="-unity-text-outline-color: rgb(0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/flip_full.png?fileID=21300000&amp;guid=0197a3da3f2f66246958e11b1175218e&amp;type=3#flip_full&apos;); width: 64px; height: 64px;" />
+                <ui:Label text="x99" display-tooltip-when-elided="true" name="enemy-counter-label" style="color: rgb(255, 255, 255); font-size: 40px; -unity-text-align: middle-center; -unity-font-style: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

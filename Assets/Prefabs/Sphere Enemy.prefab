@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6240261251722148513}
   m_Layer: 0
   m_Name: Sphere Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,9 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 3
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onMaxHealthChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -170,14 +167,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6240261251722148513}
-        m_TargetAssemblyTypeName: GameObjectDestroyer, Assembly-CSharp
+        m_TargetAssemblyTypeName: GravityTanks.Utils.GameObjectDestroyer, Assembly-CSharp
         m_MethodName: DestroyGameobject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 0.5
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
