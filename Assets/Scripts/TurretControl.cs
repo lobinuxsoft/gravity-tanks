@@ -9,6 +9,7 @@ namespace GravityTanks
     {
         [SerializeField] float rotSpeed = 1f;
         [SerializeField] Transform turret;
+        [SerializeField] Transform aim;
 
         bool isMouse;
         Camera cam;
@@ -21,6 +22,8 @@ namespace GravityTanks
         private void Awake()
         {
             cam = Camera.main;
+
+            aim.SetParent(null);
         }
 
         private void LateUpdate()
@@ -33,9 +36,17 @@ namespace GravityTanks
             {
                 pointer3D = hit.point;
 
+
                 if (Vector3.Distance(pointer3D, transform.position) > 1.5f)
                 {
                     dir = (pointer3D - transform.position).normalized;
+
+                    aim.gameObject.SetActive(true);
+                    aim.position = pointer3D + hit.normal * .25f;
+                }
+                else
+                {
+                    aim.gameObject.SetActive(false);
                 }
 
                 float singleStep = rotSpeed * Time.deltaTime;
@@ -43,6 +54,10 @@ namespace GravityTanks
                 Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
 
                 turret.rotation = Quaternion.LookRotation(newDir, transform.up);
+            }
+            else
+            {
+                aim.gameObject.SetActive(false);
             }
         }
 
