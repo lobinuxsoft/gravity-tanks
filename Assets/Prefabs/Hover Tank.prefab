@@ -298,10 +298,34 @@ MonoBehaviour:
       m_Calls: []
   m_ControlsChangedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7399629590829570272}
+        m_TargetAssemblyTypeName: GravityTanks.TurretControl, Assembly-CSharp
+        m_MethodName: ChangedControls
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7399629590829570272}
+        m_TargetAssemblyTypeName: GravityTanks.TurretControl, Assembly-CSharp
+        m_MethodName: ShootInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f963142c-1737-4eff-b8da-6df7aa5ebb5c
     m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
   - m_PersistentCalls:
@@ -463,8 +487,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d1f0cc694ae77418a4fe96500c9ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 4
+  rotSpeed: 2
   turret: {fileID: 3322501222172473305}
+  onTurretLookTarget:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7939248468205306463}
+        m_TargetAssemblyTypeName: CannonControl, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4240138551643076513
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,6 +682,7 @@ Transform:
   m_Children:
   - {fileID: 7360622629993490085}
   - {fileID: 4634569993426413861}
+  - {fileID: 6315467494268342190}
   m_Father: {fileID: 3322501222172473305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -698,3 +738,90 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &7313160130660273533
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6774586652248444557}
+    m_Modifications:
+    - target: {fileID: 3356059294661820987, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_Name
+      value: Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0555dd2eb7e2874499605b7f8a50ab2, type: 3}
+--- !u!4 &6315467494268342190 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3663850224271098579, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7313160130660273533}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7939248468205306463 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 815274740796034850, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7313160130660273533}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6692d820ce71f4faead0da158390db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

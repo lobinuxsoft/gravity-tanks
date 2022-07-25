@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5128695635110145600}
   - component: {fileID: 6745059596932498452}
   - component: {fileID: 5128695635110145611}
+  - component: {fileID: 1558796072066750251}
+  - component: {fileID: 6240261251722148513}
   m_Layer: 0
   m_Name: Sphere Enemy
   m_TagString: Untagged
@@ -144,3 +146,50 @@ MonoBehaviour:
   behaviours:
   - {fileID: 11400000, guid: 37d9ba088c9d4424bb4c4a12adbae680, type: 2}
   - {fileID: 11400000, guid: 061e5cd4cc0e98d4e84a081308c65629, type: 2}
+--- !u!114 &1558796072066750251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128695635110145610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9994358463d71364a97cbc826040ceed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onMaxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6240261251722148513}
+        m_TargetAssemblyTypeName: GameObjectDestroyer, Assembly-CSharp
+        m_MethodName: DestroyGameobject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6240261251722148513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5128695635110145610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f625d0019789894dae5395cf36389fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

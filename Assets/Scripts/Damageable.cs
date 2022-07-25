@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class Damageable
+public class Damageable : MonoBehaviour
 {
     [SerializeField] private int health = 5;
     [SerializeField] private int maxHealth = 5;
 
     public UnityEvent<int> onHealthChanged;
     public UnityEvent<int> onMaxHealthChanged;
-    public UnityEvent onDestroy;
+    public UnityEvent onDie;
 
     public int Health 
     {
@@ -17,8 +17,8 @@ public class Damageable
         {
             health = value;
 
-            if (health <= 0) 
-                onDestroy?.Invoke();
+            if (health <= 0)
+                onDie?.Invoke();
             else 
                 onHealthChanged?.Invoke(health);
         } 
@@ -26,8 +26,12 @@ public class Damageable
     
     public int MaxHealth 
     { 
-        get => maxHealth; 
-        set => maxHealth = value; 
+        get => maxHealth;
+        set 
+        {
+            maxHealth = value;
+            onMaxHealthChanged?.Invoke(maxHealth);
+        } 
     }
 
     public void SetDamage(int value) => Health -= value;

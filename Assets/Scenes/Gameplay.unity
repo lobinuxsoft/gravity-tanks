@@ -498,6 +498,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere Enemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: m_RootOrder
@@ -622,40 +627,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
+    - target: {fileID: 7399629590829570272, guid: e3d62821a3c52384bb7684bbe17aca37,
         type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 664177719}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangedControls
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GravityTanks.TurretControl, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4134616999384371205, guid: e3d62821a3c52384bb7684bbe17aca37,
-        type: 3}
-      propertyPath: m_ControlsChangedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      propertyPath: rotSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3d62821a3c52384bb7684bbe17aca37, type: 3}
@@ -665,18 +640,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 664177711}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &664177719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7399629590829570272, guid: e3d62821a3c52384bb7684bbe17aca37,
-    type: 3}
-  m_PrefabInstance: {fileID: 664177711}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d1f0cc694ae77418a4fe96500c9ab7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &705920159
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +686,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771429, y: 1}
+    m_SensorSize: {x: 1.7751479, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -808,6 +771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
@@ -976,6 +944,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere Enemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: m_RootOrder
@@ -1107,6 +1080,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere Enemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: m_RootOrder
@@ -1206,6 +1184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere Enemy (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
@@ -1307,6 +1290,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sphere Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: m_RootOrder
@@ -1375,6 +1363,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Sphere Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145615, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}

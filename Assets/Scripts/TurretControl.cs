@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 namespace GravityTanks
@@ -14,6 +16,8 @@ namespace GravityTanks
         Vector3 dir;
         Vector3 pointer3D = Vector3.zero;
 
+        public UnityEvent onTurretLookTarget;
+
         private void Awake()
         {
             cam = Camera.main;
@@ -25,18 +29,27 @@ namespace GravityTanks
 
             Physics.Raycast(ray, out RaycastHit hit);
 
-            pointer3D = hit.point;
-
-            if(Vector3.Distance(pointer3D, transform.position) > 1.5f)
+            if (hit.collider != null)
             {
-                dir = (pointer3D - transform.position).normalized;
+                pointer3D = hit.point;
+
+                if (Vector3.Distance(pointer3D, transform.position) > 1.5f)
+                {
+                    dir = (pointer3D - transform.position).normalized;
+                }
+
+                float singleStep = rotSpeed * Time.deltaTime;
+
+                Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
+
+                turret.rotation = Quaternion.LookRotation(newDir, transform.up);
             }
+        }
 
-            float singleStep = rotSpeed * Time.deltaTime;
-
-            Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
-
-            turret.rotation = Quaternion.LookRotation(newDir, transform.up);
+        private void Shoot()
+        {
+            if (Vector3.Angle(turret.forward, dir) < 1)
+                onTurretLookTarget?.Invoke();
         }
 
         public void PointerInput(InputAction.CallbackContext callbackContext)
@@ -53,6 +66,13 @@ namespace GravityTanks
                 pointerInput.x = .5f + (inputValue.x * .5f);
                 pointerInput.y = .5f + (inputValue.y * .5f);
             }
+        }
+
+        public void ShootInput(InputAction.CallbackContext callbackContext)
+        {
+            if (!callbackContext.performed) return;
+
+            Shoot();
         }
 
         Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
