@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 5540696720341770286}
   - component: {fileID: 6891523483290475665}
   - component: {fileID: 7399629590829570272}
+  - component: {fileID: 1613487224895678736}
   m_Layer: 6
   m_Name: Hover Tank
   m_TagString: Player
@@ -450,6 +451,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 792b9319-03fc-459e-8d92-7a61041869a4
     m_ActionName: Player/LookAt[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8d179227-bc0e-420a-bd13-bb2e6ba5a176
+    m_ActionName: Player/CameraSwitcher[/Keyboard/c]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -522,6 +527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotSpeed: 4
+  minDistanceToAim: 3
   turret: {fileID: 7300662567386176738}
   aim: {fileID: 6099921389157763271}
   onTurretLookTarget:
@@ -539,6 +545,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1613487224895678736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688708277199922024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61665ec4ec128234f83d1dac15e3bd96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farCamera: {fileID: 0}
+  nearCamera: {fileID: 0}
 --- !u!1 &3537934382746945047
 GameObject:
   m_ObjectHideFlags: 0
