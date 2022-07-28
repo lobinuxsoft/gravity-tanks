@@ -13,6 +13,48 @@
     border-bottom-left-radius: 8px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+.container:enabled {
+    background-color: rgba(0, 0, 0, 0.6);
+    flex-direction: row;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+
+.container:disabled {
+    background-color: rgba(0, 0, 0, 0.6);
+    flex-direction: row;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+    opacity: 0;
 }
 
 .custom-button {
@@ -47,7 +89,7 @@
     color: rgb(255, 255, 255);
     transition-timing-function: ease-out-elastic;
     transition-duration: 1s;
-    scale: 2 2;
+    scale: 1.25 1.25;
 }
 
 .custom-button:active {
@@ -89,12 +131,24 @@
     border-bottom-left-radius: 30px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
+    -unity-font-style: bold;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 255);
+    -unity-text-align: middle-center;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .unity-toggle:hover {
-    scale: 2 2;
+    scale: 1.25 1.25;
     transition-duration: 1s;
     transition-timing-function: ease-out-elastic;
+    -unity-font-style: bold;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 255);
+    -unity-text-align: middle-center;
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
 .unity-toggle__label {

@@ -1,3 +1,4 @@
+using CryingOnionTools.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -6,13 +7,11 @@ namespace GravityTanks.UI
 {
     public class EnemyCounterUI : MonoBehaviour
     {
+        [SerializeField] IntVariable enemiesAmount;
         UIDocument uiDocument;
         Label enemyCounterLabel;
 
         int totalEnemies;
-        int enemiesAmount;
-
-        public int TotalEnemiesDestroyed => totalEnemies - enemiesAmount;
 
         public UnityEvent onAllEnemyDetroy;
 
@@ -20,31 +19,30 @@ namespace GravityTanks.UI
         {
             uiDocument = GetComponent<UIDocument>();
             enemyCounterLabel = uiDocument.rootVisualElement.Q<Label>("enemy-counter-label");
+            enemiesAmount.onValueChange += UpdateView;
             FindAllEnemies();
         }
+
+        private void OnDestroy() => enemiesAmount.onValueChange -= UpdateView;
 
         private void FindAllEnemies()
         {
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
             totalEnemies = enemies.Length;
-            enemiesAmount = totalEnemies;
-
-            enemyCounterLabel.text = $"x{enemiesAmount:00}";
+            enemiesAmount.Value = totalEnemies;
 
             foreach (var enemy in enemies)
             {
                 if (enemy.TryGetComponent(out Damageable damageable)) 
-                    damageable.onDie.AddListener(SubstractEnemy);
+                    damageable.onDie.AddListener(() => enemiesAmount.Value--);
             }
         }
 
-        private void SubstractEnemy()
+        private void UpdateView(int value)
         {
-            enemiesAmount--;
-            enemyCounterLabel.text = $"x{enemiesAmount:00}";
-
-            if (enemiesAmount <= 0) onAllEnemyDetroy?.Invoke();
+            enemyCounterLabel.text = $"x{value:00}";
+            if (value <= 0) onAllEnemyDetroy?.Invoke();
         }
     }
 }

@@ -1,3 +1,4 @@
+using CryingOnionTools.ScriptableVariables;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,7 +11,8 @@ namespace GravityTanks.UI
         [Tooltip("Duracion total del contador en segundos")]
         [SerializeField] int timerDuration = 60;
 
-        int timerCount = 0;
+        [SerializeField] IntVariable timerCount;
+
         UIDocument uiDocument;
         Label timerLabel;
 
@@ -20,18 +22,22 @@ namespace GravityTanks.UI
         {
             uiDocument = GetComponent<UIDocument>();
             timerLabel = uiDocument.rootVisualElement.Q<Label>("timer-label");
-            timerCount = timerDuration;
-            timerLabel.text = $"{timerCount}:s";
+            timerCount.onValueChange += UpdateView;
+
+            timerCount.Value = timerDuration;
 
             StartCountDown();
         }
+
+        private void OnDestroy() => timerCount.onValueChange -= UpdateView;
+
+        private void UpdateView(int value) => timerLabel.text = $"{value}:s";
 
         public void StartCountDown()
         {
             StopCountDown();
             
-            timerCount = timerDuration;
-            timerLabel.text = $"{timerCount}:s";
+            timerCount.Value = timerDuration;
 
             StartCoroutine(CountDownRoutine());
         }
@@ -40,11 +46,10 @@ namespace GravityTanks.UI
 
         IEnumerator CountDownRoutine()
         {
-            while (timerCount > 0)
+            while (timerCount.Value > 0)
             {
                 yield return new WaitForSeconds(1);
-                timerCount--;
-                timerLabel.text = $"{timerCount}:s";
+                timerCount.Value--;
             }
 
             onCountDownEnd?.Invoke();

@@ -16,6 +16,8 @@ namespace GravityTanks.UI
             transitionElement = document.rootVisualElement.Q<VisualElement>("transition");
         }
 
+        private void Start() => FadeIn();
+
         public static void FadeOut(string sceneName) 
         {
             nextSneceName = sceneName;
@@ -24,8 +26,12 @@ namespace GravityTanks.UI
             transitionElement.SetEnabled(true);
         }
 
-        private static void ChangeScene(TransitionEndEvent evt) => SceneManager.LoadScene(nextSneceName);
+        private static void ChangeScene(TransitionEndEvent evt) 
+        {
+            transitionElement.UnregisterCallback<TransitionEndEvent>(ChangeScene);
+            SceneManager.LoadScene(nextSneceName); 
+        }
 
-        public static void FadeIn() => transitionElement.SetEnabled(false);
+        private static void FadeIn() => transitionElement.SetEnabled(false);
     }
 }

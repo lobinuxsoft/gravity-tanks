@@ -40,9 +40,8 @@ namespace GravityTanks.UI
         {
             playButton.clicked -= ToGamePlay;
             quitButton.clicked -= QuitGame;
+            audioToggle.UnregisterValueChangedCallback(OnToggleChange);
         }
-
-        private void Start() => TransitionSceneUI.FadeIn();
 
         private void OnToggleChange(ChangeEvent<bool> evt) 
         { 

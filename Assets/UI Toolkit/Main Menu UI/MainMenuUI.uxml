@@ -6,7 +6,7 @@
         <ui:GroupBox style="flex-direction: row; flex-grow: 0.5; padding-left: 25%;">
             <ui:GroupBox name="GroupBoxButtons" style="justify-content: space-around; align-items: center; flex-grow: 1;">
                 <ui:Button text="PLAY" display-tooltip-when-elided="true" name="play-button" class="custom-button" />
-                <ui:Toggle label="AUDIO" value="true" name="audio-toggle" style="font-size: 40px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-center; padding-left: 25px; padding-right: 25px; align-items: center;" />
+                <ui:Toggle label="AUDIO" value="true" name="audio-toggle" style="align-items: center;" />
                 <ui:Button text="QUIT" display-tooltip-when-elided="true" name="quit-button" class="custom-button" />
             </ui:GroupBox>
             <ui:GroupBox name="CreditsContainer" style="align-items: center; justify-content: flex-start;">
