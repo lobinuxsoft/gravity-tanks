@@ -10,6 +10,15 @@
       ]
     },
     {
+      "name": "Music",
+      "authors": [
+        {
+          "name": "Tomas Guida",
+          "url": "https://www.linkedin.com/in/tomas-guida-457a271b3/"
+        }
+      ]
+    },
+    {
       "name": "Free Assets",
       "authors": [
         {
@@ -19,6 +28,15 @@
         {
           "name": "Crosshair Pack by Kenney",
           "url": "https://www.kenney.nl/assets/crosshair-pack"
+        }
+      ]
+    },
+    {
+      "name": "Pay Assets",
+      "authors": [
+        {
+          "name": "8-Bit Music and SFX by MEGAHAMMER STUDIOS",
+          "url": "https://assetstore.unity.com/packages/audio/music/electronic/8-bit-music-and-sfx-megahammer-megabundle-vol-1-179677"
         }
       ]
     }
