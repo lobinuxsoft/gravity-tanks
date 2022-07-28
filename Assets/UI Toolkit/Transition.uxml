@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/GenericsStyles.uss?fileID=7433441132597879392&amp;guid=5ea9df3957c11864fa794f233b0cd139&amp;type=3#GenericsStyles" />
+    <ui:VisualElement name="transition" picking-mode="Ignore" class="transition" />
+</ui:UXML>
