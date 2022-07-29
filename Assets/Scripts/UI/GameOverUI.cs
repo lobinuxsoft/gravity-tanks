@@ -70,32 +70,16 @@ namespace GravityTanks.UI
         {
             scoreBoardData.LoadData();
             
-            if(scoreBoardData.Value.Count > 0)
-            {
-                for (int i = 0; i < scoreBoardData.Value.Count; i++)
-                {
-                    if (scoreBoardData.Value[i].score < value.score)
-                    {
-                        scoreBoardData.Value[i] = value;
-                        break;
-                    }
-                }
-            }
-            else
+            if(scoreBoardData.Value.Count == 0)
             {
                 for (int i = 0; i < 3; i++)
                     scoreBoardData.Value.Add(new ScoreData());
-
-
-                for (int j = 0; j < scoreBoardData.Value.Count; j++)
-                {
-                    if (scoreBoardData.Value[j].score < value.score)
-                    {
-                        scoreBoardData.Value[j] = value;
-                        break;
-                    }
-                }
             }
+
+            scoreBoardData.Value.Add(value);
+            scoreBoardData.Value.Sort((a, b) => a.score.CompareTo(b.score));
+            scoreBoardData.Value.Reverse();
+            scoreBoardData.Value.RemoveRange(3, Mathf.Clamp(scoreBoardData.Value.Count - 3, 0, scoreBoardData.Value.Count));
 
             scoreBoardData.SaveData();
         }
