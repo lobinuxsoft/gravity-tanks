@@ -31,7 +31,7 @@ namespace GravityTanks.UI
 
         private void OnDestroy() => timerCount.onValueChange -= UpdateView;
 
-        private void UpdateView(int value) => timerLabel.text = $"{value}:s";
+        private void UpdateView(int value) => timerLabel.text = $"<sprite=1>{value:00s}";
 
         public void StartCountDown()
         {

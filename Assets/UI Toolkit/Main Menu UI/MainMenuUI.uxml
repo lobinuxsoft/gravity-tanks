@@ -4,12 +4,12 @@
     <GravityTanks.UI.SafeAreaManager style="align-items: center; justify-content: space-around;">
         <ui:Label text="Gravity Tank" display-tooltip-when-elided="true" name="Title" picking-mode="Ignore" style="font-size: 120px; color: rgb(255, 255, 255); -unity-text-align: middle-center; -unity-font-style: bold;" />
         <ui:GroupBox style="flex-direction: row; flex-grow: 0.5; padding-left: 25%;">
-            <ui:GroupBox name="GroupBoxButtons" style="justify-content: space-around; align-items: center; flex-grow: 1;">
-                <ui:Button text="PLAY" display-tooltip-when-elided="true" name="play-button" class="custom-button" />
-                <ui:Toggle label="AUDIO" value="true" name="audio-toggle" style="align-items: center;" />
+            <ui:GroupBox name="GroupBoxButtons" style="justify-content: flex-start; align-items: center; flex-grow: 1;">
+                <ui:Button text="PLAY" display-tooltip-when-elided="true" name="play-button" class="custom-button" style="margin-bottom: 40px;" />
+                <ui:Toggle label="AUDIO" value="true" name="audio-toggle" style="align-items: center; margin-bottom: 40px;" />
                 <ui:Button text="QUIT" display-tooltip-when-elided="true" name="quit-button" class="custom-button" />
             </ui:GroupBox>
-            <ui:GroupBox name="CreditsContainer" style="align-items: center; justify-content: flex-start;">
+            <ui:GroupBox name="CreditsContainer" style="align-items: flex-end; justify-content: flex-start;">
                 <ui:Label text="Credits" display-tooltip-when-elided="true" name="Title" style="color: rgb(255, 255, 255); font-size: 60px; -unity-font-style: bold; -unity-text-align: middle-center; flex-grow: 0;" />
             </ui:GroupBox>
         </ui:GroupBox>

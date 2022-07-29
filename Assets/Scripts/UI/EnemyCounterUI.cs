@@ -30,19 +30,19 @@ namespace GravityTanks.UI
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
             totalEnemies = enemies.Length;
-            enemiesAmount.Value = totalEnemies;
+            enemiesAmount.Value = 0;
 
             foreach (var enemy in enemies)
             {
                 if (enemy.TryGetComponent(out Damageable damageable)) 
-                    damageable.onDie.AddListener(() => enemiesAmount.Value--);
+                    damageable.onDie.AddListener(() => enemiesAmount.Value++);
             }
         }
 
         private void UpdateView(int value)
         {
-            enemyCounterLabel.text = $"x{value:00}";
-            if (value <= 0) onAllEnemyDetroy?.Invoke();
+            enemyCounterLabel.text = $"x{totalEnemies - value:00}";
+            if (totalEnemies - value <= 0) onAllEnemyDetroy?.Invoke();
         }
     }
 }
