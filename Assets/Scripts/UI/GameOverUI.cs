@@ -60,7 +60,11 @@ namespace GravityTanks.UI
             }
         }
 
-        private void ToMainMenu() => TransitionSceneUI.FadeOut("MainMenu");
+        private void ToMainMenu() 
+        {
+            sfxTrigger.PlaySFX(clickSfx);
+            TransitionSceneUI.FadeOut("MainMenu"); 
+        }
 
         private void EvaluateScores(ScoreData value)
         {

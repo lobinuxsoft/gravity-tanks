@@ -718,6 +718,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesEliminated: {fileID: 11400000, guid: 94ddcf5405d61b44c9317a16f007714d, type: 2}
   timeRemain: {fileID: 11400000, guid: a15d963fbe53b69428b48374c2d7fb2e, type: 2}
+  clickSfx: {fileID: 8300000, guid: 247f9edc96135d6468705bdecc126542, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
