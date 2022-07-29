@@ -504,7 +504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   multiplier: 1.5
   moveForce: 20
-  turnTorque: 10
+  turnTorque: 4
   centerOfMass: {x: 0, y: -2, z: 0}
   rayLayerMask:
     serializedVersion: 2
