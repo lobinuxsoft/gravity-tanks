@@ -31,7 +31,6 @@ namespace GravityTanks.UI
 
             volumeController = GetComponent<MixerVolumeController>();
             sfxTrigger = GetComponent<SFXTrigger>();
-            audioToggle.value = volumeController.Volume > 0;
 
             pauseButton.clicked += Open;
             resumeButton.clicked += Close;
@@ -39,7 +38,11 @@ namespace GravityTanks.UI
             audioToggle.RegisterValueChangedCallback(OnToggleChange);
         }
 
-        private void Start() => Close();
+        private void Start() 
+        {
+            AudioSettingLoad();
+            Close(); 
+        }
 
         private void OnDestroy()
         {
@@ -78,7 +81,22 @@ namespace GravityTanks.UI
         private void OnToggleChange(ChangeEvent<bool> evt)
         {
             sfxTrigger.PlaySFX(clickSfx);
-            volumeController.ChangeVolume(evt.newValue ? 1 : 0);
+            AudioSettingSave(evt.newValue);
+        }
+
+        private void AudioSettingSave(bool value)
+        {
+            volumeController.ChangeVolume(value ? 1 : 0);
+            PlayerPrefs.SetInt("AudioSetting", (int)volumeController.Volume);
+            PlayerPrefs.Save();
+        }
+
+        private void AudioSettingLoad()
+        {
+            if (PlayerPrefs.HasKey("AudioSetting"))
+                volumeController.ChangeVolume(PlayerPrefs.GetInt("AudioSetting"));
+
+            audioToggle.value = volumeController.Volume > .1f;
         }
     }
 }
