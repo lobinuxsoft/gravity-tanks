@@ -1,0 +1,3 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:Label text="&lt;size=60&gt;&lt;sprite=1&gt;&lt;/size&gt;: XX &lt;size=60&gt;&lt;sprite=0&gt;&lt;/size&gt;: XX" display-tooltip-when-elided="true" name="score-label" style="-unity-font-style: bold; font-size: 40px; color: rgb(255, 255, 255); margin-top: 10px; margin-bottom: 10px;" />
+</ui:UXML>

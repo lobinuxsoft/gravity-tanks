@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1137768970, guid: 172a368433b62cf459d2da1725e4526b, type: 3}
-  m_Name: Enemies Amount
+  m_Script: {fileID: 11500000, guid: 34960863b1743cd409b6dd5e30ff1774, type: 3}
+  m_Name: Score Board Data
   m_EditorClassIdentifier: 
-  value: 50
+  value: []
   redeableFile: 0
   fileExtention: .save
