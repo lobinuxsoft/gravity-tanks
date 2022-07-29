@@ -265,7 +265,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: -0.092379734, y: 0.8965565, z: -0.22302441, w: -0.3713659}
+  m_LocalRotation: {x: -0.09237974, y: 0.8965565, z: -0.22302443, w: -0.3713659}
   m_LocalPosition: {x: 2, y: 4.3900003, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 375849446}
   - component: {fileID: 375849448}
   - component: {fileID: 375849447}
+  - component: {fileID: 375849449}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -620,6 +621,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &375849449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375849438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24126867f0b502409bfdcff8c14a1b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSfx: {fileID: 8300000, guid: 247f9edc96135d6468705bdecc126542, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1147,7 +1161,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7761194, y: 1}
+    m_SensorSize: {x: 1.777439, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1163,7 +1177,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816689590}
-  m_LocalRotation: {x: -0.092379734, y: 0.8965565, z: -0.22302441, w: -0.3713659}
+  m_LocalRotation: {x: -0.09237974, y: 0.8965565, z: -0.22302443, w: -0.3713659}
   m_LocalPosition: {x: 2, y: 4.3900003, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

@@ -296,7 +296,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.44721362, y: 0.000000015389855, z: -0.000000007694927, w: 0.89442724}
+  m_LocalRotation: {x: 0.44721362, y: -0.000000015389857, z: 0.000000007694929, w: 0.89442724}
   m_LocalPosition: {x: 0, y: 20, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -504,8 +504,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 375849450}
         m_TargetAssemblyTypeName: GravityTanks.UI.GameplayUI, Assembly-CSharp
-        m_MethodName: ShowMessage
-        m_Mode: 5
+        m_MethodName: Lose
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -544,8 +544,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 375849450}
         m_TargetAssemblyTypeName: GravityTanks.UI.GameplayUI, Assembly-CSharp
-        m_MethodName: ShowMessage
-        m_Mode: 5
+        m_MethodName: Win
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -718,6 +718,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesEliminated: {fileID: 11400000, guid: 94ddcf5405d61b44c9317a16f007714d, type: 2}
   timeRemain: {fileID: 11400000, guid: a15d963fbe53b69428b48374c2d7fb2e, type: 2}
+  winClip:
+  - {fileID: 8300000, guid: 90a5ce00c5d123f458b1f5fb3b24cb28, type: 3}
+  - {fileID: 8300000, guid: e245ba3b5e2a65b459a8f23dd0fdf62d, type: 3}
+  loseClip:
+  - {fileID: 8300000, guid: a7bcace12397a96499283d0e05f87183, type: 3}
+  - {fileID: 8300000, guid: 0119fa833b9b34f4c9f8403fec190224, type: 3}
+  clickSfx: {fileID: 8300000, guid: 247f9edc96135d6468705bdecc126542, type: 3}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,7 +1234,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705920159}
-  m_LocalRotation: {x: 0.44721362, y: 0.000000015389855, z: -0.000000007694927, w: 0.89442724}
+  m_LocalRotation: {x: 0.44721362, y: -0.000000015389857, z: 0.000000007694929, w: 0.89442724}
   m_LocalPosition: {x: 0, y: 20, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

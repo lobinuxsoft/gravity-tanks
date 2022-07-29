@@ -1,18 +1,26 @@
 using CryingOnionTools.ScriptableVariables;
 using UnityEngine;
 using UnityEngine.UIElements;
+using CryingOnionTools.AudioTools;
 
 namespace GravityTanks.UI
 {
+    [RequireComponent(typeof(SFXTrigger))]
     public class GameplayUI : MonoBehaviour
     {
         [SerializeField] IntVariable enemiesEliminated;
         [SerializeField] IntVariable timeRemain;
+        [SerializeField] AudioClip[] winClip;
+        [SerializeField] AudioClip[] loseClip;
+        [SerializeField] AudioClip clickSfx;
+
         UIDocument document;
         VisualElement gameplayMessagePanel;
         Label gameplayMessageLabel;
         Label sessionScoreLabel;
         Button resultButton;
+
+        SFXTrigger sfxTrigger;
 
         private void Awake()
         {
@@ -21,6 +29,7 @@ namespace GravityTanks.UI
             gameplayMessageLabel = document.rootVisualElement.Q<Label>("gameplay-message-label");
             sessionScoreLabel = document.rootVisualElement.Q<Label>("session-score");
             resultButton = document.rootVisualElement.Q<Button>("result-button");
+            sfxTrigger = GetComponent<SFXTrigger>();
 
             resultButton.clicked += ToGameOver;
 
@@ -28,7 +37,23 @@ namespace GravityTanks.UI
             gameplayMessagePanel.pickingMode = PickingMode.Ignore;
         }
 
-        public void ShowMessage(string message)
+        public void Win()
+        {
+            Random.InitState(Mathf.RoundToInt(Time.time));
+            MusicManager.Instance.StopTrack();
+            sfxTrigger.PlaySFX(winClip[Random.Range(0, winClip.Length)]);
+            ShowMessage("CONGRATULATIONS!!");
+        }
+
+        public void Lose()
+        {
+            Random.InitState(Mathf.RoundToInt(Time.time));
+            MusicManager.Instance.StopTrack();
+            sfxTrigger.PlaySFX(loseClip[Random.Range(0, loseClip.Length)]);
+            ShowMessage("TIME OUT!!");
+        }
+
+        private void ShowMessage(string message)
         {
             gameplayMessageLabel.text = message;
             int score = enemiesEliminated.Value * 10 + timeRemain.Value * 100;
@@ -39,6 +64,10 @@ namespace GravityTanks.UI
 
         private void OnDestroy() => resultButton.clicked -= ToGameOver;
 
-        private void ToGameOver() => TransitionSceneUI.FadeOut("GameOver");
+        private void ToGameOver() 
+        {
+            sfxTrigger.PlaySFX(clickSfx);
+            TransitionSceneUI.FadeOut("GameOver"); 
+        }
     }
 }
