@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -14,8 +15,9 @@ namespace GravityTanks
         bool isMouse;
         Camera cam;
         Vector2 pointerInput;
-        Vector3 dir;
+        Vector3 dir = Vector3.zero;
         Vector3 pointer3D = Vector3.zero;
+        Coroutine shootRoutine;
 
         public UnityEvent onTurretLookTarget;
 
@@ -49,22 +51,47 @@ namespace GravityTanks
                     aim.gameObject.SetActive(false);
                 }
 
-                float singleStep = rotSpeed * Time.deltaTime;
+                //float singleStep = rotSpeed * Time.deltaTime;
 
-                Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
+                //Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
 
-                turret.rotation = Quaternion.LookRotation(newDir, transform.up);
+                //turret.rotation = Quaternion.LookRotation(newDir, transform.up);
             }
             else
             {
+                dir = transform.forward * 2;
+                dir.y = 0;
                 aim.gameObject.SetActive(false);
             }
         }
 
         private void Shoot()
         {
-            if (Vector3.Angle(turret.forward, dir) < 1)
-                onTurretLookTarget?.Invoke();
+            //if (Vector3.Angle(turret.forward, dir) < 1)
+            //    onTurretLookTarget?.Invoke();
+
+            if(shootRoutine != null)
+            {
+                StopCoroutine(shootRoutine);
+            }
+
+            shootRoutine = StartCoroutine(ShootRoutine(dir));
+        }
+
+        IEnumerator ShootRoutine(Vector3 dirToShoot)
+        {
+            while(Vector3.Angle(turret.forward, dirToShoot) > 1)
+            {
+                float singleStep = rotSpeed * Time.deltaTime;
+
+                Vector3 newDir = Vector3.RotateTowards(turret.forward, dirToShoot, singleStep, 0.0f);
+
+                turret.rotation = Quaternion.LookRotation(newDir, transform.up);
+
+                yield return null;
+            }
+
+            onTurretLookTarget?.Invoke();
         }
 
         public void PointerInput(InputAction.CallbackContext callbackContext)

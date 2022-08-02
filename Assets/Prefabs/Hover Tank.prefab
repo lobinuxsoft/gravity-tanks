@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d1f0cc694ae77418a4fe96500c9ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 4
+  rotSpeed: 2
   minDistanceToAim: 3
   turret: {fileID: 7300662567386176738}
   aim: {fileID: 6099921389157763271}
