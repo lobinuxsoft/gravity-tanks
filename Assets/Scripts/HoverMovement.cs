@@ -9,7 +9,7 @@ namespace GravityTanks
     public class HoverMovement : MonoBehaviour
     {
         [SerializeField] float multiplier = 2;
-        [SerializeField] float moveForce = 20, turnTorque = 10;
+        [SerializeField] float moveForce = 20, turnSpeed = 10;
         [SerializeField] Vector3 centerOfMass = Vector3.down * 2;
         [SerializeField] LayerMask rayLayerMask;
         [SerializeField] Transform[] anchors;
@@ -41,8 +41,19 @@ namespace GravityTanks
                 ApplyForce(anchors[i], ref hits[i]);
             }
 
-            rb.AddForce(moveInput * moveForce * transform.forward);
-            rb.AddTorque(turnInput * turnTorque * transform.up);
+            Vector3 moveDir = new Vector3(turnInput, 0, moveInput);
+
+            //rb.AddForce(moveInput * moveForce * transform.forward);
+            rb.AddForce(moveDir * moveForce);
+            //rb.AddTorque(turnInput * turnTorque * transform.up);
+            if(moveDir.magnitude > 0f)
+            {
+                Quaternion newRot = Quaternion.LookRotation(moveDir, Vector3.up);
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    newRot,
+                    Quaternion.Angle(transform.rotation, newRot) * turnSpeed * Time.deltaTime);
+            }
         }
 
         void ApplyForce(Transform anchor, ref RaycastHit hit)
