@@ -1,5 +1,6 @@
 using UnityEngine;
 using CryingOnionTools.AudioTools;
+using System.Collections;
 
 namespace GravityTanks
 {
@@ -8,12 +9,15 @@ namespace GravityTanks
     {
         [SerializeField] AudioClip shootSfx;
         [SerializeField] AudioClip impactSfx;
+        [SerializeField] float shotRate = .5f;
 
         Damager damager;
 
         ParticleSystem particle;
 
         SFXTrigger sfxTrigger;
+
+        Coroutine shotRoutine = null;
 
         private void Awake() 
         {
@@ -24,8 +28,16 @@ namespace GravityTanks
 
         public void Shoot() 
         {
+            if (shotRoutine == null)
+                shotRoutine = StartCoroutine(ShotRoutine(shotRate));
+        }
+
+        IEnumerator ShotRoutine(float delay)
+        {
             sfxTrigger.PlaySFX(shootSfx);
-            particle.Emit(1); 
+            particle.Emit(1);
+            yield return new WaitForSeconds(delay);
+            shotRoutine = null;
         }
 
         void OnParticleCollision(GameObject other) 

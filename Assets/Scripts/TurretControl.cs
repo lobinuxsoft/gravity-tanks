@@ -1,136 +1,75 @@
-using System.Collections;
+using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 namespace GravityTanks
 {
     public class TurretControl : MonoBehaviour
     {
-        [SerializeField] float rotSpeed = 1f;
+        [SerializeField] float rotSpeed = 5f;
         [SerializeField] float minDistanceToAim = 5f;
-        [SerializeField] Transform turret;
+        [SerializeField] float minAngleToShot = 2.5f;
         [SerializeField] Transform aim;
+        [SerializeField] CannonControl cannon;
 
-        bool isMouse;
-        Camera cam;
-        Vector2 pointerInput;
-        Vector3 dir = Vector3.zero;
-        Vector3 pointer3D = Vector3.zero;
-        Coroutine shootRoutine;
+        Transform targetToShot = null;
 
-        public UnityEvent onTurretLookTarget;
+        Rigidbody body;
 
         private void Awake()
         {
-            cam = Camera.main;
-
             aim.SetParent(null);
+            body = GetComponent<Rigidbody>();
         }
 
-        private void LateUpdate()
+        private void FixedUpdate()
         {
-            Ray ray = cam.ViewportPointToRay(pointerInput);
 
-            Physics.Raycast(ray, out RaycastHit hit);
+            if (Time.frameCount % 5 == 0)
+                targetToShot = FindClosedTarget();
 
-            if (hit.collider != null)
+            aim.gameObject.SetActive(targetToShot);
+
+            if (!targetToShot) return;
+
+            aim.position = targetToShot.position;
+
+            Vector3 targetDir = targetToShot.position - body.position;
+            Quaternion newRot = Quaternion.LookRotation(targetDir, Vector3.up);
+            body.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                newRot,
+                Quaternion.Angle(transform.rotation, newRot) * rotSpeed * Time.deltaTime);
+
+            if (Vector3.Angle(transform.forward, targetDir.normalized) <= minAngleToShot)
             {
-                pointer3D = hit.point;
-
-
-                if (Vector3.Distance(pointer3D, turret.position) > minDistanceToAim)
-                {
-                    dir = (pointer3D - turret.position).normalized;
-
-                    aim.gameObject.SetActive(true);
-                    aim.position = pointer3D + hit.normal * .25f;
-                }
-                else
-                {
-                    aim.gameObject.SetActive(false);
-                }
-
-                //float singleStep = rotSpeed * Time.deltaTime;
-
-                //Vector3 newDir = Vector3.RotateTowards(turret.forward, dir, singleStep, 0.0f);
-
-                //turret.rotation = Quaternion.LookRotation(newDir, transform.up);
+                cannon.transform.LookAt(targetToShot);
+                cannon.Shoot();
             }
-            else
-            {
-                dir = transform.forward * 2;
-                dir.y = 0;
-                aim.gameObject.SetActive(false);
-            }
+
+            if ((targetToShot.position - transform.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
+                targetToShot = null;
         }
 
-        private void Shoot()
+        private Transform FindClosedTarget(string tag = "Enemy")
         {
-            //if (Vector3.Angle(turret.forward, dir) < 1)
-            //    onTurretLookTarget?.Invoke();
+            var all = GameObject.FindGameObjectsWithTag(tag).ToList();
 
-            if(shootRoutine != null)
-            {
-                StopCoroutine(shootRoutine);
-            }
+            all = all.Where(t => (transform.position - t.transform.position).sqrMagnitude <= minDistanceToAim * minDistanceToAim).ToList();
 
-            shootRoutine = StartCoroutine(ShootRoutine(dir));
-        }
+            all.Sort
+                (
+                    delegate(GameObject a, GameObject b)
+                    {
+                        return (transform.position - a.transform.position).sqrMagnitude.CompareTo((transform.position - b.transform.position).sqrMagnitude);
+                    }
+                );
 
-        IEnumerator ShootRoutine(Vector3 dirToShoot)
-        {
-            while(Vector3.Angle(turret.forward, dirToShoot) > 1)
-            {
-                float singleStep = rotSpeed * Time.deltaTime;
-
-                Vector3 newDir = Vector3.RotateTowards(turret.forward, dirToShoot, singleStep, 0.0f);
-
-                turret.rotation = Quaternion.LookRotation(newDir, transform.up);
-
-                yield return null;
-            }
-
-            onTurretLookTarget?.Invoke();
-        }
-
-        public void PointerInput(InputAction.CallbackContext callbackContext)
-        {
-            Vector2 inputValue = callbackContext.ReadValue<Vector2>();
-
-            if (isMouse)
-            {
-                pointerInput.x = inputValue.x / Screen.width;
-                pointerInput.y = inputValue.y / Screen.height;
-            }
-            else
-            {
-                pointerInput.x = .5f + (inputValue.x * .5f);
-                pointerInput.y = .5f + (inputValue.y * .5f);
-            }
-        }
-
-        public void ShootInput(InputAction.CallbackContext callbackContext)
-        {
-            if (!callbackContext.performed) return;
-
-            Shoot();
-        }
-
-        public void ChangedControls(PlayerInput playerInput)
-        {
-            isMouse = !playerInput.currentControlScheme.Contains("Gamepad");
+            return all.Count > 0 ? all[0].transform : null;
         }
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawSphere(pointer3D, .25f);
-
-            if (turret)
-            {
-                Gizmos.color = Color.cyan;
-                Gizmos.DrawWireSphere(turret.position, minDistanceToAim);
-            }
+            Gizmos.DrawWireSphere(transform.position, minDistanceToAim);
         }
     }
 }

@@ -46,6 +46,7 @@ namespace GravityTanks
             //rb.AddForce(moveInput * moveForce * transform.forward);
             rb.AddForce(moveDir * moveForce);
             //rb.AddTorque(turnInput * turnTorque * transform.up);
+
             if(moveDir.magnitude > 0f)
             {
                 Quaternion newRot = Quaternion.LookRotation(moveDir, Vector3.up);
