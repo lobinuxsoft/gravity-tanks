@@ -217,12 +217,11 @@ GameObject:
   - component: {fileID: 3322501223316666834}
   - component: {fileID: 1852174440357967479}
   - component: {fileID: 4490310512982672061}
-  - component: {fileID: 4134616999384371205}
   - component: {fileID: 8710970700933137294}
   - component: {fileID: 5540696720341770286}
   - component: {fileID: 6891523483290475665}
   - component: {fileID: 7399629590829570272}
-  - component: {fileID: 1613487224895678736}
+  - component: {fileID: 8856685561980392173}
   m_Layer: 6
   m_Name: Hover Tank
   m_TagString: Player
@@ -301,157 +300,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4134616999384371205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688708277199922024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 7c00e6043eb89b6459954017bb408d7c,
-    type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7399629590829570272}
-        m_TargetAssemblyTypeName: GravityTanks.TurretControl, Assembly-CSharp
-        m_MethodName: ChangedControls
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7399629590829570272}
-        m_TargetAssemblyTypeName: GravityTanks.TurretControl, Assembly-CSharp
-        m_MethodName: ShootInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: f963142c-1737-4eff-b8da-6df7aa5ebb5c
-    m_ActionName: Player/Fire[/XInputControllerWindows/rightTrigger,/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: afdc4f2d-04f8-4038-90f3-3231fd0c4ff6
-    m_ActionName: UI/Navigate[/XInputControllerWindows/leftStick/up,/XInputControllerWindows/rightStick/up,/XInputControllerWindows/leftStick/down,/XInputControllerWindows/rightStick/down,/XInputControllerWindows/leftStick/left,/XInputControllerWindows/rightStick/left,/XInputControllerWindows/leftStick/right,/XInputControllerWindows/rightStick/right,/XInputControllerWindows/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5ea8e7f5-44df-4823-a426-c52e523a2ade
-    m_ActionName: UI/Submit[/Keyboard/enter,/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: de6180ac-4fdc-49b1-82b5-6cf9f3b84f8b
-    m_ActionName: UI/Cancel[/Keyboard/escape,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 657e6ddd-0c6b-494c-85d9-0177577513b8
-    m_ActionName: UI/Point[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a8c90079-2125-4c02-9cb1-4eda37079d63
-    m_ActionName: UI/Click[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 5731c022-5dd7-4836-a14b-74b58b86dda4
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: df09bd26-e60b-41a0-bb1a-75972dcc415d
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f3dce79a-93ed-4e1b-8311-42f2bf73e6a4
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 4e42f5c8-2a64-4ab6-98f2-742d347f00b4
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: a5ef128f-21a1-4bec-9604-cb4000afde14
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6891523483290475665}
-        m_TargetAssemblyTypeName: GravityTanks.HoverMovement, Assembly-CSharp
-        m_MethodName: MoveInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 6d4d2dcc-b771-4c6a-ad09-4a1072942006
-    m_ActionName: Player/Accelerate[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger,/Keyboard/s,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6891523483290475665}
-        m_TargetAssemblyTypeName: GravityTanks.HoverMovement, Assembly-CSharp
-        m_MethodName: TurnInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: d7fbb8fc-af9b-434d-80cb-db4a993d5652
-    m_ActionName: Player/Turn[/XInputControllerWindows/leftStick/x,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7399629590829570272}
-        m_TargetAssemblyTypeName: GravityTanks.TurretControl, Assembly-CSharp
-        m_MethodName: PointerInput
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 792b9319-03fc-459e-8d92-7a61041869a4
-    m_ActionName: Player/LookAt[/Mouse/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 8d179227-bc0e-420a-bd13-bb2e6ba5a176
-    m_ActionName: Player/CameraSwitcher[/Keyboard/c]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!54 &8710970700933137294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -494,7 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7bbfed95af74a640ac9cea6690a4be0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  multiplier: 1.5
+  heighForce: 2
   moveForce: 20
   turnSpeed: 10
   centerOfMass: {x: 0, y: -2, z: 0}
@@ -518,12 +366,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11d1f0cc694ae77418a4fe96500c9ab7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
   rotSpeed: 10
-  minDistanceToAim: 20
-  minAngleToShot: 2.5
+  minDistanceToAim: 25
+  minAngleToShot: 10
   aim: {fileID: 6099921389157763271}
   cannon: {fileID: 7939248468205306463}
---- !u!114 &1613487224895678736
+--- !u!114 &8856685561980392173
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,11 +383,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 2688708277199922024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61665ec4ec128234f83d1dac15e3bd96, type: 3}
+  m_Script: {fileID: 11500000, guid: c1fc604df8fece34aa7e2d131a1ac816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farCamera: {fileID: 0}
-  nearCamera: {fileID: 0}
+  moveAction: {fileID: 113242957943080450, guid: 7c00e6043eb89b6459954017bb408d7c,
+    type: 3}
+  onMoveAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6891523483290475665}
+        m_TargetAssemblyTypeName: GravityTanks.HoverMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3537934382746945047
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,7 +555,7 @@ LineRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5470510433967348164}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 0
@@ -983,6 +849,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7300662567386176738}
     m_Modifications:
+    - target: {fileID: 815274740796034850, guid: a0555dd2eb7e2874499605b7f8a50ab2,
+        type: 3}
+      propertyPath: layerToCollide.m_Bits
+      value: 129
+      objectReference: {fileID: 0}
     - target: {fileID: 3356059294661820987, guid: a0555dd2eb7e2874499605b7f8a50ab2,
         type: 3}
       propertyPath: m_Name

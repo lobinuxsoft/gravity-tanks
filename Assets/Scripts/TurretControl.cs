@@ -5,6 +5,7 @@ namespace GravityTanks
 {
     public class TurretControl : MonoBehaviour
     {
+        [SerializeField] LayerMask targetLayerMask;
         [SerializeField] float rotSpeed = 5f;
         [SerializeField] float minDistanceToAim = 5f;
         [SerializeField] float minAngleToShot = 2.5f;
@@ -25,7 +26,7 @@ namespace GravityTanks
         {
 
             if (Time.frameCount % 5 == 0)
-                targetToShot = FindClosedTarget();
+                targetToShot = FindClosedTarget(targetLayerMask);
 
             aim.gameObject.SetActive(targetToShot);
 
@@ -50,15 +51,16 @@ namespace GravityTanks
                 targetToShot = null;
         }
 
-        private Transform FindClosedTarget(string tag = "Enemy")
+        private Transform FindClosedTarget(LayerMask mask)
         {
-            var all = GameObject.FindGameObjectsWithTag(tag).ToList();
+            //var all = GameObject.FindGameObjectsWithTag(tag).ToList();
+            var all = Physics.OverlapSphere(transform.position, minDistanceToAim, mask).ToList();
 
-            all = all.Where(t => (transform.position - t.transform.position).sqrMagnitude <= minDistanceToAim * minDistanceToAim).ToList();
+            //all = all.Where(t => (transform.position - t.transform.position).sqrMagnitude <= minDistanceToAim * minDistanceToAim).ToList();
 
             all.Sort
                 (
-                    delegate(GameObject a, GameObject b)
+                    delegate(Collider a, Collider b)
                     {
                         return (transform.position - a.transform.position).sqrMagnitude.CompareTo((transform.position - b.transform.position).sqrMagnitude);
                     }
@@ -69,7 +71,17 @@ namespace GravityTanks
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(transform.position, minDistanceToAim);
+            if (!targetToShot)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawWireSphere(transform.position, minDistanceToAim);
+            }
+            else
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawLine(transform.position, targetToShot.position);
+                Gizmos.DrawSphere(targetToShot.position, .25f);
+            }
         }
     }
 }

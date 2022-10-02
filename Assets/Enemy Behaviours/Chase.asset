@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce002af4a9e18b42af5ca5289c2ae0e, type: 3}
   m_Name: Chase
   m_EditorClassIdentifier: 
-  torqueSpeed: 90
-  maxAngularVelocity: 180
+  rayLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  moveForce: 10
+  turnSpeed: 10
+  heighForce: 10

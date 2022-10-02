@@ -7,6 +7,7 @@ namespace GravityTanks
     [RequireComponent(typeof(Damager), typeof(SFXTrigger))]
     public class CannonControl : MonoBehaviour
     {
+        [SerializeField] LayerMask layerToCollide;
         [SerializeField] AudioClip shootSfx;
         [SerializeField] AudioClip impactSfx;
         [SerializeField] float shotRate = .5f;
@@ -14,6 +15,7 @@ namespace GravityTanks
         Damager damager;
 
         ParticleSystem particle;
+        ParticleSystem.CollisionModule collisionModule;
 
         SFXTrigger sfxTrigger;
 
@@ -22,6 +24,8 @@ namespace GravityTanks
         private void Awake() 
         {
             particle = GetComponent<ParticleSystem>();
+            collisionModule = particle.collision;
+            collisionModule.collidesWith = layerToCollide;
             damager = GetComponent<Damager>();
             sfxTrigger = GetComponent<SFXTrigger>();
         }

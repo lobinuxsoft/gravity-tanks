@@ -1,4 +1,0 @@
-<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
-    <Style src="project://database/Assets/UI%20Toolkit/GenericsStyles.uss?fileID=7433441132597879392&amp;guid=5ea9df3957c11864fa794f233b0cd139&amp;type=3#GenericsStyles" />
-    <ui:Button display-tooltip-when-elided="true" text="Autor" name="autor-label" class="label-credits-data" />
-</ui:UXML>

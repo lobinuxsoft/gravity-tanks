@@ -1,23 +1,45 @@
 // Basado en: https://www.youtube.com/watch?v=XF4HzViMSRk&t=101s
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace GravityTanks
 {
-    [RequireComponent(typeof(Rigidbody), typeof(MeshCollider))]
+    [RequireComponent(typeof(Rigidbody))]
     public class HoverMovement : MonoBehaviour
     {
-        [SerializeField] float multiplier = 2;
+        [SerializeField] float heighForce = 2;
         [SerializeField] float moveForce = 20, turnSpeed = 10;
         [SerializeField] Vector3 centerOfMass = Vector3.down * 2;
         [SerializeField] LayerMask rayLayerMask;
         [SerializeField] Transform[] anchors;
 
+        public float HeighForce
+        {
+            get => heighForce;
+            set => heighForce = value;
+        }
+
+        public float MoveForce
+        {
+            get => moveForce;
+            set => moveForce = value;
+        }
+
+        public float TurnSpeed
+        {
+            get => turnSpeed;
+            set => turnSpeed = value;
+        }
+
+        public LayerMask RayLayerMask
+        {
+            get => rayLayerMask;
+            set => rayLayerMask = value;
+        }
+
         Rigidbody rb;
 
-        float moveInput;
-        float turnInput;
+        Vector2 moveInput;
 
         RaycastHit[] hits;
 
@@ -28,6 +50,9 @@ namespace GravityTanks
             rb.mass = 1;
             rb.drag = 1;
             rb.angularDrag = 2;
+
+            if(anchors == null)
+                anchors = GetComponents<Transform>();
 
             hits = new RaycastHit[anchors.Length];
         }
@@ -41,11 +66,9 @@ namespace GravityTanks
                 ApplyForce(anchors[i], ref hits[i]);
             }
 
-            Vector3 moveDir = new Vector3(turnInput, 0, moveInput);
+            Vector3 moveDir = new Vector3(moveInput.x, 0, moveInput.y);
 
-            //rb.AddForce(moveInput * moveForce * transform.forward);
             rb.AddForce(moveDir * moveForce);
-            //rb.AddTorque(turnInput * turnTorque * transform.up);
 
             if(moveDir.magnitude > 0f)
             {
@@ -59,16 +82,14 @@ namespace GravityTanks
 
         void ApplyForce(Transform anchor, ref RaycastHit hit)
         {
-            if (Physics.Raycast(anchor.position, -anchor.up, out hit, multiplier, rayLayerMask))
+            if (Physics.Raycast(anchor.position, -anchor.up, out hit, heighForce, rayLayerMask))
             {
-                float force = Mathf.Abs(1 / Mathf.Clamp(Vector3.Distance(hit.point, anchor.position), .1f, multiplier));
-                rb.AddForceAtPosition(transform.up * force * multiplier, anchor.position, ForceMode.Acceleration);
+                float force = Mathf.Abs(1 / Mathf.Clamp(Vector3.Distance(hit.point, anchor.position), .1f, heighForce));
+                rb.AddForceAtPosition(transform.up * force * heighForce, anchor.position, ForceMode.Acceleration);
             }
         }
 
-        public void MoveInput(InputAction.CallbackContext callbackContext) => moveInput = callbackContext.ReadValue<float>();
-
-        public void TurnInput(InputAction.CallbackContext callbackContext) => turnInput = callbackContext.ReadValue<float>();
+        public void Move(Vector2 value) => moveInput = value;
 
 #if UNITY_EDITOR
         private void OnDrawGizmos()
@@ -98,8 +119,8 @@ namespace GravityTanks
                     }
                     else
                     {
-                        Gizmos.DrawLine(anchors[i].position, anchors[i].position - anchors[i].up * multiplier);
-                        Gizmos.DrawWireSphere(anchors[i].position - anchors[i].up * multiplier, .25f);
+                        Gizmos.DrawLine(anchors[i].position, anchors[i].position - anchors[i].up * heighForce);
+                        Gizmos.DrawWireSphere(anchors[i].position - anchors[i].up * heighForce, .25f);
                     }
                 }
             }

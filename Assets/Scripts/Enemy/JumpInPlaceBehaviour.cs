@@ -15,7 +15,7 @@ namespace GravityTanks.Enemy.Behaviour
 
         public override void DoBehaviour(GameObject owner)
         {
-            if(!gDetector) gDetector = owner.GetComponent<GroundDetector>();
+            if(!gDetector) gDetector = owner.AddComponent<GroundDetector>();
             if (!body) body = owner.GetComponent<Rigidbody>();
 
             body.angularDrag = 100;
