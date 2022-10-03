@@ -1,6 +1,5 @@
 using UnityEngine;
 using GravityTanks.Enemy.Behaviour;
-using UnityEngine.EventSystems;
 
 namespace GravityTanks.Enemy
 {
@@ -20,7 +19,7 @@ namespace GravityTanks.Enemy
         private void FixedUpdate()
         {
             if(behaviour) behaviour.DoBehaviour(this.gameObject);
-}
+        }
 
         private void OnDestroy() => Destroy(behaviour);
     }

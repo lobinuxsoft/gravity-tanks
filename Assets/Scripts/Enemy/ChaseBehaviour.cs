@@ -34,7 +34,7 @@ namespace GravityTanks.Enemy.Behaviour
                 rb.isKinematic = true;
             }
 
-            if(Time.time - lastRefresh < refreshTargetPositionRate)
+            if(Time.time - lastRefresh > refreshTargetPositionRate)
             {
                 lastRefresh = Time.time;
                 agent.SetDestination(target.position);
