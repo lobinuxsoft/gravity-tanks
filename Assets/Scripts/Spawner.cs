@@ -1,9 +1,12 @@
 using GravityTanks;
 using GravityTanks.Enemy;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class Spawner : MonoBehaviour
 {
+    ObjectPool<EnemyIA> enemyPool;
+
     [SerializeField] EnemyIA enemy;
     [SerializeField] Wave[] waves;
 
@@ -15,6 +18,15 @@ public class Spawner : MonoBehaviour
 
     float nextSpawnTime;
 
+    private void Awake()
+    {
+        enemyPool = new ObjectPool<EnemyIA>(
+            (EnemyIA enemy)=> { enemy.gameObject.SetActive(true); },
+            (EnemyIA enemy) => { enemy.gameObject.SetActive(false); },
+            false
+        );
+    }
+
     private void Start() => NextWave();
 
     private void Update()
@@ -24,7 +36,8 @@ public class Spawner : MonoBehaviour
             enemiesRemainingToSpawn--;
             nextSpawnTime = Time.time + currentWave.TimeBetweenSpawns;
 
-            EnemyIA spawnedEnemy = Instantiate(enemy, Vector3.zero, Quaternion.identity);
+            EnemyIA spawnedEnemy = enemyPool.Get();
+            spawnedEnemy.transform.position = Vector3.zero;
 
             if(spawnedEnemy.TryGetComponent(out Damageable damageable))
                 damageable.onDie.AddListener(OnEnemyDeath);
@@ -34,6 +47,7 @@ public class Spawner : MonoBehaviour
     void OnEnemyDeath()
     {
         enemiesRemainingAlive--;
+        enemyPool.Release(enemy);
         if (enemiesRemainingAlive == 0)
             NextWave();
     }
