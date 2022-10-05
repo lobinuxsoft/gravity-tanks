@@ -1,7 +1,6 @@
 using GravityTanks;
 using GravityTanks.Enemy;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 [RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
