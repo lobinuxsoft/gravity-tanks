@@ -10,7 +10,7 @@ namespace GravityTanks
         [SerializeField] float minDistanceToAim = 5f;
         [SerializeField] float minAngleToShot = 2.5f;
         [SerializeField] Transform aim;
-        [SerializeField] CannonControl cannon;
+        [SerializeField] CannonControl[] cannons;
 
         Transform targetToShot = null;
 
@@ -43,8 +43,11 @@ namespace GravityTanks
 
             if (Vector3.Angle(transform.forward, targetDir.normalized) <= minAngleToShot)
             {
-                cannon.transform.LookAt(targetToShot);
-                cannon.Shoot();
+                for (int i = 0; i < cannons.Length; i++)
+                {
+                    cannons[i].transform.LookAt(targetToShot);
+                    cannons[i].Shoot();
+                }
             }
 
             if ((targetToShot.position - transform.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
