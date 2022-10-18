@@ -1,13 +1,16 @@
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] Material floorMaterial;
     [SerializeField] Transform tilePref;
     [SerializeField] Transform obstaclePref;
+    [SerializeField] LayerMask navMeshLayer;
     [SerializeField] Vector2Int mapSize = Vector2Int.one * 10;
-    [SerializeField] float tileScale = 1;
+    [SerializeField] float tileSize = 1;
     [SerializeField, Range(0f, 1f)] float outlinePercent;
     [SerializeField, Range(0f, 1f)] float obstaclePercent;
     [SerializeField] int seed = "Lobinux".GetHashCode();
@@ -63,8 +66,8 @@ public class MapGenerator : MonoBehaviour
             if (randomCoord != mapCentre && MapIsFullyAccessible(obstacleMap, currentObstacleCount))
             {
                 Vector3 obstaclePosition = CoordToPosition(randomCoord.x, randomCoord.y);
-                Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up / 2, Quaternion.identity, obstaclesHolder);
-                newObstacle.localScale = Vector3.right * tileScale + Vector3.forward * tileScale + Vector3.up;
+                Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up * .5f, Quaternion.identity, obstaclesHolder);
+                newObstacle.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
             }
             else
             {
@@ -81,12 +84,15 @@ public class MapGenerator : MonoBehaviour
                 {
                     Vector3 tilePosition = CoordToPosition(x, y);
                     Transform newTile = Instantiate(tilePref, tilePosition, Quaternion.Euler(Vector3.right * 90), tilesHolder);
-                    newTile.localScale = Vector3.one * tileScale * (1 - outlinePercent);
+                    newTile.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
                 }
             }
         }
 
         CombineMesh(tilesHolder.gameObject, mapHolder.gameObject);
+
+        // Update navmesh
+
     }
 
     private void CombineMesh(GameObject container, GameObject target)
@@ -96,6 +102,8 @@ public class MapGenerator : MonoBehaviour
 
         MeshFilter meshFilter = target.AddComponent<MeshFilter>();
         MeshRenderer meshRenderer = target.AddComponent<MeshRenderer>();
+        NavMeshSurface navMeshSurface = target.AddComponent<NavMeshSurface>();
+        navMeshSurface.layerMask = navMeshLayer;
         meshRenderer.material = floorMaterial;
 
         MeshCollider meshCollider = target.AddComponent<MeshCollider>();
@@ -112,6 +120,7 @@ public class MapGenerator : MonoBehaviour
         meshFilter.sharedMesh = new Mesh();
         meshFilter.sharedMesh.CombineMeshes(combine);
         meshCollider.sharedMesh = meshFilter.sharedMesh;
+        navMeshSurface.BuildNavMesh();
         DestroyImmediate(container);
     }
 
@@ -158,7 +167,7 @@ public class MapGenerator : MonoBehaviour
 
     Vector3 CoordToPosition(int x, int y)
     {
-        return new Vector3(-(mapSize.x * tileScale) / 2 + (tileScale / 2) + (x * tileScale), 0, -(mapSize.y * tileScale) / 2 + (tileScale / 2) + (y * tileScale));
+        return (new Vector3(-mapSize.x / 2 + .5f + x, 0, -mapSize.y / 2 + 0.5f + y) * tileSize) + transform.position;
     }
 
     public Coord GetRandomCoord()

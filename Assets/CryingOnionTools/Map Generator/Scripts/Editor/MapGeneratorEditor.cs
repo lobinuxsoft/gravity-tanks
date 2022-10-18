@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 [CustomEditor(typeof(MapGenerator))]
 public class MapGeneratorEditor : Editor
@@ -9,6 +10,9 @@ public class MapGeneratorEditor : Editor
 
         MapGenerator map = (MapGenerator)target;
 
-        map.GenerateMap();
+        if(GUILayout.Button("Regenerate Map"))
+        {
+            map.GenerateMap();
+        }
     }
 }

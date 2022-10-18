@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2124053918469721970}
   - component: {fileID: 540361612718358052}
   - component: {fileID: 6684038314472478661}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Engine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1891209227466048464}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 8867128267212913886}
   - component: {fileID: 7285096978965219284}
   - component: {fileID: 4073673951045511459}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapons Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   - component: {fileID: 8721795342107977033}
   - component: {fileID: 1839851577516947074}
   - component: {fileID: 5660821472164068116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon1L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -818,7 +818,7 @@ GameObject:
   - component: {fileID: 322751703062230826}
   - component: {fileID: 1389950254974742166}
   - component: {fileID: 5960504296985955848}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Weapon1R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -961,10 +961,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 884567774100618984, guid: 9f5e6c846cda29745850a2a7d6f0f200,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1634440193736732537, guid: 9f5e6c846cda29745850a2a7d6f0f200,
         type: 3}
       propertyPath: m_Name
       value: MultiProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634440193736732537, guid: 9f5e6c846cda29745850a2a7d6f0f200,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5e6c846cda29745850a2a7d6f0f200, type: 3}
@@ -1058,10 +1068,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 884567774100618984, guid: 9f5e6c846cda29745850a2a7d6f0f200,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1634440193736732537, guid: 9f5e6c846cda29745850a2a7d6f0f200,
         type: 3}
       propertyPath: m_Name
       value: MultiProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1634440193736732537, guid: 9f5e6c846cda29745850a2a7d6f0f200,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5e6c846cda29745850a2a7d6f0f200, type: 3}
