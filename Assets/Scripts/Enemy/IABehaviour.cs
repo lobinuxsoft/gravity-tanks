@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityTanks.Enemy.Behaviour
+namespace HNW.Enemy.Behaviour
 {
     public abstract class IABehaviour : ScriptableObject
     {

@@ -1,15 +1,14 @@
-using GravityTanks;
-using GravityTanks.Enemy;
+using HNW;
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 [RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
 {
     ObjectPool enemyPool;
 
+    [SerializeField] Transform player;
     [SerializeField] Wave[] waves;
 
     public event Action<int> OnNextWave; 
@@ -45,6 +44,8 @@ public class Spawner : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
+        yield return new WaitForEndOfFrame();
+
         Vector3 pos = mapGenerator.GetRandomPos();
         GameObject spawnedEnemy = enemyPool.GetFromPool();
         spawnedEnemy.transform.position = pos;
@@ -71,6 +72,11 @@ public class Spawner : MonoBehaviour
             NextWave();
     }
 
+    void ResetPlayerPosition()
+    {
+        player.position = mapGenerator.GetMapCentrePos();
+    }
+
     void NextWave()
     {
         currentWaveNumber++;
@@ -83,6 +89,8 @@ public class Spawner : MonoBehaviour
             enemiesRemainingAlive = enemiesRemainingToSpawn;
 
             OnNextWave?.Invoke(currentWaveNumber);
+
+            ResetPlayerPosition();
         }
     }
 }

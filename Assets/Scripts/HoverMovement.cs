@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-namespace GravityTanks
+namespace HNW
 {
     [RequireComponent(typeof(Rigidbody))]
     public class HoverMovement : MonoBehaviour

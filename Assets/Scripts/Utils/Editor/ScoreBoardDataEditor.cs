@@ -1,7 +1,7 @@
 using UnityEditor;
 using CryingOnionTools.ScriptableVariables.Editor;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     [CustomEditor(typeof(ScoreBoardData))]
     public class ScoreBoardDataEditor : ScriptableVariableEditor

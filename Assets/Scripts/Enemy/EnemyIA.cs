@@ -1,7 +1,7 @@
 using UnityEngine;
-using GravityTanks.Enemy.Behaviour;
+using HNW.Enemy.Behaviour;
 
-namespace GravityTanks.Enemy
+namespace HNW.Enemy
 {
     public class EnemyIA : MonoBehaviour
     {

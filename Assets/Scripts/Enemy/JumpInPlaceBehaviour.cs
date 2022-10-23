@@ -1,7 +1,7 @@
 using UnityEngine;
-using GravityTanks.Utils;
+using HNW.Utils;
 
-namespace GravityTanks.Enemy.Behaviour
+namespace HNW.Enemy.Behaviour
 {
     [CreateAssetMenu(menuName = "Enemy/Behaviour/Jump In Place")]
     public class JumpInPlaceBehaviour : IABehaviour

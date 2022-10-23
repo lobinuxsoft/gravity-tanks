@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace GravityTanks
+namespace HNW
 {
     public class Damageable : MonoBehaviour
     {

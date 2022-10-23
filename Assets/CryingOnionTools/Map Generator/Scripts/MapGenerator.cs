@@ -1,4 +1,4 @@
-using GravityTanks;
+using HNW;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
@@ -45,6 +45,8 @@ public class MapGenerator : MonoBehaviour
 
         GenerateMap();
     }
+
+
 
     public void GenerateMap()
     {
@@ -256,6 +258,11 @@ public class MapGenerator : MonoBehaviour
         Vector3 randomPos = shufflePositions.Dequeue();
         shufflePositions.Enqueue(randomPos);
         return randomPos;
+    }
+
+    public Vector3 GetMapCentrePos()
+    {
+        return CoordToPosition(currentMap.MapCentre.x, currentMap.MapCentre.y) + Vector3.up;
     }
 
     private void OnTriggerExit(Collider other)

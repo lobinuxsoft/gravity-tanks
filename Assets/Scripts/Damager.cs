@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityTanks
+namespace HNW
 {
     public class Damager : MonoBehaviour
     {

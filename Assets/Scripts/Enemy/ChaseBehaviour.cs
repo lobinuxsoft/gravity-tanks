@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AI;
 
-namespace GravityTanks.Enemy.Behaviour
+namespace HNW.Enemy.Behaviour
 {
     [CreateAssetMenu(menuName = "Enemy/Behaviour/Chase")]
     public class ChaseBehaviour : IABehaviour

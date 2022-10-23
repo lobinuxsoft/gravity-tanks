@@ -2,7 +2,7 @@ using UnityEngine;
 using CryingOnionTools.AudioTools;
 using System.Collections;
 
-namespace GravityTanks
+namespace HNW
 {
     [RequireComponent(typeof(Damager), typeof(SFXTrigger))]
     public class CannonControl : MonoBehaviour

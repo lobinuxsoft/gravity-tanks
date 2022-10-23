@@ -385,7 +385,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.49269882, y: -0.000000021175007, z: 0.000000011989084, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175008, z: 0.000000011989085, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 36, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a51971e4190fd4394bfd715f0681b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 664177712}
   waves:
   - enemyCount: 5
     timeBetweenSpawns: 1
@@ -878,7 +879,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705920159}
-  m_LocalRotation: {x: 0.49269882, y: -0.000000021175007, z: 0.000000011989084, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175008, z: 0.000000011989085, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 36, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

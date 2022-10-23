@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     public class GameObjectDestroyer : MonoBehaviour
     {
