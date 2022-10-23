@@ -308,9 +308,7 @@ MonoBehaviour:
   minDistanceToAim: 25
   minAngleToShot: 10
   aim: {fileID: 6099921389157763271}
-  cannons:
-  - {fileID: 2643989705900888442}
-  - {fileID: 5599821288841666158}
+  cannons: []
 --- !u!114 &8856685561980392173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,18 +1043,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5e6c846cda29745850a2a7d6f0f200, type: 3}
---- !u!114 &2643989705900888442 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7449533952957557697, guid: 9f5e6c846cda29745850a2a7d6f0f200,
-    type: 3}
-  m_PrefabInstance: {fileID: 4336024124356019525}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6692d820ce71f4faead0da158390db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &4581870908649276936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 268726856805466957, guid: 9f5e6c846cda29745850a2a7d6f0f200,
@@ -1158,15 +1144,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6137139232878299729}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5599821288841666158 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: -7449533952957557697, guid: 9f5e6c846cda29745850a2a7d6f0f200,
-    type: 3}
-  m_PrefabInstance: {fileID: 6137139232878299729}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a6692d820ce71f4faead0da158390db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

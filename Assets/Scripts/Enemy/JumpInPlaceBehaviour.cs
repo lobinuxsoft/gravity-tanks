@@ -13,13 +13,20 @@ namespace GravityTanks.Enemy.Behaviour
         GroundDetector gDetector;
         float timer = 0;
 
-        public override void DoBehaviour(GameObject owner)
+        public override void InitBehaviour(GameObject owner)
         {
-            if(!gDetector) gDetector = owner.AddComponent<GroundDetector>();
-            if (!body) body = owner.GetComponent<Rigidbody>();
+            if (!gDetector)
+                gDetector = owner.AddComponent<GroundDetector>();
 
-            body.angularDrag = 100;
+            if (!body)
+            {
+                body = owner.GetComponent<Rigidbody>();
+                body.angularDrag = 100;
+            }
+        }
 
+        public override void DoBehaviour()
+        {
             if (gDetector.OnGround)
             {
                 if (timer > jumpTimer)

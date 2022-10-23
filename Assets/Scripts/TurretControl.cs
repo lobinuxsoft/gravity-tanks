@@ -5,22 +5,36 @@ namespace GravityTanks
 {
     public class TurretControl : MonoBehaviour
     {
+        [Header("Aiming settings")]
         [SerializeField] LayerMask targetLayerMask;
         [SerializeField] float rotSpeed = 5f;
         [SerializeField] float minDistanceToAim = 5f;
         [SerializeField] float minAngleToShot = 2.5f;
         [SerializeField] Transform aim;
+
+        [Space(20)]
+        [Header("Cannon settings")]
         [SerializeField] CannonControl[] cannons;
 
         Transform targetToShot = null;
 
         Rigidbody body;
 
+        public CannonControl[] Cannons => cannons;
+
         private void Awake()
         {
             aim.SetParent(null);
             body = GetComponent<Rigidbody>();
+            UpdateCannons();
         }
+
+        private void OnEnable()
+        {
+            UpdateCannons();
+        }
+
+        private void UpdateCannons() => cannons = GetComponentsInChildren<CannonControl>();
 
         private void FixedUpdate()
         {

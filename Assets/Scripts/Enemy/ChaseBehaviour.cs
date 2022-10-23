@@ -15,19 +15,19 @@ namespace GravityTanks.Enemy.Behaviour
 
         private NavMeshAgent agent;
         private Rigidbody rb;
-        private Transform target;
+        private GameObject target;
         private Renderer rend;
         private Damager damager;
 
         private float lastRefresh;
         private float nextAttackTime;
-        
-        public override async void DoBehaviour(GameObject owner)
-        {
-            if (!target) 
-                target = GameObject.FindGameObjectWithTag("Player").transform;
 
-            if(!damager)
+        public override void InitBehaviour(GameObject owner)
+        {
+            if (!target)
+                target = GameObject.FindWithTag("Player");
+
+            if (!damager)
             {
                 damager = owner.AddComponent<Damager>();
                 damager.DamageAmount = damageAmount;
@@ -41,19 +41,27 @@ namespace GravityTanks.Enemy.Behaviour
                 agent.baseOffset = heighForce;
             }
 
-            if(!rb)
+            if (!rb)
             {
                 rb = owner.GetComponent<Rigidbody>();
                 rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
                 rb.isKinematic = true;
             }
 
-            if (!rend) 
+            if (!rend)
                 rend = owner.GetComponent<Renderer>();
+        }
 
-            if(target.gameObject.activeSelf && Time.time > nextAttackTime)
+        public override async void DoBehaviour()
+        {
+            if (!target)
             {
-                float sqrDstToTarget = (target.position - owner.transform.position).sqrMagnitude;
+                target = GameObject.FindWithTag("Player");
+            }
+
+            if (target && target.activeSelf && Time.time > nextAttackTime)
+            {
+                float sqrDstToTarget = (target.transform.position - rb.transform.position).sqrMagnitude;
 
                 if(sqrDstToTarget < Mathf.Pow(attackDistanceThreshold, 2))
                 {
@@ -62,10 +70,10 @@ namespace GravityTanks.Enemy.Behaviour
                 }
             }
 
-            if(target.gameObject.activeSelf && agent.isActiveAndEnabled && Time.time - lastRefresh > refreshTargetPositionRate)
+            if(target && target.activeSelf && agent.isActiveAndEnabled && Time.time - lastRefresh > refreshTargetPositionRate)
             {
                 lastRefresh = Time.time;
-                agent.SetDestination(target.position);
+                agent.SetDestination(target.transform.position);
             }
         }
 
@@ -75,7 +83,7 @@ namespace GravityTanks.Enemy.Behaviour
             agent.enabled = false;
 
             Vector3 oriPos = rb.position;
-            Vector3 attackPos = target.position;
+            Vector3 attackPos = target.transform.position;
 
             float attackSpeed = 3;
             float percent = 0;

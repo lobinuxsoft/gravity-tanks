@@ -1,7 +1,9 @@
 using GravityTanks;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -19,8 +21,28 @@ public class MapGenerator : MonoBehaviour
     Map currentMap;
     BoxCollider boxCollider;
 
-    private void Start()
+    private void Awake()
     {
+        FindObjectOfType<Spawner>().OnNextWave += NewWave;
+    }
+
+    private void OnDestroy()
+    {
+        FindObjectOfType<Spawner>().OnNextWave -= NewWave;
+    }
+
+    void NewWave(int waveNumber)
+    {
+        mapIndex = Mathf.Clamp(waveNumber - 1, 0, maps.Length);
+        StartCoroutine(GenerateMapRoutine());
+    }
+
+    private IEnumerator GenerateMapRoutine()
+    {
+        NavMesh.RemoveAllNavMeshData();
+
+        yield return new WaitForEndOfFrame();
+
         GenerateMap();
     }
 
@@ -61,7 +83,17 @@ public class MapGenerator : MonoBehaviour
         string holderName = "Generated Map";
 
         if (transform.Find(holderName))
-            DestroyImmediate(transform.Find(holderName).gameObject);
+        {
+            if(Application.isEditor)
+            {
+                DestroyImmediate(transform.Find(holderName).gameObject);
+            }
+            else
+            {
+                Destroy(transform.Find(holderName).gameObject);
+            }
+        }
+            
 
         Transform mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
@@ -98,6 +130,10 @@ public class MapGenerator : MonoBehaviour
                     obstMaterial.color = currentMap.colorGradient.Evaluate(colourPercent);
                     obstacleRend.sharedMaterial = obstMaterial;
                 }
+
+                if(newObstacle.TryGetComponent(out NavMeshObstacle meshObstacle))
+                    meshObstacle.carving = true;
+
             }
             else
             {
@@ -156,7 +192,10 @@ public class MapGenerator : MonoBehaviour
         meshCollider.sharedMesh = meshFilter.sharedMesh;
         navMeshSurface.BuildNavMesh();
 
-        DestroyImmediate(container);
+        if (Application.isEditor)
+            DestroyImmediate(container);
+        else
+            Destroy(container);
     }
 
     bool MapIsFullyAccessible(bool[,] obstacleMap, int currentObstacleCount)

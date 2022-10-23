@@ -1,7 +1,9 @@
 using GravityTanks;
 using GravityTanks.Enemy;
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
@@ -9,6 +11,8 @@ public class Spawner : MonoBehaviour
     ObjectPool enemyPool;
 
     [SerializeField] Wave[] waves;
+
+    public event Action<int> OnNextWave; 
 
     Wave currentWave;
     int currentWaveNumber;
@@ -77,6 +81,8 @@ public class Spawner : MonoBehaviour
 
             enemiesRemainingToSpawn = currentWave.EnemyCount;
             enemiesRemainingAlive = enemiesRemainingToSpawn;
+
+            OnNextWave?.Invoke(currentWaveNumber);
         }
     }
 }

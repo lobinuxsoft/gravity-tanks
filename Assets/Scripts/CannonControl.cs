@@ -9,10 +9,10 @@ namespace GravityTanks
     {
         [SerializeField] int emmitAmount = 1;
         [SerializeField] float arcShootAngle = 45;
+        [SerializeField] float shootRate = .5f;
         [SerializeField] LayerMask layerToCollide;
         [SerializeField] AudioClip shootSfx;
         [SerializeField] AudioClip impactSfx;
-        [SerializeField] float shotRate = .5f;
 
         Damager damager;
 
@@ -22,7 +22,30 @@ namespace GravityTanks
 
         SFXTrigger sfxTrigger;
 
-        Coroutine shotRoutine = null;
+        Coroutine shootRoutine = null;
+
+        public int EmmitAmount
+        {
+            get => emmitAmount;
+            set => emmitAmount = value;
+        }
+
+        public float ArcShootAngle
+        {
+            get => arcShootAngle;
+            set
+            {
+                arcShootAngle = value;
+                shapeModule.arc = arcShootAngle;
+                shapeModule.rotation = new Vector3(90f, -90f + (shapeModule.arc / 2), 0f);
+            }
+        }
+
+        public float ShootRate
+        {
+            get => shootRate;
+            set => shootRate = value;
+        }
 
         private void Awake() 
         {
@@ -46,8 +69,8 @@ namespace GravityTanks
 
         public void Shoot() 
         {
-            if (shotRoutine == null)
-                shotRoutine = StartCoroutine(ShotRoutine(shotRate));
+            if (shootRoutine == null)
+                shootRoutine = StartCoroutine(ShotRoutine(shootRate));
         }
 
         IEnumerator ShotRoutine(float delay)
@@ -55,7 +78,7 @@ namespace GravityTanks
             sfxTrigger.PlaySFX(shootSfx);
             particle.Emit(emmitAmount);
             yield return new WaitForSeconds(delay);
-            shotRoutine = null;
+            shootRoutine = null;
         }
 
         void OnParticleCollision(GameObject other) 
