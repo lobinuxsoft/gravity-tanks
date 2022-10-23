@@ -6,13 +6,12 @@ public class MapGeneratorEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
-
         MapGenerator map = (MapGenerator)target;
 
-        if(GUILayout.Button("Regenerate Map"))
-        {
+        if(DrawDefaultInspector())
             map.GenerateMap();
-        }
+
+        if(GUILayout.Button("Generate Map"))
+            map.GenerateMap();
     }
 }

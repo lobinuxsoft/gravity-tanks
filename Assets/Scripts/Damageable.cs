@@ -7,8 +7,9 @@ namespace GravityTanks
     {
         [SerializeField] private int health = 5;
         [SerializeField] private int maxHealth = 5;
+        [SerializeField] GameObject deathEffect;
 
-        public UnityAction<int> onHealthChanged;
+        public UnityEvent<int> onHealthChanged;
         public UnityEvent<int> onMaxHealthChanged;
         public UnityEvent onDie;
 
@@ -21,6 +22,8 @@ namespace GravityTanks
 
                 if (health <= 0)
                 {
+                    if(deathEffect != null)
+                        Instantiate(deathEffect, transform.position, transform.rotation);
 
                     onDie?.Invoke();
                 }
@@ -40,5 +43,7 @@ namespace GravityTanks
         }
 
         public void SetDamage(int value) => Health -= value;
+
+        public void FullHeal() => Health = MaxHealth;
     }
 }

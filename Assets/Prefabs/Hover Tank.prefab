@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 6891523483290475665}
   - component: {fileID: 7399629590829570272}
   - component: {fileID: 8856685561980392173}
+  - component: {fileID: 7504185274215454398}
   m_Layer: 6
   m_Name: Hover Tank
   m_TagString: Player
@@ -331,6 +332,43 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GravityTanks.HoverMovement, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7504185274215454398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2688708277199922024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9994358463d71364a97cbc826040ceed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 5
+  maxHealth: 5
+  deathEffect: {fileID: 8203971654862924019, guid: e6a39a89b63106043be2c02adf54da65,
+    type: 3}
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onMaxHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  onDie:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2688708277199922024}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1085,6 +1123,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f5e6c846cda29745850a2a7d6f0f200, type: 3}
+--- !u!4 &6237989312591055132 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 268726856805466957, guid: 9f5e6c846cda29745850a2a7d6f0f200,
+    type: 3}
+  m_PrefabInstance: {fileID: 6137139232878299729}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5599821288841666158 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: -7449533952957557697, guid: 9f5e6c846cda29745850a2a7d6f0f200,
@@ -1097,9 +1141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a6692d820ce71f4faead0da158390db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &6237989312591055132 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 268726856805466957, guid: 9f5e6c846cda29745850a2a7d6f0f200,
-    type: 3}
-  m_PrefabInstance: {fileID: 6137139232878299729}
-  m_PrefabAsset: {fileID: 0}

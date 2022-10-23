@@ -1,24 +1,23 @@
+using GravityTanks;
 using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] Material floorMaterial;
+    [SerializeField] Map[] maps;
+    [SerializeField] int mapIndex;
     [SerializeField] Transform tilePref;
     [SerializeField] Transform obstaclePref;
     [SerializeField] LayerMask navMeshLayer;
-    [SerializeField] Vector2Int mapSize = Vector2Int.one * 10;
     [SerializeField] float tileSize = 1;
     [SerializeField, Range(0f, 1f)] float outlinePercent;
-    [SerializeField, Range(0f, 1f)] float obstaclePercent;
-    [SerializeField] int seed = "Lobinux".GetHashCode();
 
-    Coord mapCentre;
-    List<Coord> allTileCoords;
-    Queue<Coord> shuffleTileCoords;
+    Queue<Vector2Int> shuffleTileCoords;
+    Queue<Vector3> shufflePositions;
 
+    Map currentMap;
+    BoxCollider boxCollider;
 
     private void Start()
     {
@@ -27,19 +26,38 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        allTileCoords = new List<Coord>();
-        for (int x = 0; x < mapSize.x; x++)
+        if(!TryGetComponent(out boxCollider))
+            boxCollider = gameObject.AddComponent<BoxCollider>();
+
+
+        currentMap = maps[mapIndex];
+
+        boxCollider.isTrigger = true;
+
+        boxCollider.size = new Vector3(
+                currentMap.mapSize.x * tileSize,
+                (Mathf.Min(currentMap.mapSize.x, currentMap.mapSize.y) * tileSize) / 2f,
+                currentMap.mapSize.y * tileSize
+            );
+
+        boxCollider.center = new Vector3(0, boxCollider.size.y / 2f, 0);
+
+        System.Random rand = new System.Random(currentMap.seed);
+
+        // Generating coords
+        List<Vector2Int> allTileCoords = new List<Vector2Int>();
+
+        for (int x = 0; x < currentMap.mapSize.x; x++)
         {
-            for (int y = 0; y < mapSize.y; y++)
+            for (int y = 0; y < currentMap.mapSize.y; y++)
             {
-                allTileCoords.Add(new Coord(x, y));
+                allTileCoords.Add(new Vector2Int(x, y));
             }
         }
 
-        shuffleTileCoords = new Queue<Coord>(Utility.ShuffleArray(allTileCoords.ToArray(), seed));
+        shuffleTileCoords = new Queue<Vector2Int>(Utility.ShuffleArray(allTileCoords.ToArray(), currentMap.seed));
 
-        mapCentre = new Coord(mapSize.x / 2, mapSize.y / 2);
-
+        // Create holders
         string holderName = "Generated Map";
 
         if (transform.Find(holderName))
@@ -54,20 +72,32 @@ public class MapGenerator : MonoBehaviour
         Transform obstaclesHolder = new GameObject("Obstacles").transform;
         obstaclesHolder.parent = mapHolder;
 
-        bool[,] obstacleMap = new bool[mapSize.x, mapSize.y];
+        // Spawning Obstacles
+        bool[,] obstacleMap = new bool[currentMap.mapSize.x, currentMap.mapSize.y];
 
-        int obstacleCount = (int)(mapSize.x * mapSize.y * obstaclePercent);
+        int obstacleCount = (int)(currentMap.mapSize.x * currentMap.mapSize.y * currentMap.obstaclePercent);
         int currentObstacleCount = 0;
+
         for (int i = 0; i < obstacleCount; i++)
         {
-            Coord randomCoord = GetRandomCoord();
+            Vector2Int randomCoord = GetRandomCoord();
             obstacleMap[randomCoord.x, randomCoord.y] = true;
             currentObstacleCount++;
-            if (randomCoord != mapCentre && MapIsFullyAccessible(obstacleMap, currentObstacleCount))
+            if (randomCoord != currentMap.MapCentre && MapIsFullyAccessible(obstacleMap, currentObstacleCount))
             {
+                float obstacleHeight = Mathf.Lerp(currentMap.minObstacleHeight, currentMap.maxObstacleHeight, (float)rand.NextDouble());
                 Vector3 obstaclePosition = CoordToPosition(randomCoord.x, randomCoord.y);
-                Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up * .5f, Quaternion.identity, obstaclesHolder);
-                newObstacle.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
+                Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up * obstacleHeight / 2, Quaternion.identity, obstaclesHolder);
+                newObstacle.localScale = new Vector3((1 - outlinePercent) * tileSize, obstacleHeight, (1 - outlinePercent) * tileSize);
+
+                if(newObstacle.TryGetComponent(out Renderer obstacleRend))
+                {
+                    Material obstMaterial = new Material(currentMap.obstacleMaterial);
+                    //float colourPercent = randomCoord.y / (float)currentMap.mapSize.y;
+                    float colourPercent = newObstacle.localScale.y / (float)currentMap.maxObstacleHeight;
+                    obstMaterial.color = currentMap.colorGradient.Evaluate(colourPercent);
+                    obstacleRend.sharedMaterial = obstMaterial;
+                }
             }
             else
             {
@@ -76,26 +106,30 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        for (int x = 0; x < mapSize.x; x++)
+        // Spawning tiles
+        List<Vector3> positions = new List<Vector3>();
+
+        for (int x = 0; x < currentMap.mapSize.x; x++)
         {
-            for (int y = 0; y < mapSize.y; y++)
+            for (int y = 0; y < currentMap.mapSize.y; y++)
             {
                 if(obstacleMap[x, y] == false)
                 {
                     Vector3 tilePosition = CoordToPosition(x, y);
                     Transform newTile = Instantiate(tilePref, tilePosition, Quaternion.Euler(Vector3.right * 90), tilesHolder);
                     newTile.localScale = Vector3.one * (1 - outlinePercent) * tileSize;
+                    positions.Add(newTile.position);
                 }
             }
         }
 
-        CombineMesh(tilesHolder.gameObject, mapHolder.gameObject);
+        shufflePositions = new Queue<Vector3>(Utility.ShuffleArray(positions.ToArray(), currentMap.seed));
 
-        // Update navmesh
-
+        // Combine tiles
+        CombineMesh(tilesHolder.gameObject, mapHolder.gameObject, currentMap.tileMaterial);
     }
 
-    private void CombineMesh(GameObject container, GameObject target)
+    private void CombineMesh(GameObject container, GameObject target, Material material)
     {
         MeshFilter[] meshFilters = container.GetComponentsInChildren<MeshFilter>();
         CombineInstance[] combine = new CombineInstance[meshFilters.Length];
@@ -104,7 +138,7 @@ public class MapGenerator : MonoBehaviour
         MeshRenderer meshRenderer = target.AddComponent<MeshRenderer>();
         NavMeshSurface navMeshSurface = target.AddComponent<NavMeshSurface>();
         navMeshSurface.layerMask = navMeshLayer;
-        meshRenderer.material = floorMaterial;
+        meshRenderer.sharedMaterial = material;
 
         MeshCollider meshCollider = target.AddComponent<MeshCollider>();
 
@@ -121,22 +155,23 @@ public class MapGenerator : MonoBehaviour
         meshFilter.sharedMesh.CombineMeshes(combine);
         meshCollider.sharedMesh = meshFilter.sharedMesh;
         navMeshSurface.BuildNavMesh();
+
         DestroyImmediate(container);
     }
 
     bool MapIsFullyAccessible(bool[,] obstacleMap, int currentObstacleCount)
     {
         bool[,] mapFlags = new bool[obstacleMap.GetLength(0), obstacleMap.GetLength(1)];
-        Queue<Coord> queue = new Queue<Coord>();
-        queue.Enqueue(mapCentre);
+        Queue<Vector2Int> queue = new Queue<Vector2Int>();
+        queue.Enqueue(currentMap.MapCentre);
 
-        mapFlags[mapCentre.x, mapCentre.y] = true;
+        mapFlags[currentMap.MapCentre.x, currentMap.MapCentre.y] = true;
 
         int accessibleTileCount = 1;
 
         while (queue.Count > 0)
         {
-            Coord tile = queue.Dequeue();
+            Vector2Int tile = queue.Dequeue();
 
             for (int x = -1; x <= 1; x++)
             {
@@ -152,7 +187,7 @@ public class MapGenerator : MonoBehaviour
                             if (!mapFlags[neighbourX, neighbourY] && !obstacleMap[neighbourX, neighbourY])
                             {
                                 mapFlags[neighbourX, neighbourY] = true;
-                                queue.Enqueue(new Coord(neighbourX, neighbourY));
+                                queue.Enqueue(new Vector2Int(neighbourX, neighbourY));
                                 accessibleTileCount++;
                             }
                         }
@@ -161,35 +196,47 @@ public class MapGenerator : MonoBehaviour
             }
         }
 
-        int targetAccessibleTileCount = (int)(mapSize.x * mapSize.y - currentObstacleCount);
+        int targetAccessibleTileCount = (int)(currentMap.mapSize.x * currentMap.mapSize.y - currentObstacleCount);
         return targetAccessibleTileCount == accessibleTileCount;
     }
 
     Vector3 CoordToPosition(int x, int y)
     {
-        return (new Vector3(-mapSize.x / 2 + .5f + x, 0, -mapSize.y / 2 + 0.5f + y) * tileSize) + transform.position;
+        return (new Vector3(-currentMap.mapSize.x / 2f + .5f + x, 0, -currentMap.mapSize.y / 2f + 0.5f + y) * tileSize) + transform.position;
     }
 
-    public Coord GetRandomCoord()
+    public Vector2Int GetRandomCoord()
     {
-        Coord randomCoord = shuffleTileCoords.Dequeue();
+        Vector2Int randomCoord = shuffleTileCoords.Dequeue();
         shuffleTileCoords.Enqueue(randomCoord);
         return randomCoord;
     }
 
-    public struct Coord
+    public Vector3 GetRandomPos()
     {
-        public int x;
-        public int y;
-
-        public Coord(int x, int y)
-        {
-            this.x = x;
-            this.y = y;
-        }
-
-        public static bool operator ==(Coord lhs, Coord rhs) => lhs.x == rhs.x && lhs.y == rhs.y;
-
-        public static bool operator !=(Coord lhs, Coord rhs) => !(lhs == rhs);
+        Vector3 randomPos = shufflePositions.Dequeue();
+        shufflePositions.Enqueue(randomPos);
+        return randomPos;
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.TryGetComponent(out Damageable damageable))
+            damageable.Health -= damageable.Health;
+    }
+}
+
+[System.Serializable]
+public class Map
+{
+    public Vector2Int mapSize = Vector2Int.one * 10;
+    [Range(0, 1)] public float obstaclePercent = .25f;
+    public int seed = "CryingOnion".GetHashCode();
+    public float minObstacleHeight = 1;
+    public float maxObstacleHeight = 3;
+    public Material tileMaterial;
+    public Material obstacleMaterial;
+    public Gradient colorGradient;
+
+    public Vector2Int MapCentre => new Vector2Int(mapSize.x / 2, mapSize.y / 2);
 }

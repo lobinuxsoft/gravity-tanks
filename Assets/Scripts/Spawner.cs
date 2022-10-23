@@ -1,5 +1,6 @@
 using GravityTanks;
 using GravityTanks.Enemy;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(ObjectPool))]
@@ -17,7 +18,13 @@ public class Spawner : MonoBehaviour
 
     float nextSpawnTime;
 
-    private void Awake() => enemyPool = GetComponent<ObjectPool>();
+    MapGenerator mapGenerator;
+
+    private void Awake()
+    {
+        enemyPool = GetComponent<ObjectPool>();
+        mapGenerator = FindObjectOfType<MapGenerator>();
+    }
 
     private void Start() => NextWave();
 
@@ -28,18 +35,34 @@ public class Spawner : MonoBehaviour
             enemiesRemainingToSpawn--;
             nextSpawnTime = Time.time + currentWave.TimeBetweenSpawns;
 
-            GameObject spawnedEnemy = enemyPool.GetFromPool();
-            spawnedEnemy.transform.position = Vector3.zero;
-
-            if(spawnedEnemy.TryGetComponent(out Damageable damageable))
-                damageable.onDie.AddListener(() => OnEnemyDeath(spawnedEnemy));
+            StartCoroutine(SpawnEnemy());
         }
+    }
+
+    IEnumerator SpawnEnemy()
+    {
+        Vector3 pos = mapGenerator.GetRandomPos();
+        GameObject spawnedEnemy = enemyPool.GetFromPool();
+        spawnedEnemy.transform.position = pos;
+
+        if (spawnedEnemy.TryGetComponent(out Damageable damageable))
+            damageable.onDie.AddListener(() => OnEnemyDeath(spawnedEnemy));
+
+        yield return null;
     }
 
     void OnEnemyDeath(GameObject spawnedEnemy)
     {
         enemiesRemainingAlive--;
-        enemyPool.ReturnToPool(spawnedEnemy);
+
+        if (spawnedEnemy.TryGetComponent(out Damageable damageable))
+        {
+            damageable.onDie.RemoveAllListeners();
+            damageable.FullHeal();
+        }
+
+            enemyPool.ReturnToPool(spawnedEnemy);
+
         if (enemiesRemainingAlive == 0)
             NextWave();
     }

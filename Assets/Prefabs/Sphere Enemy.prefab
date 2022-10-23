@@ -128,7 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviours:
   - {fileID: 11400000, guid: 37d9ba088c9d4424bb4c4a12adbae680, type: 2}
-  - {fileID: 11400000, guid: 061e5cd4cc0e98d4e84a081308c65629, type: 2}
 --- !u!114 &1558796072066750251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 3
+  deathEffect: {fileID: 5297635048341763810, guid: b9fbda2760a8c30408c14c13bbedc52b,
+    type: 3}
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   onMaxHealthChanged:
     m_PersistentCalls:
       m_Calls: []
