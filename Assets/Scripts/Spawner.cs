@@ -1,12 +1,14 @@
 using HNW;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
 {
-    ObjectPool enemyPool;
+    Dictionary<string, ObjectPool> pools = new Dictionary<string, ObjectPool>();
+    //ObjectPool enemyPool;
 
     [SerializeField] Transform player;
     [SerializeField] Wave[] waves;
@@ -23,7 +25,25 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        enemyPool = GetComponent<ObjectPool>();
+        //enemyPool = GetComponent<ObjectPool>();
+        SetupEnemies();
+    }
+
+    private void SetupEnemies()
+    {
+        for (int i = 0; i < waves.Length; i++)
+        {
+            for (int j = 0; j < waves[i].Enemies.Length; j++)
+            {
+                if(!pools.ContainsKey(waves[i].Enemies[j].name))
+                {
+                    ObjectPool pool = new GameObject(waves[i].Enemies[j].name).AddComponent<ObjectPool>();
+                    pool.transform.SetParent(this.transform);
+                    pool.SetObjectToPool(waves[i].Enemies[j]);
+                    pools.Add(waves[i].Enemies[j].name, pool);
+                }
+            }
+        }
     }
 
     private void Start() => NextWave();
@@ -44,7 +64,7 @@ public class Spawner : MonoBehaviour
         yield return new WaitForEndOfFrame();
 
         Vector3 pos = MapGenerator.Instance.GetRandomPos();
-        GameObject spawnedEnemy = enemyPool.GetFromPool();
+        GameObject spawnedEnemy = pools[currentWave.Enemies[UnityEngine.Random.Range(0, currentWave.Enemies.Length)].name].GetFromPool();
         spawnedEnemy.transform.position = pos;
 
         if (spawnedEnemy.TryGetComponent(out Damageable damageable))
@@ -63,7 +83,7 @@ public class Spawner : MonoBehaviour
             damageable.FullHeal();
         }
 
-            enemyPool.ReturnToPool(spawnedEnemy);
+        pools[spawnedEnemy.name].ReturnToPool(spawnedEnemy);
 
         if (enemiesRemainingAlive == 0)
             NextWave();
@@ -97,6 +117,7 @@ public struct Wave
 {
     [SerializeField] int enemyCount;
     [SerializeField] float timeBetweenSpawns;
+    [SerializeField] GameObject[] enemies;
 
     public int EnemyCount
     {
@@ -109,4 +130,6 @@ public struct Wave
         get => timeBetweenSpawns;
         set => timeBetweenSpawns = value;
     }
+
+    public GameObject[] Enemies => enemies;
 }

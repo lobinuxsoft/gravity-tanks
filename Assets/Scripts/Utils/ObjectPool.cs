@@ -7,11 +7,16 @@ public class ObjectPool : MonoBehaviour
 
     private Queue<GameObject> pool = default;
     
+    public void SetObjectToPool(GameObject prefab)
+    {
+        this.prefab = prefab;
+    }
+
     // Start is called before the first frame update
     void Awake()
     {
         pool = new Queue<GameObject>();
-        GrowPool();
+        //GrowPool();
     }
 
     /// <summary>
@@ -59,9 +64,10 @@ public class ObjectPool : MonoBehaviour
     /// </summary>
     private void GrowPool()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 1; i++)
         {
             var newObj = Instantiate(prefab, transform);
+            newObj.name = prefab.name;
             newObj.SetActive(false);
             pool.Enqueue(newObj);
         }

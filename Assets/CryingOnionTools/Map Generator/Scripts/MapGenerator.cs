@@ -260,12 +260,12 @@ public class MapGenerator : MonoBehaviour
     {
         Vector3 randomPos = shufflePositions.Dequeue();
         shufflePositions.Enqueue(randomPos);
-        return randomPos;
+        return randomPos + Vector3.up * .25f;
     }
 
     public Vector3 GetMapCentrePos()
     {
-        return CoordToPosition(currentMap.MapCentre.x, currentMap.MapCentre.y) + Vector3.up;
+        return CoordToPosition(currentMap.MapCentre.x, currentMap.MapCentre.y) + Vector3.up * .25f;
     }
 
     private void OnTriggerExit(Collider other)

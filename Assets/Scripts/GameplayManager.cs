@@ -30,7 +30,7 @@ public class GameplayManager : MonoBehaviour
     {
         player.FullHeal();
 
-        player.transform.position = MapGenerator.Instance.GetMapCentrePos();
+        player.transform.position = MapGenerator.Instance.GetRandomPos();
 
         player.gameObject.SetActive(true);
     }

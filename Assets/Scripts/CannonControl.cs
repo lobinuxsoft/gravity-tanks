@@ -67,6 +67,15 @@ namespace HNW
             sfxTrigger = GetComponent<SFXTrigger>();
         }
 
+        private void OnEnable()
+        {
+            if (shootRoutine != null)
+            {
+                StopAllCoroutines();
+                shootRoutine = null;
+            }
+        }
+
         public void Shoot() 
         {
             if (shootRoutine == null)
