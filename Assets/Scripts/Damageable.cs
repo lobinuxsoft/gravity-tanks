@@ -57,7 +57,15 @@ namespace HNW
             Health -= value;
         }
 
-        public void FullHeal() => Health = MaxHealth;
+        public void FullHeal() 
+        { 
+            Health = MaxHealth;
+
+            for (int i = 0; i < renderers.Length; i++)
+            {
+                renderers[i].material.color = damageGradient.Evaluate(0);
+            }
+        }
 
         IEnumerator BlinkEffect(float duration = 1)
         {

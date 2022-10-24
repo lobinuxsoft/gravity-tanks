@@ -21,12 +21,9 @@ public class Spawner : MonoBehaviour
 
     float nextSpawnTime;
 
-    MapGenerator mapGenerator;
-
     private void Awake()
     {
         enemyPool = GetComponent<ObjectPool>();
-        mapGenerator = FindObjectOfType<MapGenerator>();
     }
 
     private void Start() => NextWave();
@@ -46,7 +43,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        Vector3 pos = mapGenerator.GetRandomPos();
+        Vector3 pos = MapGenerator.Instance.GetRandomPos();
         GameObject spawnedEnemy = enemyPool.GetFromPool();
         spawnedEnemy.transform.position = pos;
 
@@ -74,7 +71,7 @@ public class Spawner : MonoBehaviour
 
     void ResetPlayerPosition()
     {
-        player.position = mapGenerator.GetMapCentrePos();
+        player.position = MapGenerator.Instance.GetMapCentrePos();
     }
 
     void NextWave()

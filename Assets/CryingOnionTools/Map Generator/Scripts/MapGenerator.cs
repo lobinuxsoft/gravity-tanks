@@ -7,6 +7,8 @@ using UnityEngine.AI;
 
 public class MapGenerator : MonoBehaviour
 {
+    public static MapGenerator Instance;
+
     [SerializeField] Map[] maps;
     [SerializeField] int mapIndex;
     [SerializeField] Transform tilePref;
@@ -23,6 +25,7 @@ public class MapGenerator : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         FindObjectOfType<Spawner>().OnNextWave += NewWave;
     }
 
