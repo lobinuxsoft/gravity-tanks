@@ -80,17 +80,21 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
-    - _CellScale: 20
+    - _CellScale: 60
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Density: 0.9
+    - _Density: 0.75
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _FresnelPower: 5
+    - _GlitchColorPower: 0.01
+    - _GlitchScale: 200
+    - _GlitchSpeed: 2
+    - _GlitchVertexInfluence: 0.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
