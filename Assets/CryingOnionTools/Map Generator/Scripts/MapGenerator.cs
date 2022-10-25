@@ -132,7 +132,9 @@ public class MapGenerator : MonoBehaviour
                     Material obstMaterial = new Material(currentMap.obstacleMaterial);
                     //float colourPercent = randomCoord.y / (float)currentMap.mapSize.y;
                     float colourPercent = newObstacle.localScale.y / (float)currentMap.maxObstacleHeight;
-                    obstMaterial.color = currentMap.colorGradient.Evaluate(colourPercent);
+                    obstMaterial.SetColor("_MainColor", currentMap.colorGradient.Evaluate(colourPercent));
+                    obstMaterial.SetColor("_RedChannel", currentMap.colorGradient.Evaluate(colourPercent));
+                    obstMaterial.SetColor("_BlueChannel", currentMap.colorGradient.Evaluate(1-colourPercent));
                     obstacleRend.sharedMaterial = obstMaterial;
                 }
 
@@ -285,7 +287,7 @@ public class Map
     public float maxObstacleHeight = 3;
     public Material tileMaterial;
     public Material obstacleMaterial;
-    public Gradient colorGradient;
+    [GradientUsage(true)]public Gradient colorGradient;
 
     public Vector2Int MapCentre => new Vector2Int(mapSize.x / 2, mapSize.y / 2);
 }
