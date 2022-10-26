@@ -89,16 +89,11 @@ public class MapGenerator : MonoBehaviour
 
         if (transform.Find(holderName))
         {
-            if(Application.isEditor)
-            {
-                DestroyImmediate(transform.Find(holderName).gameObject);
-            }
-            else
-            {
+            if(Application.isPlaying)
                 Destroy(transform.Find(holderName).gameObject);
-            }
+            else
+                DestroyImmediate(transform.Find(holderName).gameObject);
         }
-            
 
         Transform mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
@@ -199,10 +194,10 @@ public class MapGenerator : MonoBehaviour
         meshCollider.sharedMesh = meshFilter.sharedMesh;
         navMeshSurface.BuildNavMesh();
 
-        if (Application.isEditor)
-            DestroyImmediate(container);
-        else
+        if (Application.isPlaying)
             Destroy(container);
+        else
+            DestroyImmediate(container);
     }
 
     bool MapIsFullyAccessible(bool[,] obstacleMap, int currentObstacleCount)
