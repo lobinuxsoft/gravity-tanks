@@ -122,10 +122,6 @@ public class MapGenerator : MonoBehaviour
                 Vector3 obstaclePosition = CoordToPosition(randomCoord.x, randomCoord.y);
                 Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up * obstacleHeight / 2, Quaternion.identity, obstaclesHolder);
                 newObstacle.localScale = new Vector3((1 - outlinePercent) * tileSize, obstacleHeight, (1 - outlinePercent) * tileSize);
-
-                if(newObstacle.TryGetComponent(out NavMeshObstacle meshObstacle))
-                    meshObstacle.carving = true;
-
             }
             else
             {
@@ -153,9 +149,8 @@ public class MapGenerator : MonoBehaviour
 
         shufflePositions = new Queue<Vector3>(Utility.ShuffleArray(positions.ToArray(), currentMap.seed));
 
-        // Combine tiles
-        CombineMesh(tilesHolder.gameObject, currentMap.tileMaterial, true);
 
+        // Combine Obstacles------------------------------------------------------
         Material obstMaterial = new Material(currentMap.obstacleMaterial);
 
         obstMaterial.SetFloat("_MinHeight", currentMap.minObstacleHeight);
@@ -163,8 +158,11 @@ public class MapGenerator : MonoBehaviour
         obstMaterial.SetColor("_BottomColor", currentMap.bottomColor);
         obstMaterial.SetColor("_TopColor", currentMap.topColor);
 
-        // Combine Obstacles
         CombineMesh(obstaclesHolder.gameObject, obstMaterial, false);
+        //------------------------------------------------------------------------
+
+        // Combine tiles----------------------------------------------------------
+        CombineMesh(tilesHolder.gameObject, currentMap.tileMaterial, true);
     }
 
     private void CombineMesh(GameObject container, Material material, bool makeNavMesh)
@@ -200,6 +198,7 @@ public class MapGenerator : MonoBehaviour
         {
             NavMeshSurface navMeshSurface = resultGo.AddComponent<NavMeshSurface>();
             navMeshSurface.layerMask = navMeshLayer;
+            navMeshSurface.collectObjects = CollectObjects.Children;
             navMeshSurface.BuildNavMesh();
         }
 
