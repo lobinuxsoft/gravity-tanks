@@ -120,23 +120,13 @@ public class MapGenerator : MonoBehaviour
             Vector2Int randomCoord = GetRandomCoord();
             obstacleMap[randomCoord.x, randomCoord.y] = true;
             currentObstacleCount++;
+
             if (randomCoord != currentMap.MapCentre && MapIsFullyAccessible(obstacleMap, currentObstacleCount))
             {
                 float obstacleHeight = Mathf.Lerp(currentMap.minObstacleHeight, currentMap.maxObstacleHeight, (float)rand.NextDouble());
                 Vector3 obstaclePosition = CoordToPosition(randomCoord.x, randomCoord.y);
                 Transform newObstacle = Instantiate(obstaclePref, obstaclePosition + Vector3.up * obstacleHeight / 2, Quaternion.identity, obstaclesHolder);
                 newObstacle.localScale = new Vector3((1 - outlinePercent) * tileSize, obstacleHeight, (1 - outlinePercent) * tileSize);
-
-                if(newObstacle.TryGetComponent(out Renderer obstacleRend))
-                {
-                    Material obstMaterial = new Material(currentMap.obstacleMaterial);
-                    //float colourPercent = randomCoord.y / (float)currentMap.mapSize.y;
-                    float colourPercent = newObstacle.localScale.y / (float)currentMap.maxObstacleHeight;
-                    obstMaterial.SetColor("_MainColor", currentMap.colorGradient.Evaluate(colourPercent));
-                    obstMaterial.SetColor("_RedChannel", currentMap.colorGradient.Evaluate(colourPercent));
-                    obstMaterial.SetColor("_BlueChannel", currentMap.colorGradient.Evaluate(1-colourPercent));
-                    obstacleRend.sharedMaterial = obstMaterial;
-                }
 
                 if(newObstacle.TryGetComponent(out NavMeshObstacle meshObstacle))
                     meshObstacle.carving = true;
@@ -169,23 +159,36 @@ public class MapGenerator : MonoBehaviour
         shufflePositions = new Queue<Vector3>(Utility.ShuffleArray(positions.ToArray(), currentMap.seed));
 
         // Combine tiles
-        CombineMesh(tilesHolder.gameObject, mapHolder.gameObject, currentMap.tileMaterial);
+        CombineMesh(tilesHolder.gameObject, currentMap.tileMaterial, true);
+
+        Material obstMaterial = new Material(currentMap.obstacleMaterial);
+
+        obstMaterial.SetFloat("_MinHeight", currentMap.minObstacleHeight);
+        obstMaterial.SetFloat("_MaxHeight", currentMap.maxObstacleHeight * 1.25f);
+        obstMaterial.SetColor("_BottomColor", currentMap.bottomColor);
+        obstMaterial.SetColor("_TopColor", currentMap.topColor);
+
+        // Combine Obstacles
+        CombineMesh(obstaclesHolder.gameObject, obstMaterial, false);
     }
 
-    private void CombineMesh(GameObject container, GameObject target, Material material)
+    private void CombineMesh(GameObject container, Material material, bool makeNavMesh)
     {
         MeshFilter[] meshFilters = container.GetComponentsInChildren<MeshFilter>();
         CombineInstance[] combine = new CombineInstance[meshFilters.Length];
 
-        MeshFilter meshFilter = target.AddComponent<MeshFilter>();
-        MeshRenderer meshRenderer = target.AddComponent<MeshRenderer>();
-        NavMeshSurface navMeshSurface = target.AddComponent<NavMeshSurface>();
-        navMeshSurface.layerMask = navMeshLayer;
+        GameObject resultGo = new GameObject(container.name);
+        resultGo.transform.SetParent(container.transform.parent);
+
+        MeshFilter meshFilter = resultGo.AddComponent<MeshFilter>();
+        MeshRenderer meshRenderer = resultGo.AddComponent<MeshRenderer>();
+
         meshRenderer.sharedMaterial = material;
 
-        MeshCollider meshCollider = target.AddComponent<MeshCollider>();
+        MeshCollider meshCollider = resultGo.AddComponent<MeshCollider>();
 
         int i = 0;
+
         while (i < meshFilters.Length)
         {
             combine[i].mesh = meshFilters[i].sharedMesh;
@@ -197,7 +200,13 @@ public class MapGenerator : MonoBehaviour
         meshFilter.sharedMesh = new Mesh();
         meshFilter.sharedMesh.CombineMeshes(combine);
         meshCollider.sharedMesh = meshFilter.sharedMesh;
-        navMeshSurface.BuildNavMesh();
+
+        if (makeNavMesh)
+        {
+            NavMeshSurface navMeshSurface = resultGo.AddComponent<NavMeshSurface>();
+            navMeshSurface.layerMask = navMeshLayer;
+            navMeshSurface.BuildNavMesh();
+        }
 
         if (Application.isEditor)
             DestroyImmediate(container);
@@ -262,7 +271,7 @@ public class MapGenerator : MonoBehaviour
     {
         Vector3 randomPos = shufflePositions.Dequeue();
         shufflePositions.Enqueue(randomPos);
-        return randomPos + Vector3.up * .25f;
+        return randomPos;
     }
 
     public Vector3 GetMapCentrePos()
@@ -287,7 +296,8 @@ public class Map
     public float maxObstacleHeight = 3;
     public Material tileMaterial;
     public Material obstacleMaterial;
-    [GradientUsage(true)]public Gradient colorGradient;
+    public Color bottomColor;
+    public Color topColor;
 
     public Vector2Int MapCentre => new Vector2Int(mapSize.x / 2, mapSize.y / 2);
 }

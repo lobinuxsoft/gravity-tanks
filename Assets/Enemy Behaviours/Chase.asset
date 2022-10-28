@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ce002af4a9e18b42af5ca5289c2ae0e, type: 3}
   m_Name: Chase
   m_EditorClassIdentifier: 
+  timeBetweenAttacks: 1
+  attackDistanceThreshold: 2
+  damageAmount: 1
   refreshTargetPositionRate: 0.25
   moveSpeed: 5
   turnSpeed: 2.5

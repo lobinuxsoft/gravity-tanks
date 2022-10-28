@@ -88,8 +88,6 @@ namespace HNW.Enemy.Behaviour
             float attackSpeed = 3;
             float percent = 0;
 
-            Color originalColor = rend.material.color;
-
             rend.material.color = Color.yellow;
 
             bool hasAppliedDamage = false;
@@ -109,7 +107,7 @@ namespace HNW.Enemy.Behaviour
                 await Task.Yield();
             }
 
-            rend.material.color = originalColor;
+            rend.material.color = Color.black;
             agent.enabled = true;
         }
     }

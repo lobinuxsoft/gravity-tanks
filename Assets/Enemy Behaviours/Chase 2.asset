@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Chase 2
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
-  attackDistanceThreshold: 1.5
+  attackDistanceThreshold: 2
   damageAmount: 1
   refreshTargetPositionRate: 0.25
   moveSpeed: 10

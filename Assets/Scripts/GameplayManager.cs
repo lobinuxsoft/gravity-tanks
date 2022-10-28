@@ -3,6 +3,8 @@ using HNW;
 
 public class GameplayManager : MonoBehaviour
 {
+    [SerializeField] GameObject farCamera;
+    [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
 
     Damageable player;
@@ -23,15 +25,28 @@ public class GameplayManager : MonoBehaviour
 
     private void ShowGameOver()
     {
+        farCamera.SetActive(false);
+        nearCamera.SetActive(true);
         gameOverUI.Show();
     }
 
     private void Revive()
     {
+        if(player.TryGetComponent(out Rigidbody body))
+        {
+            body.isKinematic = true;
+            body.velocity -= body.velocity;
+            body.isKinematic = false;
+        }
+
         player.FullHeal();
 
-        player.transform.position = MapGenerator.Instance.GetRandomPos();
+        player.transform.position = MapGenerator.Instance.GetRandomPos() + Vector3.up * .5f;
+        player.transform.rotation = Quaternion.identity;
 
         player.gameObject.SetActive(true);
+
+        nearCamera.SetActive(false);
+        farCamera.SetActive(true);
     }
 }

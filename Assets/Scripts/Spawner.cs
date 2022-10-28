@@ -25,7 +25,6 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
-        //enemyPool = GetComponent<ObjectPool>();
         SetupEnemies();
     }
 
@@ -89,9 +88,22 @@ public class Spawner : MonoBehaviour
             NextWave();
     }
 
-    void ResetPlayerPosition()
+    IEnumerator ResetPlayerPosition()
     {
-        player.position = MapGenerator.Instance.GetMapCentrePos();
+        yield return new WaitForEndOfFrame();
+        player.gameObject.SetActive(false);
+
+        if(player.TryGetComponent(out Rigidbody body))
+        {
+            body.isKinematic = true;
+            body.velocity -= body.velocity;
+            body.isKinematic = false;
+        }
+
+        player.position = MapGenerator.Instance.GetRandomPos() + Vector3.up * .5f;
+        player.rotation = Quaternion.identity;
+
+        player.gameObject.SetActive(true);
     }
 
     void NextWave()
@@ -107,7 +119,7 @@ public class Spawner : MonoBehaviour
 
             OnNextWave?.Invoke(currentWaveNumber);
 
-            ResetPlayerPosition();
+            StartCoroutine(ResetPlayerPosition());
         }
     }
 }

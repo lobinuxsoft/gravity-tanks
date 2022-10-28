@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 1558796072066750251, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: damageGradient.key0.g
-      value: 0.043137256
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1558796072066750251, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
       propertyPath: damageGradient.key0.r
-      value: 0.75686276
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd,
         type: 3}
