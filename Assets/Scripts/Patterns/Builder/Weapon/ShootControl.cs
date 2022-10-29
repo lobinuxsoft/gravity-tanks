@@ -3,42 +3,42 @@ using UnityEngine;
 
 namespace HNW
 {
-    public class TurretControl : MonoBehaviour
+    public class ShootControl : MonoBehaviour
     {
         [Header("Aiming settings")]
         [SerializeField] LayerMask targetLayerMask;
         [SerializeField] float rotSpeed = 5f;
-        [SerializeField] float minDistanceToAim = 5f;
+        [SerializeField] float minDistanceToAim = 10f;
         [SerializeField] float minAngleToShot = 2.5f;
         [SerializeField] Transform aim;
 
-        [Space(20)]
-        [Header("Cannon settings")]
-        [SerializeField] CannonControl[] cannons;
+        Weapon[] weapons;
 
         Transform targetToShot = null;
 
-        //Rigidbody body;
-
-        public CannonControl[] Cannons => cannons;
-
-        private void Awake()
+        private void Start()
         {
             aim.SetParent(null);
-            //body = GetComponent<Rigidbody>();
-            UpdateCannons();
+            UpdateWeapons();
         }
 
         private void OnEnable()
         {
-            UpdateCannons();
+            UpdateWeapons();
         }
 
-        private void UpdateCannons() => cannons = GetComponentsInChildren<CannonControl>();
+        public void UpdateWeapons()
+        {
+            weapons = GetComponentsInChildren<Weapon>();
+
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                weapons[i].LayerToDamage = targetLayerMask;
+            }
+        }
 
         private void FixedUpdate()
         {
-
             if (Time.frameCount % 5 == 0)
                 targetToShot = FindClosedTarget(targetLayerMask);
 
@@ -51,11 +51,6 @@ namespace HNW
             Vector3 targetDir = targetToShot.position - transform.position; //body.position;
             Quaternion newRot = Quaternion.LookRotation(targetDir, Vector3.up);
 
-            //body.rotation = Quaternion.RotateTowards(
-            //    transform.rotation,
-            //    newRot,
-            //    Quaternion.Angle(transform.rotation, newRot) * rotSpeed * Time.deltaTime);
-
             transform.rotation = Quaternion.RotateTowards(
                 transform.rotation,
                 newRot,
@@ -63,10 +58,9 @@ namespace HNW
 
             if (Vector3.Angle(transform.forward, targetDir.normalized) <= minAngleToShot)
             {
-                for (int i = 0; i < cannons.Length; i++)
+                for (int i = 0; i < weapons.Length; i++)
                 {
-                    cannons[i].transform.LookAt(targetToShot);
-                    cannons[i].Shoot();
+                    weapons[i].Shoot();
                 }
             }
 
@@ -76,14 +70,11 @@ namespace HNW
 
         private Transform FindClosedTarget(LayerMask mask)
         {
-            //var all = GameObject.FindGameObjectsWithTag(tag).ToList();
             var all = Physics.OverlapSphere(transform.position, minDistanceToAim, mask).ToList();
-
-            //all = all.Where(t => (transform.position - t.transform.position).sqrMagnitude <= minDistanceToAim * minDistanceToAim).ToList();
 
             all.Sort
                 (
-                    delegate(Collider a, Collider b)
+                    delegate (Collider a, Collider b)
                     {
                         return (transform.position - a.transform.position).sqrMagnitude.CompareTo((transform.position - b.transform.position).sqrMagnitude);
                     }

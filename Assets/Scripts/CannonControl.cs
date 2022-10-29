@@ -4,7 +4,7 @@ using System.Collections;
 
 namespace HNW
 {
-    [RequireComponent(typeof(Damager), typeof(SFXTrigger))]
+    [RequireComponent(typeof(SFXTrigger))]
     public class CannonControl : MonoBehaviour
     {
         [SerializeField] int emmitAmount = 1;
@@ -13,8 +13,6 @@ namespace HNW
         [SerializeField] LayerMask layerToCollide;
         [SerializeField] AudioClip shootSfx;
         [SerializeField] AudioClip impactSfx;
-
-        Damager damager;
 
         ParticleSystem particle;
         ParticleSystem.CollisionModule collisionModule;
@@ -63,7 +61,6 @@ namespace HNW
             shapeModule.shapeType = ParticleSystemShapeType.Circle;
             shapeModule.rotation = new Vector3(90f, -90f + (shapeModule.arc / 2), 0f);
 
-            damager = GetComponent<Damager>();
             sfxTrigger = GetComponent<SFXTrigger>();
         }
 
@@ -93,7 +90,7 @@ namespace HNW
         void OnParticleCollision(GameObject other) 
         {
             sfxTrigger.PlaySFX(impactSfx);
-            damager.DamageTo(other);
+            Damager.DamageTo(other, 1);
         }
     }
 }

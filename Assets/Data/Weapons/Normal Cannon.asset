@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04f632fcd690e24c952d31584dcfa20, type: 3}
+  m_Name: Normal Cannon
+  m_EditorClassIdentifier: 
+  emmitAmount: 1
+  shootRate: 0.5
+  shootAngle: 0
+  body: {fileID: 290307016851792658, guid: bdb1289f8949cdc4b91fca7beaf70759, type: 3}
+  projectile: {fileID: 2645269299671291207, guid: 01bc8745bbb66564baf55aa652605aef,
+    type: 3}

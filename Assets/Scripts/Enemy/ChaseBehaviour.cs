@@ -17,7 +17,6 @@ namespace HNW.Enemy.Behaviour
         private Rigidbody rb;
         private GameObject target;
         private Renderer rend;
-        private Damager damager;
 
         private float lastRefresh;
         private float nextAttackTime;
@@ -26,12 +25,6 @@ namespace HNW.Enemy.Behaviour
         {
             if (!target)
                 target = GameObject.FindWithTag("Player");
-
-            if (!damager)
-            {
-                damager = owner.AddComponent<Damager>();
-                damager.DamageAmount = damageAmount;
-            }
 
             if (!agent)
             {
@@ -97,7 +90,7 @@ namespace HNW.Enemy.Behaviour
                 if(percent >= .5f && !hasAppliedDamage)
                 {
                     hasAppliedDamage = true;
-                    damager.DamageTo(target.gameObject);
+                    Damager.DamageTo(target.gameObject, damageAmount);
                 }
 
                 percent += Time.deltaTime * attackSpeed;

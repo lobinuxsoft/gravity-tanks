@@ -2,17 +2,9 @@ using UnityEngine;
 
 namespace HNW
 {
-    public class Damager : MonoBehaviour
+    public static class Damager
     {
-        [SerializeField] private int damageAmount = 1;
-
-        public int DamageAmount
-        {
-            get => damageAmount;
-            set => damageAmount = value;
-        }
-
-        public void DamageTo(GameObject go)
+        public static void DamageTo(GameObject go, int damageAmount)
         {
             if(go.TryGetComponent(out Damageable damageable))
             {
