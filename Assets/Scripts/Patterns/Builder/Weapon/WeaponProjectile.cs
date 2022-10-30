@@ -8,13 +8,13 @@ namespace HNW
     [RequireComponent(typeof(SFXTrigger))]
     public class WeaponProjectile : MonoBehaviour
     {
-        [SerializeField] private AudioClip shootSfx;
+        [SerializeField] private AudioClip shotSfx;
         [SerializeField] private AudioClip impactSfx;
 
         private LayerMask layerToCollide;
         private int emmitAmount = 1;
-        private float shootRate = .5f;
-        private int shootAngle = 0;
+        private float shotRate = .5f;
+        private int shotAngle = 0;
 
         private ParticleSystem particle;
         private ParticleSystem.EmissionModule emissionModule;
@@ -42,12 +42,12 @@ namespace HNW
             }
         }
 
-        public int ShootAngle
+        public int ShotAngle
         {
-            get => shootAngle;
+            get => shotAngle;
             set
             {
-                shootAngle = Mathf.Clamp(value, 0, 360);
+                shotAngle = Mathf.Clamp(value, 0, 360);
 
                 if (shapeModule.enabled)
                 {
@@ -57,16 +57,16 @@ namespace HNW
                     shapeModule.arcSpread = 0;
                     shapeModule.shapeType = ParticleSystemShapeType.Circle;
 
-                    shapeModule.arc = shootAngle;
+                    shapeModule.arc = shotAngle;
                     shapeModule.rotation = new Vector3(90f, -90f + (shapeModule.arc / 2), 0f);
                 }
             }
         }
 
-        public float ShootRate
+        public float ShotRate
         {
-            get => shootRate;
-            set => shootRate = value;
+            get => shotRate;
+            set => shotRate = value;
         }
 
         public LayerMask LayerToCollide
@@ -94,7 +94,7 @@ namespace HNW
 
             EmmitAmount = emmitAmount;
             LayerToCollide = layerToCollide;
-            ShootAngle = emmitAmount;
+            ShotAngle = emmitAmount;
 
             sfxTrigger = GetComponent<SFXTrigger>();
         }
@@ -117,13 +117,13 @@ namespace HNW
         public void Shoot()
         {
             if (shootRoutine == null)
-                shootRoutine = StartCoroutine(ShotRoutine(shootRate));
+                shootRoutine = StartCoroutine(ShootRoutine(shotRate));
         }
 
-        IEnumerator ShotRoutine(float delay)
+        IEnumerator ShootRoutine(float delay)
         {
             particle.Play();
-            sfxTrigger.PlaySFX(shootSfx);
+            sfxTrigger.PlaySFX(shotSfx);
             yield return new WaitForSeconds(delay);
             shootRoutine = null;
         }

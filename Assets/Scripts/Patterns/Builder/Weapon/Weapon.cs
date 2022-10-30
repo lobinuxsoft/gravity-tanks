@@ -4,11 +4,18 @@ namespace HNW
 {
     public class Weapon : MonoBehaviour
     {
+        private int shotDamage;
         private int emmitAmount;
-        private float shootRate;
-        private int shootAngle;
+        private float shotRate;
+        private int shotAngle;
         private LayerMask layerToDamage;
         WeaponProjectile[] projectiles;
+
+        public int ShotDamage
+        {
+            get => shotDamage;
+            set => shotDamage = value;
+        }
 
         public int EmmitAmount
         {
@@ -24,30 +31,30 @@ namespace HNW
             }
         }
 
-        public float ShootRate
+        public float ShotRate
         {
-            get => shootRate;
+            get => shotRate;
             set
             {
-                shootRate = value;
+                shotRate = value;
 
                 for (int i = 0; i < projectiles.Length; i++)
                 {
-                    projectiles[i].ShootRate = shootRate;
+                    projectiles[i].ShotRate = shotRate;
                 }
             }
         }
 
-        public int ShootAngle
+        public int ShotAngle
         {
-            get => shootAngle;
+            get => shotAngle;
             set
             {
-                shootAngle = value;
+                shotAngle = value;
 
                 for (int i = 0; i < projectiles.Length; i++)
                 {
-                    projectiles[i].ShootAngle = shootAngle;
+                    projectiles[i].ShotAngle = shotAngle;
                 }
             }
         }
@@ -97,6 +104,6 @@ namespace HNW
             }
         }
 
-        private void OnProjectileHit(GameObject obj) => Damager.DamageTo(obj, 1);
+        private void OnProjectileHit(GameObject obj) => Damager.DamageTo(obj, shotDamage);
     }
 }

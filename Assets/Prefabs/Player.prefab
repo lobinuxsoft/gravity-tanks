@@ -238,7 +238,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   rotSpeed: 10
-  minDistanceToAim: 10
+  minDistanceToAim: 30
   minAngleToShot: 5
   aim: {fileID: 7172380640553267765}
 --- !u!1 &1583050594726864527

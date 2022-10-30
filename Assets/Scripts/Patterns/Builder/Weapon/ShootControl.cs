@@ -14,7 +14,7 @@ namespace HNW
 
         Weapon[] weapons;
 
-        Transform targetToShot = null;
+        Transform targetToShoot = null;
 
         Rigidbody body;
 
@@ -38,15 +38,15 @@ namespace HNW
         private void FixedUpdate()
         {
             if (Time.frameCount % 5 == 0)
-                targetToShot = FindClosedTarget(targetLayerMask);
+                targetToShoot = FindClosedTarget(targetLayerMask);
 
-            aim.gameObject.SetActive(targetToShot);
+            aim.gameObject.SetActive(targetToShoot);
 
-            if (!targetToShot) return;
+            if (!targetToShoot) return;
 
-            aim.position = targetToShot.position;
+            aim.position = targetToShoot.position;
 
-            Vector3 targetDir = targetToShot.position - body.position;
+            Vector3 targetDir = targetToShoot.position - body.position;
             Quaternion newRot = Quaternion.LookRotation(targetDir, Vector3.up);
 
             body.rotation = Quaternion.RotateTowards(
@@ -62,8 +62,8 @@ namespace HNW
                 }
             }
 
-            if ((targetToShot.position - body.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
-                targetToShot = null;
+            if ((targetToShoot.position - body.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
+                targetToShoot = null;
         }
 
         private Transform FindClosedTarget(LayerMask mask)
@@ -83,7 +83,7 @@ namespace HNW
 
         private void OnDrawGizmos()
         {
-            if (!targetToShot)
+            if (!targetToShoot)
             {
                 Gizmos.color = Color.yellow;
                 Gizmos.DrawWireSphere(transform.position, minDistanceToAim);
@@ -91,8 +91,8 @@ namespace HNW
             else
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawLine(transform.position, targetToShot.position);
-                Gizmos.DrawSphere(targetToShot.position, .25f);
+                Gizmos.DrawLine(transform.position, targetToShoot.position);
+                Gizmos.DrawSphere(targetToShoot.position, .25f);
             }
         }
     }

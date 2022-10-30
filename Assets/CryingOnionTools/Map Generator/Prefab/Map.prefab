@@ -53,35 +53,6 @@ MonoBehaviour:
     obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
     bottomColor: {r: 1, g: 0, b: 0.03137255, a: 0}
     topColor: {r: 0, g: 0.007843494, b: 1, a: 0}
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1.0592737, g: 0, b: 0.022183742, a: 1}
-      key1: {r: 0, g: 0.027729679, b: 1.0592737, a: 1}
-      key2: {r: 0.5, g: 1, b: 0, a: 1}
-      key3: {r: 0, g: 1, b: 1, a: 1}
-      key4: {r: 0, g: 0, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 32768
-      ctime3: 49151
-      ctime4: 65535
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 32768
-      atime2: 51079
-      atime3: 65535
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 4
   - mapSize: {x: 10, y: 25}
     obstaclePercent: 0.75
     seed: 456
@@ -91,35 +62,6 @@ MonoBehaviour:
     obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
     bottomColor: {r: 1, g: 0.06666667, b: 0, a: 0}
     topColor: {r: 1, g: 0.86274517, b: 0, a: 0}
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 1, g: 0.057113312, b: 0, a: 1}
-      key1: {r: 1, g: 0.8748325, b: 0, a: 1}
-      key2: {r: 0.5, g: 1, b: 0, a: 1}
-      key3: {r: 0, g: 1, b: 1, a: 1}
-      key4: {r: 0, g: 0, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 32768
-      ctime3: 49151
-      ctime4: 65535
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 51079
-      atime3: 65535
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
   - mapSize: {x: 20, y: 20}
     obstaclePercent: 0.5
     seed: 789
@@ -129,73 +71,15 @@ MonoBehaviour:
     obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
     bottomColor: {r: 0, g: 0, b: 0, a: 0}
     topColor: {r: 1, g: 1, b: 1, a: 0}
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
-      key2: {r: 0.5, g: 1, b: 0, a: 1}
-      key3: {r: 0, g: 1, b: 1, a: 1}
-      key4: {r: 0, g: 0, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 32768
-      ctime3: 49151
-      ctime4: 65535
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 51079
-      atime3: 65535
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
   - mapSize: {x: 30, y: 40}
     obstaclePercent: 1
     seed: 666
-    minObstacleHeight: 0
+    minObstacleHeight: 0.1
     maxObstacleHeight: 8
     tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
     obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
     bottomColor: {r: 0, g: 0, b: 0, a: 0}
     topColor: {r: 1, g: 0.32941177, b: 0, a: 0}
-    colorGradient:
-      serializedVersion: 2
-      key0: {r: 0, g: 0, b: 0, a: 1}
-      key1: {r: 2, g: 0.33420113, b: 0, a: 1}
-      key2: {r: 0.5, g: 1, b: 0, a: 1}
-      key3: {r: 0, g: 1, b: 1, a: 1}
-      key4: {r: 0, g: 0, b: 1, a: 0}
-      key5: {r: 0, g: 0, b: 0, a: 0}
-      key6: {r: 0, g: 0, b: 0, a: 0}
-      key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
-      ctime1: 65535
-      ctime2: 32768
-      ctime3: 49151
-      ctime4: 65535
-      ctime5: 0
-      ctime6: 0
-      ctime7: 0
-      atime0: 0
-      atime1: 65535
-      atime2: 51079
-      atime3: 65535
-      atime4: 0
-      atime5: 0
-      atime6: 0
-      atime7: 0
-      m_Mode: 0
-      m_NumColorKeys: 2
-      m_NumAlphaKeys: 2
   mapIndex: 0
   tilePref: {fileID: 615751482515393262, guid: ed8a572d3c0b0d94ba46f1fb33cbbe20, type: 3}
   obstaclePref: {fileID: 5696835789389454437, guid: 1c58f67a89df5d3488f548cf6333ccd4,

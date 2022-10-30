@@ -286,7 +286,7 @@ public class Map
     public Vector2Int mapSize = Vector2Int.one * 10;
     [Range(0, 1)] public float obstaclePercent = .25f;
     public int seed = "CryingOnion".GetHashCode();
-    public float minObstacleHeight = 1;
+    [Min(.1f)] public float minObstacleHeight = 1;
     public float maxObstacleHeight = 3;
     public Material tileMaterial;
     public Material obstacleMaterial;
