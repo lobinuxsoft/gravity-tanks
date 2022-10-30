@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04f632fcd690e24c952d31584dcfa20, type: 3}
   m_Name: Micro Missiles
   m_EditorClassIdentifier: 
+  layerToDamage:
+    serializedVersion: 2
+    m_Bits: 129
   emmitAmount: 6
   shootRate: 3
   shootAngle: 45

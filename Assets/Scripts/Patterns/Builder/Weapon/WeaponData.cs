@@ -5,7 +5,8 @@ namespace HNW
     [CreateAssetMenu(menuName = "Hyper Net Warrior/Weapon Builder/Weapon Data")]
     public class WeaponData : ScriptableObject
     {
-        [SerializeField] int emmitAmount = 1;
+        [SerializeField] LayerMask layerToDamage;
+        [SerializeField, Min(1)] int emmitAmount = 1;
         [SerializeField] float shootRate = .5f;
         [SerializeField, Range(0, 360)] int shootAngle = 0;
         [SerializeField] WeaponBody body;
@@ -18,6 +19,7 @@ namespace HNW
                 .WithParent(container)
                 .WithBody(body)
                 .WithProjectile(projectile)
+                .WithLayerToDamage(layerToDamage)
                 .WithEmmitAmount(emmitAmount)
                 .WithShootRate(shootRate)
                 .WithShootAngle(shootAngle)

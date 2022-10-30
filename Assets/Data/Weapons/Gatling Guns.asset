@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a04f632fcd690e24c952d31584dcfa20, type: 3}
-  m_Name: Normal Cannon
+  m_Name: Gatling Guns
   m_EditorClassIdentifier: 
   layerToDamage:
     serializedVersion: 2
     m_Bits: 129
   emmitAmount: 1
-  shootRate: 0.3
+  shootRate: 0.1
   shootAngle: 0
-  body: {fileID: 290307016851792658, guid: bdb1289f8949cdc4b91fca7beaf70759, type: 3}
+  body: {fileID: 713788691129217785, guid: e4b1c914982d3c0478c02c3a0d4f6b9b, type: 3}
   projectile: {fileID: 2645269299671291207, guid: 01bc8745bbb66564baf55aa652605aef,
     type: 3}

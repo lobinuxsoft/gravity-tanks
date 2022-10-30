@@ -10,6 +10,7 @@ namespace HNW
         Transform parent;
         WeaponBody weaponBody;
         WeaponProjectile projectileControl;
+        LayerMask layerToDamage;
         int emmitAmount;
         float shootRate;
         int shootAngle;
@@ -35,6 +36,12 @@ namespace HNW
         public WeaponBuilder WithProjectile(WeaponProjectile projectileControl)
         {
             this.projectileControl = projectileControl;
+            return this;
+        }
+
+        public WeaponBuilder WithLayerToDamage(LayerMask layerToDamage)
+        {
+            this.layerToDamage = layerToDamage;
             return this;
         }
 
@@ -79,6 +86,7 @@ namespace HNW
 
             weapon.Body = body;
             weapon.Projectiles = projectiles.ToArray();
+            weapon.LayerToDamage = layerToDamage;
             weapon.EmmitAmount = emmitAmount;
             weapon.ShootRate = shootRate;
             weapon.ShootAngle = shootAngle;

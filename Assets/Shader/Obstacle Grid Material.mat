@@ -44,7 +44,7 @@ Material:
     - _MaxHeight: 10
     - _MinHeight: 0
     - _SquareRound: 0
-    - _SquareSize: 0.96
+    - _SquareSize: 0.95
     m_Colors:
     - Color_c1318e252cbf438f84c7e77aafe96a2c: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.49056596, g: 0.49056596, b: 0.49056596, a: 0}
@@ -52,5 +52,5 @@ Material:
     - _BottomColor: {r: 0, g: 0, b: 0, a: 0}
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannel: {r: 0.7490196, g: 0, b: 0, a: 0}
-    - _TopColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TopColor: {r: 1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -7,18 +7,21 @@ namespace HNW
     {
         [Header("Aiming settings")]
         [SerializeField] LayerMask targetLayerMask;
-        [SerializeField] float rotSpeed = 5f;
+        [SerializeField] float rotSpeed = 10f;
         [SerializeField] float minDistanceToAim = 10f;
-        [SerializeField] float minAngleToShot = 2.5f;
+        [SerializeField] float minAngleToShot = 5f;
         [SerializeField] Transform aim;
 
         Weapon[] weapons;
 
         Transform targetToShot = null;
 
+        Rigidbody body;
+
         private void Start()
         {
             aim.SetParent(null);
+            body = GetComponent<Rigidbody>();
             UpdateWeapons();
         }
 
@@ -30,11 +33,6 @@ namespace HNW
         public void UpdateWeapons()
         {
             weapons = GetComponentsInChildren<Weapon>();
-
-            for (int i = 0; i < weapons.Length; i++)
-            {
-                weapons[i].LayerToDamage = targetLayerMask;
-            }
         }
 
         private void FixedUpdate()
@@ -48,10 +46,10 @@ namespace HNW
 
             aim.position = targetToShot.position;
 
-            Vector3 targetDir = targetToShot.position - transform.position; //body.position;
+            Vector3 targetDir = targetToShot.position - body.position;
             Quaternion newRot = Quaternion.LookRotation(targetDir, Vector3.up);
 
-            transform.rotation = Quaternion.RotateTowards(
+            body.rotation = Quaternion.RotateTowards(
                 transform.rotation,
                 newRot,
                 Quaternion.Angle(transform.rotation, newRot) * rotSpeed * Time.deltaTime);
@@ -64,7 +62,7 @@ namespace HNW
                 }
             }
 
-            if ((targetToShot.position - transform.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
+            if ((targetToShot.position - body.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
                 targetToShot = null;
         }
 

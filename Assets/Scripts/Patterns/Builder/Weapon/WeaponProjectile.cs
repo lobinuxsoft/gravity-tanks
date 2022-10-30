@@ -99,6 +99,15 @@ namespace HNW
             sfxTrigger = GetComponent<SFXTrigger>();
         }
 
+        private void OnDisable()
+        {
+            if (shootRoutine != null)
+            {
+                StopAllCoroutines();
+                shootRoutine = null;
+            }
+        }
+
         private void OnParticleCollision(GameObject other)
         {
             sfxTrigger.PlaySFX(impactSfx);

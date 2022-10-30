@@ -3,6 +3,7 @@ using HNW;
 
 public class GameplayManager : MonoBehaviour
 {
+    [SerializeField] WeaponData startWeapon;
     [SerializeField] GameObject farCamera;
     [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
@@ -15,6 +16,15 @@ public class GameplayManager : MonoBehaviour
         player.onDie.AddListener(ShowGameOver);
 
         gameOverUI.OnRevivePress += Revive;
+    }
+
+    private void Start()
+    {
+        if (player.TryGetComponent(out ShootControl sc))
+        {
+            startWeapon.BuildWeapon(sc.transform);
+            sc.UpdateWeapons();
+        }
     }
 
     private void OnDestroy()
