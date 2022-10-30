@@ -1,8 +1,7 @@
 using UnityEngine;
-using GravityTanks.Enemy.Behaviour;
-using UnityEngine.EventSystems;
+using HNW.Enemy.Behaviour;
 
-namespace GravityTanks.Enemy
+namespace HNW.Enemy
 {
     public class EnemyIA : MonoBehaviour
     {
@@ -15,12 +14,13 @@ namespace GravityTanks.Enemy
             Random.InitState(this.GetHashCode());
 
             behaviour = Object.Instantiate(behaviours[Random.Range(0, behaviours.Length)]);
+            behaviour.InitBehaviour(this.gameObject);
         }
 
         private void FixedUpdate()
         {
-            if(behaviour) behaviour.DoBehaviour(this.gameObject);
-}
+            if(behaviour) behaviour.DoBehaviour();
+        }
 
         private void OnDestroy() => Destroy(behaviour);
     }

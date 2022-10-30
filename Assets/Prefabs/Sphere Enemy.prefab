@@ -13,11 +13,9 @@ GameObject:
   - component: {fileID: 5128695635110145613}
   - component: {fileID: 5128695635110145612}
   - component: {fileID: 5128695635110145600}
-  - component: {fileID: 6745059596932498452}
   - component: {fileID: 5128695635110145611}
   - component: {fileID: 1558796072066750251}
-  - component: {fileID: 6240261251722148513}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -33,8 +31,7 @@ Transform:
   m_GameObject: {fileID: 5128695635110145610}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.6, y: 0.6049058, z: 6.32}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -58,7 +55,6 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -67,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3a406657e678d1343b86b71a46260b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -117,20 +113,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 2
---- !u!114 &6745059596932498452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128695635110145610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9480bc64d194a5c41bbe34a5d4e2fadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxGroundAngle: 25
+  m_CollisionDetection: 1
 --- !u!114 &5128695635110145611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +128,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviours:
   - {fileID: 11400000, guid: 37d9ba088c9d4424bb4c4a12adbae680, type: 2}
-  - {fileID: 11400000, guid: 061e5cd4cc0e98d4e84a081308c65629, type: 2}
 --- !u!114 &1558796072066750251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,33 +142,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 3
+  damageGradient:
+    serializedVersion: 2
+    key0: {r: 0, g: 0, b: 0, a: 1}
+    key1: {r: 2, g: 0.33420113, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  deathEffect: {fileID: 5297635048341763810, guid: b9fbda2760a8c30408c14c13bbedc52b,
+    type: 3}
+  onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
   onMaxHealthChanged:
     m_PersistentCalls:
       m_Calls: []
   onDie:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6240261251722148513}
-        m_TargetAssemblyTypeName: GravityTanks.Utils.GameObjectDestroyer, Assembly-CSharp
-        m_MethodName: DestroyGameobject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6240261251722148513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5128695635110145610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f625d0019789894dae5395cf36389fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+      m_Calls: []

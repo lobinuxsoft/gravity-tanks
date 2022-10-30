@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     [System.Serializable]
     public struct Credits

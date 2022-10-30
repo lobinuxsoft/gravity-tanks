@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     [RequireComponent(typeof(Rigidbody))]
     public class GroundDetector : MonoBehaviour

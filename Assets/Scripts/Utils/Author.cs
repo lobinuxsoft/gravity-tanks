@@ -1,4 +1,4 @@
-﻿namespace GravityTanks.Utils
+﻿namespace HNW.Utils
 {
     [System.Serializable]
     public struct Author
