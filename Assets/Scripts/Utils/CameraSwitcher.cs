@@ -2,7 +2,7 @@ using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     public class CameraSwitcher : MonoBehaviour
     {

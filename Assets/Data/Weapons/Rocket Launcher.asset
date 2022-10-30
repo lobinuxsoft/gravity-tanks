@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a04f632fcd690e24c952d31584dcfa20, type: 3}
+  m_Name: Rocket Launcher
+  m_EditorClassIdentifier: 
+  layerToDamage:
+    serializedVersion: 2
+    m_Bits: 129
+  shotDamage: 4
+  emmitAmount: 1
+  shotRate: 2
+  shotAngle: 0
+  body: {fileID: 3374817229786913822, guid: 9693867ba41ec4f4a84c2234475c9ef9, type: 3}
+  projectile: {fileID: 2645269299671291207, guid: 01bc8745bbb66564baf55aa652605aef,
+    type: 3}

@@ -2,7 +2,7 @@ using UnityEngine;
 using CryingOnionTools.ScriptableVariables;
 using System.Collections.Generic;
 
-namespace GravityTanks.Utils
+namespace HNW.Utils
 {
     [CreateAssetMenu(menuName = "Gravity Tanks/ Utils/ Score Board Data")]
     public class ScoreBoardData : ScriptableVariable<List<ScoreData>>

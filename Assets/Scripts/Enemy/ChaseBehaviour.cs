@@ -1,38 +1,107 @@
+using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AI;
 
-namespace GravityTanks.Enemy.Behaviour
+namespace HNW.Enemy.Behaviour
 {
     [CreateAssetMenu(menuName = "Enemy/Behaviour/Chase")]
     public class ChaseBehaviour : IABehaviour
     {
-        [SerializeField] private float torqueSpeed = 20;
-        [SerializeField] private float maxAngularVelocity = 180;
+        [SerializeField] float timeBetweenAttacks = 1;
+        [SerializeField] float attackDistanceThreshold = 1.5f;
+        [SerializeField] int damageAmount = 1;
+        [SerializeField] float refreshTargetPositionRate = .25f;
+        [SerializeField] private float moveSpeed = 5, turnSpeed = 5, heighForce = 1;
 
-        private Rigidbody body;
-        private Transform target;
-        private Vector3 targetDir = Vector3.zero;
+        private NavMeshAgent agent;
+        private Rigidbody rb;
+        private GameObject target;
+        private Renderer rend;
 
-        public override void DoBehaviour(GameObject owner)
+        private float lastRefresh;
+        private float nextAttackTime;
+
+        public override void InitBehaviour(GameObject owner)
         {
-            if(!body) body = owner.GetComponent<Rigidbody>();
-            if (!target) target = GameObject.FindWithTag("Player").transform;
+            if (!target)
+                target = GameObject.FindWithTag("Player");
 
-            body.angularDrag = maxAngularVelocity * .25f;
-            body.maxAngularVelocity = maxAngularVelocity;
+            if (!agent)
+            {
+                agent = owner.AddComponent<NavMeshAgent>();
+                agent.speed = moveSpeed;
+                agent.angularSpeed = turnSpeed;
+                agent.baseOffset = heighForce;
+            }
 
-            Vector3 dir = (target.position - owner.transform.position).normalized;
+            if (!rb)
+            {
+                rb = owner.GetComponent<Rigidbody>();
+                rb.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+                rb.isKinematic = true;
+            }
 
-            Vector3 forward = ProjectDirectionOnPlane(Vector3.forward, Vector3.up);
-            Vector3 right = ProjectDirectionOnPlane(Vector3.right, Vector3.up);
-
-            targetDir = -dir.x * forward + dir.z * right;
-
-            body.AddTorque(torqueSpeed * targetDir, ForceMode.VelocityChange);
+            if (!rend)
+                rend = owner.GetComponent<Renderer>();
         }
 
-        Vector3 ProjectDirectionOnPlane(Vector3 direction, Vector3 normal)
+        public override async void DoBehaviour()
         {
-            return (direction - normal * Vector3.Dot(direction, normal)).normalized;
+            if (!target)
+            {
+                target = GameObject.FindWithTag("Player");
+            }
+
+            if (target && target.activeSelf && Time.time > nextAttackTime)
+            {
+                float sqrDstToTarget = (target.transform.position - rb.transform.position).sqrMagnitude;
+
+                if(sqrDstToTarget < Mathf.Pow(attackDistanceThreshold, 2))
+                {
+                    nextAttackTime = Time.time + timeBetweenAttacks;
+                    await AttackTask();
+                }
+            }
+
+            if(target && target.activeSelf && agent.isActiveAndEnabled && Time.time - lastRefresh > refreshTargetPositionRate)
+            {
+                lastRefresh = Time.time;
+                agent.SetDestination(target.transform.position);
+            }
+        }
+
+
+        async Task AttackTask()
+        {
+            agent.enabled = false;
+
+            Vector3 oriPos = rb.position;
+            Vector3 attackPos = target.transform.position;
+
+            float attackSpeed = 3;
+            float percent = 0;
+
+            rend.material.color = Color.yellow;
+
+            bool hasAppliedDamage = false;
+
+            while (percent <= 1)
+            {
+                if(percent >= .5f && !hasAppliedDamage)
+                {
+                    hasAppliedDamage = true;
+                    Damager.DamageTo(target.gameObject, damageAmount);
+                }
+
+                percent += Time.deltaTime * attackSpeed;
+                float interpolate = (-Mathf.Pow(percent, 2) + percent) * 4;
+                rb.MovePosition(Vector3.Lerp(oriPos, attackPos, interpolate));
+
+                await Task.Yield();
+            }
+
+            rend.material.color = Color.black;
+            agent.enabled = true;
         }
     }
 }
