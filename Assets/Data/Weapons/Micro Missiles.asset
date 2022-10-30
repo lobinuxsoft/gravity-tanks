@@ -15,9 +15,10 @@ MonoBehaviour:
   layerToDamage:
     serializedVersion: 2
     m_Bits: 129
-  emmitAmount: 6
-  shootRate: 3
-  shootAngle: 45
+  shotDamage: 2
+  emmitAmount: 12
+  shotRate: 3
+  shotAngle: 0
   body: {fileID: 2686292621469865355, guid: 99e0c66409d82d844b9c1fff47345062, type: 3}
   projectile: {fileID: 2645269299671291207, guid: 01bc8745bbb66564baf55aa652605aef,
     type: 3}

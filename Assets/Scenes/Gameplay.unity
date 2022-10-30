@@ -460,7 +460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.49269882, y: 0.000000021175007, z: -0.0000000119890835, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175007, z: 0.000000011989084, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 27, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -875,7 +875,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705920159}
-  m_LocalRotation: {x: 0.49269882, y: 0.000000021175007, z: -0.0000000119890835, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175007, z: 0.000000011989084, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 27, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92075698bba508b448b97e4a1db0fa52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWeapon: {fileID: 11400000, guid: d56742e0111da2e4e82272787c4638c5, type: 2}
+  startWeapon: {fileID: 11400000, guid: 8350e6c99ee2219439a43e49c12dbc18, type: 2}
   farCamera: {fileID: 705920159}
   nearCamera: {fileID: 1816689590}
   gameOverUI: {fileID: 4374393410936842994}
