@@ -41,7 +41,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _FillR: 1
+    - _FillOrientation: 90
+    - _FillR: 0.549
     - _ParallaxDepth: 0
     - _ParallaxDepthB: 0.1
     - _ParallaxDepthG: -0.075
@@ -50,6 +51,7 @@ Material:
     - _ParallaxUVScaleB: 0.1
     - _ParallaxUVScaleG: 0
     - _ParallaxUVScaleR: 0
+    - _RotationSpeed: 0.5
     m_Colors:
     - _ColorB: {r: 0, g: 0.28235295, b: 5.992157, a: 1}
     - _ColorG: {r: 0, g: 1.7568628, b: 11.984314, a: 1}
