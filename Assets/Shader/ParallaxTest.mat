@@ -43,15 +43,15 @@ Material:
     m_Floats:
     - _FillR: 1
     - _ParallaxDepth: 0
-    - _ParallaxDepthB: 0.075
-    - _ParallaxDepthG: 0
-    - _ParallaxDepthR: 0.05
+    - _ParallaxDepthB: 0.1
+    - _ParallaxDepthG: -0.075
+    - _ParallaxDepthR: -0.075
     - _ParallaxUVScale: 0
     - _ParallaxUVScaleB: 0.1
-    - _ParallaxUVScaleG: 0.5
-    - _ParallaxUVScaleR: 0.1
+    - _ParallaxUVScaleG: 0
+    - _ParallaxUVScaleR: 0
     m_Colors:
-    - _ColorB: {r: 0, g: 0.085141815, b: 0.54, a: 1}
-    - _ColorG: {r: 0, g: 0.43903726, b: 2.9960785, a: 1}
-    - _ColorR: {r: 0, g: 1.742584, b: 7.999999, a: 1}
+    - _ColorB: {r: 0, g: 0.28235295, b: 5.992157, a: 1}
+    - _ColorG: {r: 0, g: 1.7568628, b: 11.984314, a: 1}
+    - _ColorR: {r: 0, g: 1.3490196, b: 5.992157, a: 1}
   m_BuildTextureStacks: []
