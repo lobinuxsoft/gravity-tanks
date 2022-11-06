@@ -137,11 +137,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5128695635110145610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9994358463d71364a97cbc826040ceed, type: 3}
+  m_Script: {fileID: 11500000, guid: f68395dd4b9329b45bf835fe653d7761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
-  maxHealth: 3
   damageGradient:
     serializedVersion: 2
     key0: {r: 0, g: 0, b: 0, a: 1}
@@ -182,3 +180,5 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls: []
+  health: 5
+  maxHealth: 5

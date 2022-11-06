@@ -165,11 +165,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1332531060809521562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9994358463d71364a97cbc826040ceed, type: 3}
+  m_Script: {fileID: 11500000, guid: a8e80dfc0e3ee104095adb65ed76085d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
   damageGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -201,12 +199,6 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   deathEffect: {fileID: 8203971654862924019, guid: e6a39a89b63106043be2c02adf54da65,
     type: 3}
-  onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  onMaxHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
   onDie:
     m_PersistentCalls:
       m_Calls:
@@ -222,6 +214,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  curHealth: {fileID: 11400000, guid: 781a75a8dc2cd5740b8fcebc917962a2, type: 2}
+  maxHealth: {fileID: 11400000, guid: 128ae0dd41f5d5142829ef3ac53a6059, type: 2}
 --- !u!114 &1332531060809521561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,7 +233,7 @@ MonoBehaviour:
     m_Bits: 128
   rotSpeed: 10
   minDistanceToAim: 30
-  minAngleToShot: 5
+  minAngleToShot: 15
   aim: {fileID: 7172380640553267765}
 --- !u!1 &1583050594726864527
 GameObject:
@@ -425,7 +419,7 @@ GameObject:
   - component: {fileID: 6476537162624901946}
   m_Layer: 6
   m_Name: Chassis
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

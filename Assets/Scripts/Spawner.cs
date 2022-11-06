@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
         GameObject spawnedEnemy = pools[currentWave.Enemies[UnityEngine.Random.Range(0, currentWave.Enemies.Length)].name].GetFromPool();
         spawnedEnemy.transform.position = pos;
 
-        if (spawnedEnemy.TryGetComponent(out Damageable damageable))
+        if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
             damageable.onDie.AddListener(() => OnEnemyDeath(spawnedEnemy));
 
         yield return null;
@@ -76,7 +76,7 @@ public class Spawner : MonoBehaviour
     {
         enemiesRemainingAlive--;
 
-        if (spawnedEnemy.TryGetComponent(out Damageable damageable))
+        if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
         {
             damageable.onDie.RemoveAllListeners();
             damageable.FullHeal();
