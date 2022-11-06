@@ -14,6 +14,9 @@
         },
         {
             "m_Id": "86fc4f434b454f249a6abfd615c3b93e"
+        },
+        {
+            "m_Id": "cf928275744f4a208f59b87b83f8a4f0"
         }
     ],
     "m_Keywords": [],
@@ -68,6 +71,9 @@
         },
         {
             "m_Id": "c6c64c0d3bd1498298169943e0917b86"
+        },
+        {
+            "m_Id": "743d3683c57c4cc5a817d89d94bb4805"
         }
     ],
     "m_GroupDatas": [],
@@ -169,6 +175,20 @@
                     "m_Id": "c6c64c0d3bd1498298169943e0917b86"
                 },
                 "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "743d3683c57c4cc5a817d89d94bb4805"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "fde8194a86e0471b9c49b0f450752927"
+                },
+                "m_SlotId": 2
             }
         },
         {
@@ -1343,7 +1363,7 @@
     "m_Guid": {
         "m_GuidSerialized": "940f504b-f712-4d25-86d2-4717c7d66457"
     },
-    "m_Name": "RadialFill",
+    "m_Name": "FillAmount",
     "m_DefaultReferenceName": "Vector1_714069369ea54edf997b1b5f169475f4",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -1356,6 +1376,41 @@
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "743d3683c57c4cc5a817d89d94bb4805",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -1298.0001220703125,
+            "y": 147.00006103515626,
+            "width": 126.00000762939453,
+            "height": 77.00000762939453
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "d94e69fcd9e04ac2a0e23ea58e17dc50"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "cf928275744f4a208f59b87b83f8a4f0"
     }
 }
 
@@ -2012,6 +2067,29 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "cf928275744f4a208f59b87b83f8a4f0",
+    "m_Guid": {
+        "m_GuidSerialized": "47fc250b-57d3-4fe7-8a1b-3cb708fd9e85"
+    },
+    "m_Name": "RadialScale",
+    "m_DefaultReferenceName": "Vector1_cf928275744f4a208f59b87b83f8a4f0",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 1.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "d33bd5f5e35e403abf4d658f8b5064d0",
@@ -2033,6 +2111,21 @@
         "z": 0.0,
         "w": 0.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "d94e69fcd9e04ac2a0e23ea58e17dc50",
+    "m_Id": 0,
+    "m_DisplayName": "RadialScale",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
