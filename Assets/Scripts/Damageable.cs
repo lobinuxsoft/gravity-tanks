@@ -32,6 +32,11 @@ namespace HNW
                         Instantiate(deathEffect, transform.position, transform.rotation);
 
                     StopAllCoroutines();
+
+                    #if UNITY_ANDROID
+                    Handheld.Vibrate();
+                    #endif
+
                     onDie?.Invoke();
                 }
                 else
