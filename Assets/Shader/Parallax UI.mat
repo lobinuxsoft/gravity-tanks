@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ParallaxTest
+  m_Name: Parallax UI
   m_Shader: {fileID: -6465566751694194690, guid: 8a5e2012e6c56784791bb4205fc7bfd0,
     type: 3}
   m_ShaderKeywords: 
@@ -20,6 +20,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 7cfad8a63ef5de845a554b4006aa0c77, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -44,16 +48,22 @@ Material:
     - _FillOrientation: 0
     - _FillR: 1
     - _ParallaxDepth: 0
-    - _ParallaxDepthB: -0.05
-    - _ParallaxDepthG: -0.1
-    - _ParallaxDepthR: 0
+    - _ParallaxDepthB: 0.025
+    - _ParallaxDepthG: -0.05
+    - _ParallaxDepthIcon: 0
+    - _ParallaxDepthR: -0.025
     - _ParallaxUVScale: 0
     - _ParallaxUVScaleB: 1
     - _ParallaxUVScaleG: 1
-    - _ParallaxUVScaleR: 0.31
+    - _ParallaxUVScaleIcon: 2.45
+    - _ParallaxUVScaleR: 1
     - _RotationSpeed: 0.36
+    - _RotationSpeedB: 0.1
+    - _RotationSpeedG: -0.5
+    - _RotationSpeedR: 0.5
     m_Colors:
-    - _ColorB: {r: 0.9999999, g: 0.14659683, b: 0, a: 1}
-    - _ColorG: {r: 16, g: 2.9442492, b: 0, a: 1}
-    - _ColorR: {r: 0, g: 0.3372549, b: 1.4980392, a: 1}
+    - _ColorB: {r: 0, g: 0.11764706, b: 1.4980392, a: 1}
+    - _ColorG: {r: 2.9960785, g: 0.3468436, b: 0, a: 1}
+    - _ColorIcon: {r: 0, g: 0.11956525, b: 1, a: 0}
+    - _ColorR: {r: 1.4980392, g: 0, b: 0.05696208, a: 1}
   m_BuildTextureStacks: []
