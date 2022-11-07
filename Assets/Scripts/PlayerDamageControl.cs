@@ -16,7 +16,7 @@ namespace HNW
                 curHealth.Value = value;
 
                 if (curHealth.Value <= 0)
-                    onDie?.Invoke();
+                    onDie?.Invoke(this.gameObject);
             }
         }
 

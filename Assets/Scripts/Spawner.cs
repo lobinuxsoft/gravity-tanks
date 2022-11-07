@@ -4,6 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+#if UNITY_ANDROID
+using GooglePlayGames;
+#endif
+
 [RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
 {
@@ -67,7 +71,7 @@ public class Spawner : MonoBehaviour
         spawnedEnemy.transform.position = pos;
 
         if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
-            damageable.onDie.AddListener(() => OnEnemyDeath(spawnedEnemy));
+            damageable.onDie.AddListener(OnEnemyDeath);
 
         yield return null;
     }
@@ -78,7 +82,7 @@ public class Spawner : MonoBehaviour
 
         if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
         {
-            damageable.onDie.RemoveAllListeners();
+            damageable.onDie.RemoveListener(OnEnemyDeath);
             damageable.FullHeal();
         }
 
@@ -86,6 +90,16 @@ public class Spawner : MonoBehaviour
 
         if (enemiesRemainingAlive == 0)
             NextWave();
+
+#if UNITY_ANDROID
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_net_guardian, 1, (bool success) =>
+        {
+            if (success)
+                Debug.Log("Achivement Net Guardian Success");
+            else
+                Debug.LogError("Achivement Net Guardian Fail");
+        });
+#endif
     }
 
     IEnumerator ResetPlayerPosition()

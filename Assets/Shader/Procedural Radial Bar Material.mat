@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _FillAmount: 1
     - _FillAmountB: 1
-    - _FillAmountG: 1
+    - _FillAmountG: 0.8
     - _FillAmountR: 1
     - _FillOrientation: 0
     - _FillOrientationB: 180

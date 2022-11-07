@@ -9,7 +9,7 @@ namespace HNW
         [SerializeField, GradientUsage(true)] Gradient damageGradient;
         [SerializeField] GameObject deathEffect;
 
-        public UnityEvent onDie;
+        public UnityEvent<GameObject> onDie;
 
         protected Renderer[] renderers;
 
@@ -28,10 +28,10 @@ namespace HNW
             onDie.RemoveListener(ExplodeEffect);
         }
 
-        private void ExplodeEffect()
+        private void ExplodeEffect(GameObject obj)
         {
             if (deathEffect != null)
-                Instantiate(deathEffect, transform.position, transform.rotation);
+                Instantiate(deathEffect, obj.transform.position, obj.transform.rotation);
 
             StopAllCoroutines();
 

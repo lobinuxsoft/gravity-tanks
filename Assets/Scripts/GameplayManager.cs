@@ -1,5 +1,7 @@
 using UnityEngine;
 using HNW;
+using GooglePlayGames;
+using GooglePlayGames.BasicApi;
 
 public class GameplayManager : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class GameplayManager : MonoBehaviour
             startWeapon.BuildWeapon(sc.transform);
             sc.UpdateWeapons();
         }
+
+        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
 
     private void OnDestroy()
@@ -33,7 +37,7 @@ public class GameplayManager : MonoBehaviour
         gameOverUI.OnRevivePress -= Revive;
     }
 
-    private void ShowGameOver()
+    private void ShowGameOver(GameObject go)
     {
         farCamera.SetActive(false);
         nearCamera.SetActive(true);
@@ -58,5 +62,22 @@ public class GameplayManager : MonoBehaviour
 
         nearCamera.SetActive(false);
         farCamera.SetActive(true);
+    }
+
+    void ProcessAuthentication(SignInStatus status)
+    {
+        Debug.Log($"Authentication statuc: {status.ToString()}");
+
+        switch (status)
+        {
+            case SignInStatus.Success:
+                Social.ReportProgress(GPGSIds.achievement_hello_world, 100f, (bool success) => {
+                    if (success)
+                        Debug.Log($"Hello World Achievement Success");
+                    else
+                        Debug.LogError($"Hello World Achievement Fail");
+                });
+                break;
+        }
     }
 }

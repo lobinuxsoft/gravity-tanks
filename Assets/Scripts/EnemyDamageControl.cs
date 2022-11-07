@@ -19,7 +19,7 @@ namespace HNW
                 health = value;
 
                 if (health <= 0)
-                    onDie?.Invoke();
+                    onDie?.Invoke(this.gameObject);
                 else
                     onHealthChanged?.Invoke(health);
             }
