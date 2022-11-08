@@ -64,12 +64,13 @@ Material:
     - _Roll: 0
     - _RollB: -127
     - _RollG: -127
-    - _RollIcon: -45
+    - _RollIcon: -127
     - _RollR: -127
     - _RotSpeed: 1
     - _RotSpeedB: -0.3
     - _RotSpeedG: 0.05
     - _RotSpeedR: 0.3
+    - _RotationIcon: 90
     - _ScaleIcon: 1.25
     m_Colors:
     - _Color: {r: 8, g: 1.1354358, b: 0, a: 1}
@@ -80,11 +81,11 @@ Material:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetB: {r: 0, g: 0.25, b: 0, a: 0}
     - _OffsetG: {r: 0, g: 0.2, b: 0, a: 0}
-    - _OffsetIcon: {r: 0.25, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.25, b: 0, a: 0}
     - _OffsetR: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 2.15, b: 0, a: 0}
     - _TilingB: {r: 1, g: 1.75, b: 0, a: 0}
     - _TilingG: {r: 1, g: 1.75, b: 0, a: 0}
-    - _TilingIcon: {r: 1.75, g: 1, b: 0, a: 0}
+    - _TilingIcon: {r: 1, g: 1.75, b: 0, a: 0}
     - _TilingR: {r: 1, g: 1.75, b: 0, a: 0}
   m_BuildTextureStacks: []
