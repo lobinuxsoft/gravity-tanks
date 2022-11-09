@@ -6,6 +6,7 @@ using GooglePlayGames.BasicApi;
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] WeaponData startWeapon;
+    [SerializeField] ChassisData startChassis;
     [SerializeField] GameObject farCamera;
     [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
@@ -22,6 +23,8 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
+        startChassis.BuildChassis(player.transform);
+
         if (player.TryGetComponent(out ShootControl sc))
         {
             startWeapon.BuildWeapon(sc.transform);
