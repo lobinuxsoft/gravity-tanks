@@ -7,7 +7,7 @@ namespace HNW
     public class WeaponBuilder
     {
         string name;
-        Transform parent;
+        Transform owner;
         WeaponBody weaponBody;
         WeaponProjectile projectileControl;
         LayerMask layerToDamage;
@@ -22,9 +22,9 @@ namespace HNW
             return this;
         }
 
-        public WeaponBuilder WithParent(Transform parent)
+        public WeaponBuilder WithOwner(Transform owner)
         {
-            this.parent = parent;
+            this.owner = owner;
             return this;
         }
 
@@ -73,7 +73,7 @@ namespace HNW
         public Weapon Build()
         {
             Weapon weapon = new GameObject(name).AddComponent<Weapon>();
-            weapon.transform.SetParent(parent);
+            weapon.transform.SetParent(owner);
             weapon.transform.localPosition = Vector3.zero;
             weapon.transform.localRotation = Quaternion.identity;
 

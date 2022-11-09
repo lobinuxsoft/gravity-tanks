@@ -7,10 +7,37 @@ namespace HNW
     {
         [Header("Aiming settings")]
         [SerializeField] LayerMask targetLayerMask;
-        [SerializeField] float rotSpeed = 10f;
-        [SerializeField] float minDistanceToAim = 10f;
-        [SerializeField] float minAngleToShot = 5f;
+        [SerializeField] int rotationSpeed = 10;
+        [SerializeField] int detectionDistance = 10;
+        [SerializeField] int minAngleToShot = 5;
         [SerializeField] Transform aim;
+
+        /// <summary>
+        /// The speed to look rotation
+        /// </summary>
+        public int RotationSpeed
+        {
+            get => rotationSpeed;
+            set => rotationSpeed = value;
+        }
+
+        /// <summary>
+        /// Auto detection Enemy distance
+        /// </summary>
+        public int DetectionDistance
+        {
+            get => detectionDistance;
+            set => detectionDistance = value;
+        }
+
+        /// <summary>
+        /// The min angle to start shooting
+        /// </summary>
+        public int MinAngleToShot
+        {
+            get => minAngleToShot;
+            set => minAngleToShot = value;
+        }
 
         Weapon[] weapons;
 
@@ -52,7 +79,7 @@ namespace HNW
             body.rotation = Quaternion.RotateTowards(
                 transform.rotation,
                 newRot,
-                Quaternion.Angle(transform.rotation, newRot) * rotSpeed * Time.deltaTime);
+                Quaternion.Angle(transform.rotation, newRot) * rotationSpeed * Time.deltaTime);
 
             if (Vector3.Angle(transform.forward, targetDir.normalized) <= minAngleToShot)
             {
@@ -62,13 +89,13 @@ namespace HNW
                 }
             }
 
-            if ((targetToShoot.position - body.position).sqrMagnitude > minDistanceToAim * minDistanceToAim)
+            if ((targetToShoot.position - body.position).sqrMagnitude > detectionDistance * detectionDistance)
                 targetToShoot = null;
         }
 
         private Transform FindClosedTarget(LayerMask mask)
         {
-            var all = Physics.OverlapSphere(transform.position, minDistanceToAim, mask).ToList();
+            var all = Physics.OverlapSphere(transform.position, detectionDistance, mask).ToList();
 
             all.Sort
                 (
@@ -86,7 +113,7 @@ namespace HNW
             if (!targetToShoot)
             {
                 Gizmos.color = Color.yellow;
-                Gizmos.DrawWireSphere(transform.position, minDistanceToAim);
+                Gizmos.DrawWireSphere(transform.position, detectionDistance);
             }
             else
             {

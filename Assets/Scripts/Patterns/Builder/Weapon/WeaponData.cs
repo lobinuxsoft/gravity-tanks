@@ -17,7 +17,7 @@ namespace HNW
         {
             return new WeaponBuilder()
                 .WithName(this.name)
-                .WithParent(container)
+                .WithOwner(container)
                 .WithBody(body)
                 .WithProjectile(projectile)
                 .WithLayerToDamage(layerToDamage)
