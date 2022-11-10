@@ -31,6 +31,7 @@ public class GameplayManager : MonoBehaviour
             sc.UpdateWeapons();
         }
 
+        PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
     }
 
@@ -74,7 +75,8 @@ public class GameplayManager : MonoBehaviour
         switch (status)
         {
             case SignInStatus.Success:
-                Social.ReportProgress(GPGSIds.achievement_hello_world, 100f, (bool success) => {
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_hello_world, 100.0f, (bool success) =>
+                {
                     if (success)
                         Debug.Log($"Hello World Achievement Success");
                     else
