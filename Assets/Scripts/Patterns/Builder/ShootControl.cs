@@ -10,6 +10,7 @@ namespace HNW
         [SerializeField] int rotationSpeed = 10;
         [SerializeField] int detectionDistance = 10;
         [SerializeField] int minAngleToShot = 5;
+        [SerializeField] Vector3 aimOffset = Vector3.up;
         [SerializeField] Transform aim;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace HNW
 
             if (!targetToShoot) return;
 
-            aim.position = targetToShoot.position;
+            aim.position = targetToShoot.position + aimOffset;
 
             Vector3 targetDir = targetToShoot.position - body.position;
             Quaternion newRot = Quaternion.LookRotation(targetDir, Vector3.up);

@@ -21,11 +21,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4c3a4062621f8b488bac30d14a10dd4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 432c0546c47d187489416be102c2827d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7cfad8a63ef5de845a554b4006aa0c77, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RenderTexture:
@@ -48,22 +48,22 @@ Material:
     - _FillOrientation: 0
     - _FillR: 1
     - _ParallaxDepth: 0
-    - _ParallaxDepthB: 0.26
-    - _ParallaxDepthG: 0.1
-    - _ParallaxDepthIcon: 0.3
-    - _ParallaxDepthR: -0.21
+    - _ParallaxDepthB: 0.35
+    - _ParallaxDepthG: 0
+    - _ParallaxDepthIcon: 0.35
+    - _ParallaxDepthR: -0.2
     - _ParallaxUVScale: 0
-    - _ParallaxUVScaleB: 1
+    - _ParallaxUVScaleB: 3.5
     - _ParallaxUVScaleG: 1
-    - _ParallaxUVScaleIcon: 2.45
-    - _ParallaxUVScaleR: 1
+    - _ParallaxUVScaleIcon: 0.56
+    - _ParallaxUVScaleR: 0.25
     - _RotationSpeed: 0.36
-    - _RotationSpeedB: 0.1
+    - _RotationSpeedB: 1.5
     - _RotationSpeedG: -0.5
     - _RotationSpeedR: 0.5
     m_Colors:
-    - _ColorB: {r: 0, g: 0.11764706, b: 1.4980392, a: 1}
-    - _ColorG: {r: 2.9960785, g: 0.3468436, b: 0, a: 1}
-    - _ColorIcon: {r: 0, g: 0.9411765, b: 8, a: 1}
-    - _ColorR: {r: 1.4980392, g: 0, b: 0.05696208, a: 1}
+    - _ColorB: {r: 2.9960785, g: 0.3498826, b: 0, a: 1}
+    - _ColorG: {r: 11.984314, g: 0.2509804, b: 0, a: 0.2509804}
+    - _ColorIcon: {r: 1.4980392, g: 0.18039216, b: 0, a: 1}
+    - _ColorR: {r: 5.992157, g: 0.1882353, b: 0, a: 1}
   m_BuildTextureStacks: []
