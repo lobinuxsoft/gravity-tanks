@@ -47,7 +47,7 @@ Material:
     m_Floats:
     - _FillAmount: 1
     - _FillAmountB: 1
-    - _FillAmountG: 0.4
+    - _FillAmountG: 1
     - _FillAmountR: 1
     - _FillOrientation: 0
     - _FillOrientationB: 180
@@ -59,13 +59,14 @@ Material:
     - _RadialGradientR: 0
     - _RadialScale: 1.28
     - _RadialScaleB: 1.5
-    - _RadialScaleG: 0.4
-    - _RadialScaleR: 0.4
+    - _RadialScaleG: 0.25
+    - _RadialScaleR: 0
     - _Roll: 0
     - _RollB: -127
     - _RollG: -127
     - _RollIcon: -127
     - _RollR: -127
+    - _RollUV: -127
     - _RotSpeed: 1
     - _RotSpeedB: -0.3
     - _RotSpeedG: 0.05
@@ -79,13 +80,15 @@ Material:
     - _ColorIcon: {r: 0, g: 2.7294118, b: 5.992157, a: 1}
     - _ColorR: {r: 2.9960785, g: 0.20257318, b: 0, a: 1}
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.2, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.15, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.15, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0.25, b: 0, a: 0}
     - _Tiling: {r: 1, g: 2.15, b: 0, a: 0}
     - _TilingB: {r: 1, g: 1.75, b: 0, a: 0}
     - _TilingG: {r: 1, g: 1.75, b: 0, a: 0}
     - _TilingIcon: {r: 1, g: 1.75, b: 0, a: 0}
     - _TilingR: {r: 1, g: 1.75, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.5, b: 0, a: 0}
   m_BuildTextureStacks: []
