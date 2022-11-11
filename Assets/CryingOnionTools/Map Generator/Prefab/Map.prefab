@@ -80,6 +80,15 @@ MonoBehaviour:
     obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
     bottomColor: {r: 0, g: 0, b: 0, a: 0}
     topColor: {r: 1, g: 0.32941177, b: 0, a: 0}
+  - mapSize: {x: 20, y: 20}
+    obstaclePercent: 0.1
+    seed: 1000
+    minObstacleHeight: 0.1
+    maxObstacleHeight: 10
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 0, g: 0, b: 0, a: 0}
+    topColor: {r: 0.5826187, g: 0, b: 1, a: 0}
   mapIndex: 0
   tilePref: {fileID: 615751482515393262, guid: ed8a572d3c0b0d94ba46f1fb33cbbe20, type: 3}
   obstaclePref: {fileID: 5696835789389454437, guid: 1c58f67a89df5d3488f548cf6333ccd4,

@@ -1,7 +1,10 @@
 using UnityEngine;
 using HNW;
+
+#if UNITY_ANDROID
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
+#endif
 
 public class GameplayManager : MonoBehaviour
 {
@@ -31,8 +34,10 @@ public class GameplayManager : MonoBehaviour
             sc.UpdateWeapons();
         }
 
+        #if UNITY_ANDROID
         PlayGamesPlatform.Activate();
         PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
+        #endif
     }
 
     private void OnDestroy()
@@ -68,6 +73,7 @@ public class GameplayManager : MonoBehaviour
         farCamera.SetActive(true);
     }
 
+#if UNITY_ANDROID
     void ProcessAuthentication(SignInStatus status)
     {
         Debug.Log($"Authentication statuc: {status.ToString()}");
@@ -75,14 +81,9 @@ public class GameplayManager : MonoBehaviour
         switch (status)
         {
             case SignInStatus.Success:
-                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_hello_world, 100.0f, (bool success) =>
-                {
-                    if (success)
-                        Debug.Log($"Hello World Achievement Success");
-                    else
-                        Debug.LogError($"Hello World Achievement Fail");
-                });
+                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_hello_world, 100.0f, (bool success) => { });
                 break;
         }
     }
+#endif
 }

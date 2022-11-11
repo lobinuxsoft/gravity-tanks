@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class WeaponBuilderTest : MonoBehaviour
 {
+    [SerializeField] ChassisData startChassis;
     [SerializeField] WeaponData[] weaponDatas;
 
     [SerializeField] ShootControl shootControl;
@@ -21,6 +22,8 @@ public class WeaponBuilderTest : MonoBehaviour
             button.GetComponentInChildren<TextMeshProUGUI>().text = data.name;
             button.onClick.AddListener(() => { CreateWeapon(data); });
         }
+
+        startChassis.BuildChassis(shootControl.transform);
     }
 
     public void CreateWeapon(WeaponData data)

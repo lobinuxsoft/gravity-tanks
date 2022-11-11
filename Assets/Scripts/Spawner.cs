@@ -92,13 +92,9 @@ public class Spawner : MonoBehaviour
             NextWave();
 
 #if UNITY_ANDROID
-        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_net_guardian, 1, (bool success) =>
-        {
-            if (success)
-                Debug.Log("Achivement Net Guardian Success");
-            else
-                Debug.LogError("Achivement Net Guardian Fail");
-        });
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_net_guardian, 1, (bool success) => { });
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_seek_and_destroy, 1, (bool success) => { });
+        PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_headhunter, 1, (bool success) => { });
 #endif
     }
 

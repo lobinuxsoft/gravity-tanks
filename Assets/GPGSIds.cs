@@ -24,8 +24,14 @@
 
 public static class GPGSIds
 {
+        public const string leaderboard_psico_killer = "CgkIv_alrLwaEAIQAw"; // <GPGSID>
         public const string achievement_hello_world = "CgkIv_alrLwaEAIQAQ"; // <GPGSID>
+        public const string achievement_gun_lover = "CgkIv_alrLwaEAIQBw"; // <GPGSID>
+        public const string achievement_seek_and_destroy = "CgkIv_alrLwaEAIQBA"; // <GPGSID>
+        public const string achievement_headhunter = "CgkIv_alrLwaEAIQBQ"; // <GPGSID>
+        public const string achievement_war_machine = "CgkIv_alrLwaEAIQCA"; // <GPGSID>
         public const string achievement_net_guardian = "CgkIv_alrLwaEAIQAg"; // <GPGSID>
+        public const string achievement_secondary_weapon = "CgkIv_alrLwaEAIQBg"; // <GPGSID>
 
 }
 

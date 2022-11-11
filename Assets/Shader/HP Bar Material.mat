@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4c3a4062621f8b488bac30d14a10dd4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1cd48aef069ab8c4c9593d792b2dbb30, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -47,7 +47,7 @@ Material:
     m_Floats:
     - _FillAmount: 1
     - _FillAmountB: 1
-    - _FillAmountG: 0
+    - _FillAmountG: 0.4
     - _FillAmountR: 1
     - _FillOrientation: 0
     - _FillOrientationB: 180
@@ -71,7 +71,7 @@ Material:
     - _RotSpeedG: 0.05
     - _RotSpeedR: 0.3
     - _RotationIcon: 90
-    - _ScaleIcon: 1.25
+    - _ScaleIcon: 1.7
     m_Colors:
     - _Color: {r: 8, g: 1.1354358, b: 0, a: 1}
     - _ColorB: {r: 1.4980392, g: 0.11764706, b: 0, a: 1}

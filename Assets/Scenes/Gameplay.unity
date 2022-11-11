@@ -460,7 +460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.49269882, y: 0.000000021175008, z: -0.000000011989085, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175008, z: 0.000000011989085, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 27, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -890,6 +890,10 @@ MonoBehaviour:
     timeBetweenSpawns: 0.1
     enemies:
     - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
+  - enemyCount: 1000
+    timeBetweenSpawns: 0.1
+    enemies:
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
 --- !u!114 &548099978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1040,7 +1044,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705920159}
-  m_LocalRotation: {x: 0.49269882, y: 0.000000021175008, z: -0.000000011989085, w: 0.8701999}
+  m_LocalRotation: {x: 0.49269882, y: -0.000000021175008, z: 0.000000011989085, w: 0.8701999}
   m_LocalPosition: {x: 0, y: 27, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
