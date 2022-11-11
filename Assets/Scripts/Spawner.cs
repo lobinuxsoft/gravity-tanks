@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CryingOnionTools.ScriptableVariables;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -14,6 +15,7 @@ public class Spawner : MonoBehaviour
     Dictionary<string, ObjectPool> pools = new Dictionary<string, ObjectPool>();
     //ObjectPool enemyPool;
 
+    [SerializeField] LongVariable killEnemiesAmount;
     [SerializeField] Transform player;
     [SerializeField] Wave[] waves;
 
@@ -90,6 +92,8 @@ public class Spawner : MonoBehaviour
 
         if (enemiesRemainingAlive == 0)
             NextWave();
+
+        killEnemiesAmount.Value++;
 
 #if UNITY_ANDROID
         PlayGamesPlatform.Instance.IncrementAchievement(GPGSIds.achievement_net_guardian, 1, (bool success) => { });

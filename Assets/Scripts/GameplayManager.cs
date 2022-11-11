@@ -1,5 +1,6 @@
 using UnityEngine;
 using HNW;
+using CryingOnionTools.ScriptableVariables;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -8,6 +9,7 @@ using GooglePlayGames.BasicApi;
 
 public class GameplayManager : MonoBehaviour
 {
+    [SerializeField] LongVariable killEnemiesAmount;
     [SerializeField] WeaponData startWeapon;
     [SerializeField] ChassisData startChassis;
     [SerializeField] GameObject farCamera;
@@ -44,6 +46,7 @@ public class GameplayManager : MonoBehaviour
     {
         player.onDie.RemoveListener(ShowGameOver);
         gameOverUI.OnRevivePress -= Revive;
+        killEnemiesAmount.EraseData();
     }
 
     private void ShowGameOver(GameObject go)
@@ -51,6 +54,12 @@ public class GameplayManager : MonoBehaviour
         farCamera.SetActive(false);
         nearCamera.SetActive(true);
         gameOverUI.Show();
+
+        #if UNITY_ANDROID
+        PlayGamesPlatform.Instance.ReportScore(killEnemiesAmount.Value, GPGSIds.leaderboard_psico_killer, (bool success) => { });
+#endif
+
+        killEnemiesAmount.EraseData();
     }
 
     private void Revive()
@@ -72,6 +81,14 @@ public class GameplayManager : MonoBehaviour
         nearCamera.SetActive(false);
         farCamera.SetActive(true);
     }
+
+    public void ShowAchievements()
+    {
+        #if UNITY_ANDROID
+        PlayGamesPlatform.Instance.ShowAchievementsUI();
+        #endif
+    }
+
 
 #if UNITY_ANDROID
     void ProcessAuthentication(SignInStatus status)

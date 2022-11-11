@@ -869,6 +869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a51971e4190fd4394bfd715f0681b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killEnemiesAmount: {fileID: 11400000, guid: f51c67121865a4b418c9c1f95793d8a8, type: 2}
   player: {fileID: 293626618}
   waves:
   - enemyCount: 5
@@ -1782,6 +1783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92075698bba508b448b97e4a1db0fa52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killEnemiesAmount: {fileID: 11400000, guid: f51c67121865a4b418c9c1f95793d8a8, type: 2}
   startWeapon: {fileID: 11400000, guid: 8350e6c99ee2219439a43e49c12dbc18, type: 2}
   startChassis: {fileID: 11400000, guid: 0e385c35dd1935549abc20229cc8bd0f, type: 2}
   farCamera: {fileID: 705920159}
