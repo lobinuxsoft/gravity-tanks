@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RadialUI
+  m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
   m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A

@@ -59,8 +59,8 @@ Material:
     - _RadialGradientR: 0
     - _RadialScale: 1.28
     - _RadialScaleB: 1.5
-    - _RadialScaleG: 0.25
-    - _RadialScaleR: 0
+    - _RadialScaleG: 0.5
+    - _RadialScaleR: 0.15
     - _Roll: 0
     - _RollB: -127
     - _RollG: -127
