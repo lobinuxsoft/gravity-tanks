@@ -35,11 +35,6 @@ public class GameplayManager : MonoBehaviour
             startWeapon.BuildWeapon(sc.transform);
             sc.UpdateWeapons();
         }
-
-        #if UNITY_ANDROID
-        PlayGamesPlatform.Activate();
-        PlayGamesPlatform.Instance.Authenticate(ProcessAuthentication);
-        #endif
     }
 
     private void OnDestroy()
@@ -88,19 +83,4 @@ public class GameplayManager : MonoBehaviour
         PlayGamesPlatform.Instance.ShowAchievementsUI();
         #endif
     }
-
-
-#if UNITY_ANDROID
-    void ProcessAuthentication(SignInStatus status)
-    {
-        Debug.Log($"Authentication statuc: {status.ToString()}");
-
-        switch (status)
-        {
-            case SignInStatus.Success:
-                PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_hello_world, 100.0f, (bool success) => { });
-                break;
-        }
-    }
-#endif
 }

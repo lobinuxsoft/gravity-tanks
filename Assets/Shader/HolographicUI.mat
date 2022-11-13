@@ -48,14 +48,17 @@ Material:
     - _FillOrientationB: 0
     - _FillOrientationG: 0
     - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
     - _RedChannelFill: 0.301
     - _RedChannelFillOrientation: 0
     - _RedChannelRotationSpeed: 0
-    - _RollUV: 127
+    - _RollUV: 0
     - _RotIcon: 15
     - _RotSpeedB: -0.3
     - _RotSpeedG: 0.15
-    - _RotSpeedR: 1.18
+    - _RotSpeedR: 0.15
     - _ScaleB: 0.3
     - _ScaleG: 0
     - _ScaleIcon: 1.5
@@ -67,17 +70,17 @@ Material:
     - _ColorB: {r: 3.9999995, g: 0.3141361, b: 0, a: 1}
     - _ColorG: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
     - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 5.340315, g: 0.36347693, b: 0, a: 1}
+    - _ColorR: {r: 3.9999995, g: 0.3141361, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
     - _OffsetB: {r: 0, g: 0.15, b: 0, a: 0}
     - _OffsetG: {r: 0, g: 0.1, b: 0, a: 0}
     - _OffsetIcon: {r: 0, g: 0.15, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0.1, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0.25, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.7, b: 0, a: 0}
   m_BuildTextureStacks: []
