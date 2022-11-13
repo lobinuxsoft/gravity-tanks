@@ -7,6 +7,9 @@ namespace HNW
 {
     public class MainMenuView : MonoBehaviour
     {
+        [SerializeField] string nextSceneName = "Gameplay";
+        [SerializeField] Gradient fadeIn;
+        [SerializeField] Gradient fadeOut;
         [SerializeField] HolographicButton playButton;
         [SerializeField] HolographicButton settingsButton;
         [SerializeField] HolographicButton achievementsButton;
@@ -39,7 +42,7 @@ namespace HNW
 
         private void OnPlayClicked()
         {
-            throw new NotImplementedException();
+            TimelineUITransition.Instance.FadeStart(nextSceneName, 1.5f, fadeIn, fadeOut);
         }
 
         private void OnSettingsClicked()
