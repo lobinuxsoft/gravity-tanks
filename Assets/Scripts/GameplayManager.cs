@@ -1,11 +1,8 @@
 using UnityEngine;
 using HNW;
-using CryingOnionTools.ScriptableVariables;
-using System;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
-using GooglePlayGames.BasicApi;
 #endif
 
 public class GameplayManager : MonoBehaviour
@@ -13,6 +10,7 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] LongVariable killEnemiesAmount;
     [SerializeField] WeaponData startWeapon;
     [SerializeField] ChassisData startChassis;
+    [SerializeField] EngineData startEngine;
     [SerializeField] GameObject farCamera;
     [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
@@ -34,6 +32,7 @@ public class GameplayManager : MonoBehaviour
     private void Start()
     {
         startChassis.BuildChassis(player.transform);
+        startEngine.BuildEngine(player.transform);
 
         if (player.TryGetComponent(out ShootControl sc))
         {
@@ -58,7 +57,7 @@ public class GameplayManager : MonoBehaviour
 
         #if UNITY_ANDROID
         PlayGamesPlatform.Instance.ReportScore(killEnemiesAmount.Value, GPGSIds.leaderboard_psico_killer, (bool success) => { });
-#endif
+        #endif
 
         killEnemiesAmount.EraseData();
     }

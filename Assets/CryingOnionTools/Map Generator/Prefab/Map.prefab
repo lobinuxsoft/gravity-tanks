@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maps:
   - mapSize: {x: 10, y: 10}
-    obstaclePercent: 1
+    obstaclePercent: 0.5
     seed: 123
     minObstacleHeight: 0.25
     maxObstacleHeight: 5
@@ -64,7 +64,7 @@ MonoBehaviour:
     topColor: {r: 1, g: 0.86274517, b: 0, a: 0}
   - mapSize: {x: 20, y: 20}
     obstaclePercent: 0.5
-    seed: 789
+    seed: 666
     minObstacleHeight: 4
     maxObstacleHeight: 7
     tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
@@ -72,7 +72,7 @@ MonoBehaviour:
     bottomColor: {r: 0, g: 0, b: 0, a: 0}
     topColor: {r: 1, g: 1, b: 1, a: 0}
   - mapSize: {x: 30, y: 40}
-    obstaclePercent: 1
+    obstaclePercent: 0.5
     seed: 666
     minObstacleHeight: 0.1
     maxObstacleHeight: 8

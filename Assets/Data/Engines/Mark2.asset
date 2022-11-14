@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa97c3a69b7cfd1438007f10dcfc000a, type: 3}
-  m_Name: Normal Chassis
+  m_Script: {fileID: 11500000, guid: 683a726754a849c4ab69f26b1c7dd4b5, type: 3}
+  m_Name: Mark2
   m_EditorClassIdentifier: 
-  defense: 1
-  chassisBody: {fileID: 8300855552413686702, guid: 149da5cb7a9869f4590385af773334c8,
+  moveForce: 20
+  turnSpeed: 10
+  engineBody: {fileID: 8046949870843139457, guid: 256e399687577074db66aaea891fce90,
     type: 3}

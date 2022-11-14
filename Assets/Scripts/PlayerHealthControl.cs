@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace HNW
 {
-    public class PlayerDamageControl : Damageable
+    public class PlayerHealthControl : Damageable
     {
         [SerializeField] IntVariable curHealth;
         [SerializeField] IntVariable maxHealth;

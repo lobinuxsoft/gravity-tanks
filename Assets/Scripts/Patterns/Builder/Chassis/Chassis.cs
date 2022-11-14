@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class Chassis : MonoBehaviour
+namespace HNW
 {
-    [SerializeField] int defense;
-
-    public int Defense
+    public class Chassis : MonoBehaviour
     {
-        get => defense;
-        set => defense = value;
+        [SerializeField] int defense;
+
+        public int Defense
+        {
+            get => defense;
+            set => defense = value;
+        }
     }
 }
