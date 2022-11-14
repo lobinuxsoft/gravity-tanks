@@ -1,3 +1,4 @@
+using GooglePlayGames;
 using System;
 using UnityEngine;
 
@@ -11,6 +12,9 @@ namespace HNW
         [SerializeField] HolographicButton playButton;
         [SerializeField] HolographicButton shopButton;
         [SerializeField] HolographicButton statsButton;
+        [SerializeField] HolographicButton achievementsButton;
+        [SerializeField] HolographicButton leaderboardButton;
+
         UIPopup popup;
 
         private void Awake()
@@ -20,6 +24,8 @@ namespace HNW
             playButton.onClick += OnPlayClicked;
             shopButton.onClick += OnShopClicked;
             statsButton.onClick += OnStatsClicked;
+            achievementsButton.onClick += OnAchievementsClicked;
+            leaderboardButton.onClick += OnLeaderboardClicked;
         }
 
         private void OnDestroy()
@@ -27,6 +33,8 @@ namespace HNW
             playButton.onClick -= OnPlayClicked;
             shopButton.onClick -= OnShopClicked;
             statsButton.onClick -= OnStatsClicked;
+            achievementsButton.onClick -= OnAchievementsClicked;
+            leaderboardButton.onClick -= OnLeaderboardClicked;
         }
 
         private void OnPlayClicked()
@@ -42,6 +50,20 @@ namespace HNW
         private void OnStatsClicked()
         {
             throw new NotImplementedException();
+        }
+
+        private void OnAchievementsClicked()
+        {
+            #if UNITY_ANDROID
+            PlayGamesPlatform.Instance.ShowAchievementsUI();
+            #endif
+        }
+
+        private void OnLeaderboardClicked()
+        {
+            #if UNITY_ANDROID
+            PlayGamesPlatform.Instance.ShowLeaderboardUI();
+            #endif
         }
     }
 }
