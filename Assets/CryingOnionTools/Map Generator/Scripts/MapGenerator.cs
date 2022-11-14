@@ -23,15 +23,21 @@ public class MapGenerator : MonoBehaviour
     Map currentMap;
     BoxCollider boxCollider;
 
+    Spawner spawner;
+
     private void Awake()
     {
         Instance = this;
-        FindObjectOfType<Spawner>().OnNextWave += NewWave;
+        spawner = FindObjectOfType<Spawner>();
+
+        if(spawner)
+            spawner.OnNextWave += NewWave;
     }
 
     private void OnDestroy()
     {
-        FindObjectOfType<Spawner>().OnNextWave -= NewWave;
+        if (spawner)
+            spawner.OnNextWave -= NewWave;
     }
 
     void NewWave(int waveNumber)
