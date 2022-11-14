@@ -79,6 +79,9 @@ public class TimelineUITransition : MonoBehaviour
             yield return null;
         }
 
+        canvas.worldCamera = Camera.main;
+        canvas.planeDistance = 1;
+
         onLoadProgressChange?.Invoke(asyncLoad.progress);
 
         director.Play(fadeIn);

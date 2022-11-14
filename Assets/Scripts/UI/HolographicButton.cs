@@ -130,9 +130,11 @@ namespace HNW
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            StartCoroutine(ClickAnimRoutine(lerpSpeed));
+            PlayAnimation(lerpSpeed);
             onClick?.Invoke();
         }
+
+        public void PlayAnimation(float speed) => StartCoroutine(ClickAnimRoutine(speed));
     }
 
 

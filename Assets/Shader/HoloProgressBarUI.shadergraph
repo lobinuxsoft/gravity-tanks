@@ -1078,6 +1078,20 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
+                    "m_Id": "9e0c1254b088408b8c9f904d4ffa3be2"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "2592f734a61847628233a5e896e5c3dd"
+                },
+                "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
                     "m_Id": "a6545c646bc34eda86561ebc8f411825"
                 },
                 "m_SlotId": 5
@@ -1255,20 +1269,6 @@
                     "m_Id": "e5d2ff99517b40e3a07df9e4847aa892"
                 },
                 "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "e057835e4cd14508a23d82a39005a924"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "2592f734a61847628233a5e896e5c3dd"
-                },
-                "m_SlotId": 1
             }
         },
         {
@@ -3755,7 +3755,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "4597be5fd1a34ec290eafd1525a98a9a",
     "m_Id": 0,
-    "m_DisplayName": "FillAmoutG",
+    "m_DisplayName": "FillAmountG",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -7329,7 +7329,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "bd8d78056bee436f99447d61950bd860",
     "m_Id": 0,
-    "m_DisplayName": "FillAmoutR",
+    "m_DisplayName": "FillAmountR",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -8769,7 +8769,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "f5ef31cc92544b98a4d29735924aa5aa",
     "m_Id": 0,
-    "m_DisplayName": "FillAmoutB",
+    "m_DisplayName": "FillAmountB",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",

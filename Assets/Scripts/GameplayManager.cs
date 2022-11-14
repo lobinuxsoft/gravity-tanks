@@ -1,6 +1,7 @@
 using UnityEngine;
 using HNW;
 using CryingOnionTools.ScriptableVariables;
+using System;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -15,6 +16,9 @@ public class GameplayManager : MonoBehaviour
     [SerializeField] GameObject farCamera;
     [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
+    [SerializeField] string coreLoopSceneName = "Core Loop";
+    [SerializeField] Gradient fadeIn;
+    [SerializeField] Gradient fadeOut;
 
     Damageable player;
 
@@ -24,6 +28,7 @@ public class GameplayManager : MonoBehaviour
         player.onDie.AddListener(ShowGameOver);
 
         gameOverUI.OnRevivePress += Revive;
+        gameOverUI.OnReturnPress += Return;
     }
 
     private void Start()
@@ -41,6 +46,7 @@ public class GameplayManager : MonoBehaviour
     {
         player.onDie.RemoveListener(ShowGameOver);
         gameOverUI.OnRevivePress -= Revive;
+        gameOverUI.OnReturnPress -= Return;
         killEnemiesAmount.EraseData();
     }
 
@@ -77,10 +83,8 @@ public class GameplayManager : MonoBehaviour
         farCamera.SetActive(true);
     }
 
-    public void ShowAchievements()
+    private void Return()
     {
-        #if UNITY_ANDROID
-        PlayGamesPlatform.Instance.ShowAchievementsUI();
-        #endif
+        TimelineUITransition.Instance.FadeStart(coreLoopSceneName, 1, fadeIn, fadeOut);
     }
 }
