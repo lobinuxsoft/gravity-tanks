@@ -40,7 +40,7 @@ namespace HNW
             #endif
         }
 
-        public void SetDamage(int value)
+        public virtual void SetDamage(int value)
         {
             if (isActiveAndEnabled)
                 StartCoroutine(BlinkEffect());
@@ -58,7 +58,7 @@ namespace HNW
             }
         }
 
-        IEnumerator BlinkEffect(float duration = 1)
+        protected IEnumerator BlinkEffect(float duration = 1)
         {
             float lerp = 0;
             float blinkSpeed = 4;

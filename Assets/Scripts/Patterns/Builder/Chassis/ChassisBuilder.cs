@@ -7,6 +7,7 @@ namespace HNW
         string name;
         Transform owner;
         MeshFilter chassisBody;
+        int maxHealth;
         int defense;
 
         public ChassisBuilder WithName(string name)
@@ -27,6 +28,12 @@ namespace HNW
             return this;
         }
 
+        public ChassisBuilder WithMaxHealth(int maxHealth)
+        {
+            this.maxHealth = maxHealth;
+            return this;
+        }
+
         public ChassisBuilder WithDefense(int defense)
         {
             this.defense = defense;
@@ -37,6 +44,7 @@ namespace HNW
         {
             Chassis chassis = Object.Instantiate(chassisBody, owner).gameObject.AddComponent<Chassis>();
             chassis.name = name;
+            chassis.MaxHealth = maxHealth;
             chassis.Defense = defense;
 
             if(owner.TryGetComponent(out MeshCollider mc))

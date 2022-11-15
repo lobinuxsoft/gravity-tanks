@@ -8,9 +8,7 @@ using GooglePlayGames;
 public class GameplayManager : MonoBehaviour
 {
     [SerializeField] LongVariable killEnemiesAmount;
-    [SerializeField] WeaponData startWeapon;
-    [SerializeField] ChassisData startChassis;
-    [SerializeField] EngineData startEngine;
+    [SerializeField] ShipData shipData;
     [SerializeField] GameObject farCamera;
     [SerializeField] GameObject nearCamera;
     [SerializeField] GameOverUI gameOverUI;
@@ -31,14 +29,7 @@ public class GameplayManager : MonoBehaviour
 
     private void Start()
     {
-        startChassis.BuildChassis(player.transform);
-        startEngine.BuildEngine(player.transform);
-
-        if (player.TryGetComponent(out ShootControl sc))
-        {
-            startWeapon.BuildWeapon(sc.transform);
-            sc.UpdateWeapons();
-        }
+        shipData.BuildShip(player.transform);
     }
 
     private void OnDestroy()

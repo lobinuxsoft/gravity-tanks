@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace HNW
@@ -6,13 +7,9 @@ namespace HNW
     {
         string name;
         Transform owner;
-        uint maxHp;
-        uint attack;
-        uint defense;
-        uint speed;
-        string chassis;
-        string engine;
-        string[] weapons;
+        ChassisData chassisData;
+        EngineData engineData;
+        WeaponData[] weaponsData;
 
         public ShipBuilder WithName(string name)
         {
@@ -26,46 +23,44 @@ namespace HNW
             return this;
         }
 
-        public ShipBuilder WithMaxHP(uint maxHp)
+        public ShipBuilder WithChassis(ChassisData chassisData)
         {
-            this.maxHp = maxHp;
+            this.chassisData = chassisData;
             return this;
         }
 
-        public ShipBuilder WithAttack(uint attack)
+        public ShipBuilder WithEngine(EngineData engineData)
         {
-            this.attack = attack;
+            this.engineData = engineData;
             return this;
         }
 
-        public ShipBuilder WithDefense(uint defense)
+        public ShipBuilder WithWeapons(WeaponData[] weaponsData)
         {
-            this.defense = defense;
+            this.weaponsData = weaponsData;
             return this;
         }
 
-        public ShipBuilder WithSpeed(uint speed)
+        public Ship Build()
         {
-            this.speed = speed;
-            return this;
-        }
+            Ship ship = owner.gameObject.AddComponent<Ship>();
 
-        public ShipBuilder WithChassis(string chassis)
-        {
-            this.chassis = chassis;
-            return this;
-        }
+            ship.name = name;
 
-        public ShipBuilder WithEngine(string engine)
-        {
-            this.engine = engine;
-            return this;
-        }
+            ship.Chassis = chassisData.BuildChassis(ship.transform);
 
-        public ShipBuilder WithWeapons(string[] weapons)
-        {
-            this.weapons = weapons;
-            return this;
+            ship.Engine = engineData.BuildEngine(ship.transform);
+
+            List<Weapon> weapons = new List<Weapon>();
+
+            for (int i = 0; i < weaponsData.Length; i++)
+            {
+                weapons.Add(weaponsData[i].BuildWeapon(ship.transform));
+            }
+
+            ship.Weapons = weapons.ToArray();
+
+            return ship;
         }
     }
 }

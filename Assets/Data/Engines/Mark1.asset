@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683a726754a849c4ab69f26b1c7dd4b5, type: 3}
   m_Name: Mark1
   m_EditorClassIdentifier: 
-  moveForce: 10
+  moveForce: 20
   turnSpeed: 5
   engineBody: {fileID: 7755163730856218881, guid: c6753e84f7596e741b7ce4cb4f7acf99,
     type: 3}

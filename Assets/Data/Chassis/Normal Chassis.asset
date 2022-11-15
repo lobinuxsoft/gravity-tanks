@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa97c3a69b7cfd1438007f10dcfc000a, type: 3}
   m_Name: Normal Chassis
   m_EditorClassIdentifier: 
+  maxHealth: 10
   defense: 1
   chassisBody: {fileID: 8300855552413686702, guid: 149da5cb7a9869f4590385af773334c8,
     type: 3}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687dda66da0011e479bfb3eca645bdd5, type: 3}
+  m_Name: Ship Data
+  m_EditorClassIdentifier: 
+  value:
+    chassisName: Normal Chassis
+    engineName: Mark1
+    weaponsNames:
+    - Normal Cannon
+  redeableFile: 0
+  fileExtention: .save
+  chassisShopData: {fileID: 11400000, guid: 1bea571eb311e1843a90ada325b6fcdf, type: 2}
+  enginesShopData: {fileID: 11400000, guid: 77dd8cfdd70f5aa489564a2083b40d71, type: 2}
+  weaponsShopData: {fileID: 11400000, guid: 06497cd683eb60346b551f69b9ea8d47, type: 2}
