@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapons Shop Data
   m_EditorClassIdentifier: 
   weaponsDatas:
-  - {fileID: 11400000, guid: 8350e6c99ee2219439a43e49c12dbc18, type: 2}
-  - {fileID: 11400000, guid: 1537706c1560b0240ab0b496ad211371, type: 2}
   - {fileID: 11400000, guid: 541840825d126344d94782001a13a176, type: 2}
   - {fileID: 11400000, guid: d56742e0111da2e4e82272787c4638c5, type: 2}
+  - {fileID: 11400000, guid: 1537706c1560b0240ab0b496ad211371, type: 2}
+  - {fileID: 11400000, guid: 8350e6c99ee2219439a43e49c12dbc18, type: 2}

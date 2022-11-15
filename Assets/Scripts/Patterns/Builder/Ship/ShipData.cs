@@ -14,7 +14,21 @@ namespace HNW
         public override void EraseData()
         {
             base.EraseData();
-            value = new ShipStruct();
+
+            if (chassisShopData)
+                value.chassisName = chassisShopData.GetAllChassis()[0].name;
+            else
+                value.chassisName = "";
+
+            if (enginesShopData)
+                value.engineName = enginesShopData.GetAllEngines()[0].name;
+            else
+                value.engineName = "";
+
+            if (weaponsShopData)
+                value.weaponsNames = new string[] { weaponsShopData.GetAllWeapons()[0].name };
+            else
+                value.weaponsNames = new string[0];
         }
 
         public Ship BuildShip(Transform owner)
