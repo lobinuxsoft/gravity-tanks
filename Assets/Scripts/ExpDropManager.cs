@@ -34,6 +34,16 @@ namespace HNW
             temp.SetActive(true);
         }
 
+        public void GrabAllActiveExpDrop()
+        {
+            var expDrops = GetComponentsInChildren<ExpDrop>();
+
+            for (int i = 0; i < expDrops.Length; i++)
+            {
+                expDrops[i].ForceToFollow();
+            }
+        }
+
         private void OnTouchPlayer(ExpDrop drop)
         {
             exp.Value += drop.ExpToGive;

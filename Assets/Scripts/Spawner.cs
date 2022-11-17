@@ -91,7 +91,7 @@ public class Spawner : MonoBehaviour
         pools[spawnedEnemy.name].ReturnToPool(spawnedEnemy);
 
         if (enemiesRemainingAlive == 0)
-            NextWave();
+            WaveEnd();
 
         killEnemiesAmount.Value++;
 
@@ -120,21 +120,28 @@ public class Spawner : MonoBehaviour
         player.gameObject.SetActive(true);
     }
 
+    void WaveEnd()
+    {
+        expDropManager.GrabAllActiveExpDrop();
+
+        if (currentWaveNumber + 1 >= waves.Length)
+            Debug.Log("Ya no hay mas waves!!... Se termino el juego");
+        else
+            NextWave();
+    }
+
     void NextWave()
     {
         currentWaveNumber++;
 
-        if((currentWaveNumber - 1) < waves.Length)
-        {
-            currentWave = waves[currentWaveNumber - 1];
+        currentWave = waves[(currentWaveNumber - 1) % waves.Length];
 
-            enemiesRemainingToSpawn = currentWave.EnemyCount;
-            enemiesRemainingAlive = enemiesRemainingToSpawn;
+        enemiesRemainingToSpawn = currentWave.EnemyCount;
+        enemiesRemainingAlive = enemiesRemainingToSpawn;
 
-            OnNextWave?.Invoke(currentWaveNumber);
+        OnNextWave?.Invoke(currentWaveNumber);
 
-            StartCoroutine(ResetPlayerPosition());
-        }
+        StartCoroutine(ResetPlayerPosition());
     }
 }
 

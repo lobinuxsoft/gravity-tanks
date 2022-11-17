@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class ExpDrop : MonoBehaviour
@@ -11,6 +12,7 @@ public class ExpDrop : MonoBehaviour
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] TrailRenderer trailRenderer;
 
+    Coroutine followRoutine;
 
     public Color ExpDropColor
     {
@@ -57,10 +59,24 @@ public class ExpDrop : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsFollow && (Target.position - transform.position).sqrMagnitude < distanceToStartFollow * distanceToStartFollow)
-            transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref velocity, Time.deltaTime * modifier);
+        if (followRoutine == null && IsFollow && (Target.position - transform.position).sqrMagnitude < distanceToStartFollow * distanceToStartFollow)
+            ForceToFollow();
 
         transform.GetChild(0).Rotate(Vector3.up * rotationSpeed);
+    }
+
+    public void ForceToFollow()
+    {
+        followRoutine = StartCoroutine(FollowRoutine());
+    }
+
+    IEnumerator FollowRoutine()
+    {
+        while ((Target.position - transform.position).sqrMagnitude > 0)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref velocity, Time.deltaTime * modifier);
+            yield return null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,6 +84,7 @@ public class ExpDrop : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             IsFollow = false;
+            followRoutine = null;
             onTouchPlayer?.Invoke(this);
         }
     }
