@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(UIPopup))]
 public class GameOverUI : MonoBehaviour
 {
+    const uint reviveCost = 100;
+
+    [SerializeField] LongVariable exp;
     [SerializeField] HolographicButton reviveButton;
     [SerializeField] HolographicButton returnButton;
 
@@ -28,11 +31,13 @@ public class GameOverUI : MonoBehaviour
 
     public void Show()
     {
+        reviveButton.gameObject.SetActive(exp.Value >= reviveCost);
         popup.Show();
     }
 
     private void Revive()
     {
+        exp.Value -= reviveCost;
         popup.Hide(null, OnRevivePress);
     }
 

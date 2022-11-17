@@ -23,13 +23,13 @@ public class ObjectPool : MonoBehaviour
     /// Devuelve un objeto de la pool
     /// </summary>
     /// <returns></returns>
-    public GameObject GetFromPool()
+    public GameObject GetFromPool(bool activated = true)
     {
         if(pool.Count <= 0)
             GrowPool();
         
         var nextObj = pool.Dequeue();
-        nextObj.SetActive(true);
+        nextObj.SetActive(activated);
         return nextObj;
     }
 

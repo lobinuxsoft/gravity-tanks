@@ -3,13 +3,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using CryingOnionTools.ScriptableVariables;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
 #endif
 
-[RequireComponent(typeof(ObjectPool))]
 public class Spawner : MonoBehaviour
 {
     Dictionary<string, ObjectPool> pools = new Dictionary<string, ObjectPool>();
@@ -18,6 +16,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] LongVariable killEnemiesAmount;
     [SerializeField] Transform player;
     [SerializeField] Wave[] waves;
+    [SerializeField] ExpDropManager expDropManager;
 
     public event Action<int> OnNextWave; 
 
@@ -81,6 +80,7 @@ public class Spawner : MonoBehaviour
     void OnEnemyDeath(GameObject spawnedEnemy)
     {
         enemiesRemainingAlive--;
+        expDropManager.DropExpInPlace(spawnedEnemy.transform.position);
 
         if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
         {
