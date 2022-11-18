@@ -1,6 +1,5 @@
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
-using System;
 using UnityEngine;
 
 namespace HNW
@@ -45,10 +44,7 @@ namespace HNW
             TimelineUITransitionScene.Instance.FadeStart(nextSceneName, 1.5f, fadeIn, fadeOut);
         }
 
-        private void OnSettingsClicked()
-        {
-            settingsView.Show();
-        }
+        private void OnSettingsClicked() => settingsView.Show();
 
         private void OnAchievementsClicked()
         {

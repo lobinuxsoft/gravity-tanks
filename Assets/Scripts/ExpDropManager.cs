@@ -55,5 +55,5 @@ namespace HNW
 public struct ExpData
 {
     public int value;
-    public Color color;
+    [ColorUsage(true, true)] public Color color;
 }

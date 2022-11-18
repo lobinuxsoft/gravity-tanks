@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slider Back
-  m_Shader: {fileID: -6465566751694194690, guid: 343465bdf37f7d741a6d741ac6fa6c06,
+  m_Shader: {fileID: -6465566751694194690, guid: 818e56cd790216d4c8111d1f28c8b820,
     type: 3}
   m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
@@ -68,6 +68,7 @@ Material:
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 0}
     - _ColorB: {r: 3.9999995, g: 0.3141361, b: 0, a: 1}
     - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
     - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}

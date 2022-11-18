@@ -9,16 +9,11 @@ namespace HNW
         [SerializeField] TextMeshProUGUI label;
         [SerializeField] HolographicButton icon;
 
-        private void Awake()
-        {
-            expVariable.onValueChange += OnValueChange;
-            label.text = expVariable.Value.ToString();
-        }
+        private void Awake() => expVariable.onValueChange += OnValueChange;
 
-        private void OnDestroy()
-        {
-            expVariable.onValueChange -= OnValueChange;
-        }
+        private void Start() => label.text = expVariable.Value.ToString();
+
+        private void OnDestroy() => expVariable.onValueChange -= OnValueChange;
 
         private void OnValueChange(long value)
         {

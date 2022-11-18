@@ -166,15 +166,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3488435390414313648}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.00006818799}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3488435390968039942}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: -1, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -265,7 +265,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   closeButton: {fileID: 8820007194048245245}
   debugButton: {fileID: 119098642922037382}
-  debugView: {fileID: 0}
 --- !u!225 &3488435390414313650
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -274,9 +273,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3488435390414313648}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &3488435390414313657
 Animator:
@@ -309,8 +308,6 @@ GameObject:
   - component: {fileID: 3488435390968039949}
   - component: {fileID: 3488435390968039938}
   - component: {fileID: 3488435390968039939}
-  - component: {fileID: 3488435390968039936}
-  - component: {fileID: 3488435390968039937}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -475,37 +472,6 @@ MonoBehaviour:
     scale: 0
     rotation: 0
     offset: {x: 0, y: 0}
---- !u!320 &3488435390968039936
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3488435390968039943}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 0}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References: []
---- !u!114 &3488435390968039937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3488435390968039943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce092cdbb6df8ba4ab8f85601c30748d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showBehavior: {fileID: 0}
-  hideBehavior: {fileID: 0}
 --- !u!1001 &267439991632644886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 49.1
+      value: 47.8
       objectReference: {fileID: 0}
     - target: {fileID: 148967147457358737, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -699,6 +665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193329786612918856, guid: 4dbc2ce697f130747bb5c4cb40f1d1bc,
+        type: 3}
+      propertyPath: parameterExposeName
+      value: SFX Volume
       objectReference: {fileID: 0}
     - target: {fileID: 5605584788625536487, guid: 4dbc2ce697f130747bb5c4cb40f1d1bc,
         type: 3}
@@ -1057,6 +1028,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193329786612918856, guid: 4dbc2ce697f130747bb5c4cb40f1d1bc,
+        type: 3}
+      propertyPath: parameterExposeName
+      value: BG Volume
       objectReference: {fileID: 0}
     - target: {fileID: 5605584788625536487, guid: 4dbc2ce697f130747bb5c4cb40f1d1bc,
         type: 3}

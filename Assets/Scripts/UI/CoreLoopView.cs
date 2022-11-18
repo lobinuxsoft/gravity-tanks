@@ -6,6 +6,7 @@ namespace HNW
 {
     public class CoreLoopView : MonoBehaviour
     {
+        [SerializeField] LongVariable exp;
         [SerializeField] string gameplayScene = "Gameplay";
         [SerializeField] Gradient fadeIn;
         [SerializeField] Gradient fadeOut;
@@ -26,6 +27,8 @@ namespace HNW
             statsButton.onClick += OnStatsClicked;
             achievementsButton.onClick += OnAchievementsClicked;
             leaderboardButton.onClick += OnLeaderboardClicked;
+
+            exp.LoadData();
         }
 
         private void OnDestroy()

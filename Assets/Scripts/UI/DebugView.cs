@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -5,8 +6,12 @@ using UnityEngine.UI;
 
 namespace HNW
 {
+    [RequireComponent(typeof(UIPopup))]
     public class DebugView : MonoBehaviour
     {
+        static DebugView instance;
+        public static DebugView Instance => instance;
+
         [SerializeField] HolographicButton closeButton;
 
         [Space(10)]
@@ -18,10 +23,15 @@ namespace HNW
         LoggerBase logger;
 
         UIPopup popup;
+        Canvas canvas;
+
+        public static event Action onCloseDebug;
 
         private void Awake()
         {
             popup = GetComponent<UIPopup>();
+            canvas = GetComponent<Canvas>();
+
             closeButton.onClick += Hide;
 
             #region Logger
@@ -33,6 +43,9 @@ namespace HNW
             textLogger.text = "";
             Application.logMessageReceived += OnLogMessageReceived;
             #endregion
+
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         private void Start() => StartCoroutine(ShowLogs());
@@ -50,6 +63,12 @@ namespace HNW
             if (logger != null)
                 logger = null;
             #endregion
+        }
+
+        private void LateUpdate()
+        {
+            if (!canvas.worldCamera)
+                canvas.worldCamera = Camera.main;
         }
 
         private void SaveLog() => logger.SaveLogs();
@@ -93,8 +112,12 @@ namespace HNW
             scrollbar.value = 0;
         }
 
-        public void Show() => popup.Show(null, null, 2);
+        public void Show() => popup.Show();
 
-        private void Hide() => popup.Hide(null, null, 2);
+        private void Hide()
+        {
+            onCloseDebug?.Invoke();
+            popup.Hide();
+        }
     }
 }

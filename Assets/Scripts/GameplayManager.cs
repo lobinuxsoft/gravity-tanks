@@ -1,6 +1,7 @@
 using UnityEngine;
 using CryingOnionTools.ScriptableVariables;
 using System.Collections;
+using System;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -17,6 +18,8 @@ namespace HNW
         [SerializeField] LongVariable exp;
         [SerializeField] GameObject farCamera;
         [SerializeField] GameObject nearCamera;
+        [SerializeField] HolographicButton pauseButton;
+        [SerializeField] PauseUI pauseUI;
         [SerializeField] GameOverUI gameOverUI;
         [SerializeField] NextWaveUI nextWaveUI;
         [SerializeField] string coreLoopSceneName = "Core Loop";
@@ -29,6 +32,10 @@ namespace HNW
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Damageable>();
             player.onDie.AddListener(ShowGameOver);
+
+            pauseButton.onClick += OnPauseClicked;
+
+            pauseUI.onHomeButtonClicked += OnReturnClicked;
 
             gameOverUI.OnRevivePress += OnReviveClicked;
             gameOverUI.OnReturnPress += OnReturnClicked;
@@ -44,6 +51,10 @@ namespace HNW
         private void OnDestroy()
         {
             player.onDie.RemoveListener(ShowGameOver);
+
+            pauseButton.onClick -= OnPauseClicked;
+
+            pauseUI.onHomeButtonClicked -= OnReturnClicked;
 
             gameOverUI.OnRevivePress -= OnReviveClicked;
             gameOverUI.OnReturnPress -= OnReturnClicked;
@@ -89,6 +100,7 @@ namespace HNW
 
         private void OnReturnClicked()
         {
+            exp.SaveData();
             Time.timeScale = 1;
             TimelineUITransitionScene.Instance.FadeStart(coreLoopSceneName, 1, fadeIn, fadeOut);
         }
@@ -136,5 +148,7 @@ namespace HNW
 
             player.gameObject.SetActive(true);
         }
+
+        private void OnPauseClicked() => pauseUI.Show();
     }
 }
