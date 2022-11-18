@@ -15,6 +15,11 @@ namespace HNW
         {
             base.EraseData();
 
+            value.maxHp = 10;
+            value.attack = 1;
+            value.defense = 1;
+            value.speed = 15;
+
             if (chassisShopData)
                 value.chassisName = chassisShopData.GetAllChassis()[0].name;
             else
@@ -43,6 +48,10 @@ namespace HNW
             return new ShipBuilder()
                 .WithName(this.name)
                 .WithOwner(owner)
+                .WithMaxHp(value.maxHp)
+                .WithAttack(value.attack)
+                .WithDefense(value.defense)
+                .WithSpeed(value.speed)
                 .WithChassis(chassisShopData.GetChassisDataByName(value.chassisName))
                 .WithEngine(enginesShopData.GetEngineDataByName(value.engineName))
                 .WithWeapons(weapons.ToArray())
@@ -54,6 +63,11 @@ namespace HNW
 [System.Serializable]
 public struct ShipStruct
 {
+    public int maxHp;
+    public int attack;
+    public int defense;
+    public int speed;
+
     public string chassisName;
     public string engineName;
     public string[] weaponsNames;

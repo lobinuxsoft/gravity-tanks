@@ -11,7 +11,7 @@ namespace HNW
         WeaponBody weaponBody;
         WeaponProjectile projectileControl;
         LayerMask layerToDamage;
-        int shotDamage;
+        float attackMultiplier;
         int emmitAmount;
         float shotRate;
         int shotAngle;
@@ -46,9 +46,9 @@ namespace HNW
             return this;
         }
 
-        public WeaponBuilder WithShotDamage(int shootDamage)
+        public WeaponBuilder WithAttackMultiplier(float attackMultiplier)
         {
-            this.shotDamage = shootDamage;
+            this.attackMultiplier = attackMultiplier;
             return this;
         }
 
@@ -94,7 +94,7 @@ namespace HNW
             weapon.Body = body;
             weapon.Projectiles = projectiles.ToArray();
             weapon.LayerToDamage = layerToDamage;
-            weapon.ShotDamage = shotDamage;
+            weapon.AttackMultiplier = attackMultiplier;
             weapon.EmmitAmount = emmitAmount;
             weapon.ShotRate = shotRate;
             weapon.ShotAngle = shotAngle;

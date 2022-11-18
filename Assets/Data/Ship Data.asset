@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Ship Data
   m_EditorClassIdentifier: 
   value:
+    maxHp: 10
+    attack: 10
+    defense: 1
+    speed: 20
     chassisName: Normal Chassis
     engineName: Mark1
     weaponsNames:

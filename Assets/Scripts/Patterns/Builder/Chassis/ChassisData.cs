@@ -5,8 +5,8 @@ namespace HNW
     [CreateAssetMenu(menuName = "Hyper Net Warrior/Chassis Builder/Chassis Data")]
     public class ChassisData : ScriptableObject
     {
-        [SerializeField] int maxHealth;
-        [SerializeField] int defense;
+        [SerializeField, Min(1)] float maxHealthMultiplier = 1;
+        [SerializeField, Min(1)] float defenseMultiplier = 1;
         [SerializeField] MeshFilter chassisBody;
 
         public Chassis BuildChassis(Transform container)
@@ -15,8 +15,8 @@ namespace HNW
                 .WithName(this.name)
                 .WithOwner(container)
                 .WithBody(chassisBody)
-                .WithMaxHealth(maxHealth)
-                .WithDefense(defense)
+                .WithMaxHealthMultiplier(maxHealthMultiplier)
+                .WithDefenseMultiplier(defenseMultiplier)
                 .Build();
         }
     }

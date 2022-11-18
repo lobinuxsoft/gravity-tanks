@@ -15,7 +15,7 @@ MonoBehaviour:
   layerToDamage:
     serializedVersion: 2
     m_Bits: 129
-  shotDamage: 4
+  attackMultiplier: 4
   emmitAmount: 1
   shotRate: 2
   shotAngle: 0

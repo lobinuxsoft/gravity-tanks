@@ -7,6 +7,12 @@ namespace HNW
     {
         string name;
         Transform owner;
+
+        public int maxHp;
+        public int attack;
+        public int defense;
+        public int speed;
+
         ChassisData chassisData;
         EngineData engineData;
         WeaponData[] weaponsData;
@@ -20,6 +26,30 @@ namespace HNW
         public ShipBuilder WithOwner(Transform owner)
         {
             this.owner = owner;
+            return this;
+        }
+
+        public ShipBuilder WithMaxHp(int maxHp)
+        {
+            this.maxHp = maxHp;
+            return this;
+        }
+
+        public ShipBuilder WithAttack(int attack)
+        {
+            this.attack = attack;
+            return this;
+        }
+
+        public ShipBuilder WithDefense(int defense)
+        {
+            this.defense = defense;
+            return this;
+        }
+
+        public ShipBuilder WithSpeed(int speed)
+        {
+            this.speed = speed;
             return this;
         }
 
@@ -46,6 +76,14 @@ namespace HNW
             Ship ship = owner.gameObject.AddComponent<Ship>();
 
             ship.name = name;
+
+            ship.MaxHP = maxHp;
+
+            ship.Attack = attack;
+
+            ship.Defense = defense;
+
+            ship.Speed = speed;
 
             ship.Chassis = chassisData.BuildChassis(ship.transform);
 

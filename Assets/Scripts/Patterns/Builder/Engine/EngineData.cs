@@ -6,8 +6,8 @@ namespace HNW
     [CreateAssetMenu(menuName = "Hyper Net Warrior/Engine Builder/Engine Data")]
     public class EngineData : ScriptableObject
     {
-        [SerializeField] int moveForce;
-        [SerializeField] int turnSpeed;
+        [SerializeField, Min(1)] float moveForceMultiplier = 1;
+        [SerializeField, Min(1)] float turnSpeedMultiplier = 1;
         [SerializeField] MeshFilter engineBody;
 
         public Engine BuildEngine(Transform owner)
@@ -16,8 +16,8 @@ namespace HNW
                 .WithName(this.name)
                 .WithOwner(owner)
                 .WithBody(engineBody)
-                .WithMoveForce(moveForce)
-                .WithTurnSpeed(turnSpeed)
+                .WithMoveForceMultiplier(moveForceMultiplier)
+                .WithTurnSpeedMultiplier(turnSpeedMultiplier)
                 .Build();
         }
     }

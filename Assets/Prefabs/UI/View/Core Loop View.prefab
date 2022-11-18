@@ -54,7 +54,7 @@ PlayableDirector:
   m_GameObject: {fileID: 209671756495430820}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 15d32c8e6083d8e438e8166e96d9094f, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 92af8a30f2adc0c41beb0a69f2e2a59d, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -63,6 +63,10 @@ PlayableDirector:
   - key: {fileID: 834456115392754868, guid: 49ea8ceb4be68164ebff5979d43708d4, type: 2}
     value: {fileID: 209671756495430826}
   - key: {fileID: 3851001541289320606, guid: 15d32c8e6083d8e438e8166e96d9094f, type: 2}
+    value: {fileID: 209671756495430826}
+  - key: {fileID: 3851001541289320606, guid: a9dd22a868074db489b12a1c7ce23431, type: 2}
+    value: {fileID: 209671756495430826}
+  - key: {fileID: 834456115392754868, guid: 92af8a30f2adc0c41beb0a69f2e2a59d, type: 2}
     value: {fileID: 209671756495430826}
   m_ExposedReferences:
     m_References: []
@@ -78,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce092cdbb6df8ba4ab8f85601c30748d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showBehavior: {fileID: 11400000, guid: 15d32c8e6083d8e438e8166e96d9094f, type: 2}
-  hideBehavior: {fileID: 11400000, guid: 49ea8ceb4be68164ebff5979d43708d4, type: 2}
+  showBehavior: {fileID: 11400000, guid: 92af8a30f2adc0c41beb0a69f2e2a59d, type: 2}
+  hideBehavior: {fileID: 11400000, guid: a9dd22a868074db489b12a1c7ce23431, type: 2}
 --- !u!225 &209671756495430825
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -123,6 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8de02b855d8e30479f03dbe8c5bbcd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipData: {fileID: 11400000, guid: 1b92be573906f8844bd2e00b41f24edf, type: 2}
+  exp: {fileID: 11400000, guid: 5a0525ff63e52f349a7c72b4b587c93b, type: 2}
   gameplayScene: Gameplay
   fadeIn:
     serializedVersion: 2
@@ -187,6 +193,8 @@ MonoBehaviour:
   statsButton: {fileID: 6492654168544352468}
   achievementsButton: {fileID: 2874305646222650572}
   leaderboardButton: {fileID: 8692176081003204572}
+  avatarOwner: {fileID: 0}
+  levelUpUI: {fileID: 0}
 --- !u!1001 &1640054702833232073
 PrefabInstance:
   m_ObjectHideFlags: 0

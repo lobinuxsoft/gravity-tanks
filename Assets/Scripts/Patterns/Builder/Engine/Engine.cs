@@ -4,19 +4,19 @@ namespace HNW
 {
     public class Engine : MonoBehaviour
     {
-        [SerializeField] int moveForce;
-        [SerializeField] int turnSpeed;
+        [SerializeField, Min(1)] float moveForceMultiplier;
+        [SerializeField, Min(1)] float turnSpeedMultiplier;
 
-        public int MoveForce
+        public float MoveForceMultiplier
         {
-            get => moveForce;
-            set => moveForce = value;
+            get => moveForceMultiplier;
+            set => moveForceMultiplier = value;
         }
 
-        public int TurnSpeed
+        public float TurnSpeedMultiplier
         {
-            get => turnSpeed;
-            set => turnSpeed = value;
+            get => turnSpeedMultiplier;
+            set => turnSpeedMultiplier = value;
         }
     }
 }

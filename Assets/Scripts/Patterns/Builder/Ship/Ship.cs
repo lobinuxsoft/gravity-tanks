@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace HNW
@@ -8,6 +9,14 @@ namespace HNW
         Chassis chassis;
         Weapon[] weapons;
 
+        public int Attack { get; set; }
+
+        public int Defense { get; set; }
+
+        public int Speed { get; set; }
+
+        public int MaxHP { get; set; }
+
         public Engine Engine
         {
             get => engine;
@@ -17,12 +26,12 @@ namespace HNW
 
                 if(TryGetComponent(out HoverMovement move))
                 {
-                    move.MoveForce = engine.MoveForce;
-                    move.TurnSpeed = engine.TurnSpeed;
+                    move.MoveForce = Speed * engine.MoveForceMultiplier;
+                    move.TurnSpeed = Speed * engine.TurnSpeedMultiplier;
                 }
 
                 if (TryGetComponent(out ShootControl sc))
-                    sc.RotationSpeed = engine.TurnSpeed;
+                    sc.RotationSpeed = Speed * engine.TurnSpeedMultiplier;
             }
         }
 
@@ -46,8 +55,16 @@ namespace HNW
                 weapons = value;
 
                 if(TryGetComponent(out ShootControl sc))
+                {
                     sc.UpdateWeapons();
+                    sc.onProjectileHit += OnProjectileHit;
+                }
             }
+        }
+
+        private void OnProjectileHit(GameObject hitObj, float multiplayer)
+        {
+            Damager.DamageTo(hitObj, Mathf.RoundToInt(Attack * multiplayer));
         }
     }
 }

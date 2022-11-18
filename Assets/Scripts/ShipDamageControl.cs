@@ -15,8 +15,8 @@ namespace HNW
             set
             {
                 ship = value;
-                MaxHealth = ship.Chassis.MaxHealth;
-                Health = ship.Chassis.MaxHealth;
+                MaxHealth =  Mathf.RoundToInt( ship.MaxHP * ship.Chassis.MaxHealthMultiplier);
+                Health = MaxHealth;
             }
         }
 
@@ -43,7 +43,7 @@ namespace HNW
             if (isActiveAndEnabled)
                 StartCoroutine(BlinkEffect());
 
-            int toDamage =  value - ship.Chassis.Defense;
+            int toDamage = Mathf.RoundToInt(value * (100 / (100 + (ship.Defense * ship.Chassis.DefenseMultiplier))));
             Health -= toDamage < 0 ? 0 : toDamage;
         }
     }

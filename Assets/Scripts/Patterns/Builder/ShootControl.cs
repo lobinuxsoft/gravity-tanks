@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -7,16 +9,18 @@ namespace HNW
     {
         [Header("Aiming settings")]
         [SerializeField] LayerMask targetLayerMask;
-        [SerializeField] int rotationSpeed = 10;
-        [SerializeField] int detectionDistance = 10;
-        [SerializeField] int minAngleToShot = 5;
+        [SerializeField] float rotationSpeed = 10;
+        [SerializeField] float detectionDistance = 10;
+        [SerializeField] float minAngleToShot = 5;
         [SerializeField] Vector3 aimOffset = Vector3.up;
         [SerializeField] Transform aim;
+
+        public event Action<GameObject, float> onProjectileHit;
 
         /// <summary>
         /// The speed to look rotation
         /// </summary>
-        public int RotationSpeed
+        public float RotationSpeed
         {
             get => rotationSpeed;
             set => rotationSpeed = value;
@@ -25,7 +29,7 @@ namespace HNW
         /// <summary>
         /// Auto detection Enemy distance
         /// </summary>
-        public int DetectionDistance
+        public float DetectionDistance
         {
             get => detectionDistance;
             set => detectionDistance = value;
@@ -34,7 +38,7 @@ namespace HNW
         /// <summary>
         /// The min angle to start shooting
         /// </summary>
-        public int MinAngleToShot
+        public float MinAngleToShot
         {
             get => minAngleToShot;
             set => minAngleToShot = value;
@@ -58,9 +62,37 @@ namespace HNW
             UpdateWeapons();
         }
 
+        private void OnDestroy()
+        {
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                weapons[i].onProjectileHit -= OnProjectileHit;
+            }
+        }
+
         public void UpdateWeapons()
         {
+            StartCoroutine(UpdateWeaponRoutine());
+        }
+
+        IEnumerator UpdateWeaponRoutine()
+        {
+            if(weapons != null)
+            {
+                for (int i = 0; i < weapons.Length; i++)
+                {
+                    weapons[i].onProjectileHit -= OnProjectileHit;
+                }
+            }
+
+            yield return new WaitForEndOfFrame();
+
             weapons = GetComponentsInChildren<Weapon>();
+
+            for (int j = 0; j < weapons.Length; j++)
+            {
+                weapons[j].onProjectileHit += OnProjectileHit;
+            }
         }
 
         private void FixedUpdate()
@@ -108,6 +140,8 @@ namespace HNW
 
             return all.Count > 0 ? all[0].transform : null;
         }
+
+        private void OnProjectileHit(GameObject hitObj, float attackMultiplier) => onProjectileHit?.Invoke(hitObj, attackMultiplier);
 
         private void OnDrawGizmos()
         {

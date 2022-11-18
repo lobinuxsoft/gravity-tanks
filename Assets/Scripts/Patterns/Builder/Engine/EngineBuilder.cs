@@ -7,8 +7,8 @@ namespace HNW
         string name;
         Transform owner;
         MeshFilter engineBody;
-        int moveForce;
-        int turnSpeed;
+        float moveForceMultiplier;
+        float turnSpeedMultiplier;
 
         public EngineBuilder WithName(string name)
         {
@@ -28,15 +28,15 @@ namespace HNW
             return this;
         }
 
-        public EngineBuilder WithMoveForce(int moveForce)
+        public EngineBuilder WithMoveForceMultiplier(float moveForce)
         {
-            this.moveForce = moveForce;
+            this.moveForceMultiplier = moveForce;
             return this;
         }
 
-        public EngineBuilder WithTurnSpeed(int turnSpeed)
+        public EngineBuilder WithTurnSpeedMultiplier(float turnSpeed)
         {
-            this.turnSpeed = turnSpeed;
+            this.turnSpeedMultiplier = turnSpeed;
             return this;
         }
 
@@ -44,8 +44,8 @@ namespace HNW
         {
             Engine engine = Object.Instantiate(engineBody, owner).gameObject.AddComponent<Engine>();
             engine.name = name;
-            engine.MoveForce = moveForce;
-            engine.TurnSpeed = turnSpeed;
+            engine.MoveForceMultiplier = moveForceMultiplier;
+            engine.TurnSpeedMultiplier = turnSpeedMultiplier;
 
             return engine;
         }

@@ -4,19 +4,19 @@ namespace HNW
 {
     public class Chassis : MonoBehaviour
     {
-        [SerializeField] int maxHealth;
-        [SerializeField] int defense;
+        [SerializeField, Min(1)] float maxHealthMultiplier;
+        [SerializeField, Min(1)] float defenseMultiplier;
 
-        public int MaxHealth
+        public float MaxHealthMultiplier
         {
-            get => maxHealth;
-            set => maxHealth = value;
+            get => maxHealthMultiplier;
+            set => maxHealthMultiplier = value;
         }
 
-        public int Defense
+        public float DefenseMultiplier
         {
-            get => defense;
-            set => defense = value;
+            get => defenseMultiplier;
+            set => defenseMultiplier = value;
         }
     }
 }

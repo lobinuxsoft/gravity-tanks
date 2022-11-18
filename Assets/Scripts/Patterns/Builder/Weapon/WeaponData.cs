@@ -6,7 +6,7 @@ namespace HNW
     public class WeaponData : ScriptableObject
     {
         [SerializeField] LayerMask layerToDamage;
-        [SerializeField] int shotDamage = 1;
+        [SerializeField, Min(1)] float attackMultiplier = 1;
         [SerializeField, Min(1)] int emmitAmount = 1;
         [SerializeField] float shotRate = .5f;
         [SerializeField, Range(0, 360)] int shotAngle = 0;
@@ -21,7 +21,7 @@ namespace HNW
                 .WithBody(body)
                 .WithProjectile(projectile)
                 .WithLayerToDamage(layerToDamage)
-                .WithShotDamage(shotDamage)
+                .WithAttackMultiplier(attackMultiplier)
                 .WithEmmitAmount(emmitAmount)
                 .WithShotRate(shotRate)
                 .WithShotAngle(shotAngle)
