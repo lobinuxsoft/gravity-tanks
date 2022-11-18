@@ -1,15 +1,15 @@
+using CryingOnionTools.ScriptableVariables;
 using HNW;
 using System;
+using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(UIPopup))]
 public class GameOverUI : MonoBehaviour
 {
-    const uint reviveCost = 100;
-
-    [SerializeField] LongVariable exp;
     [SerializeField] HolographicButton reviveButton;
     [SerializeField] HolographicButton returnButton;
+    [SerializeField] TextMeshProUGUI reviveLabel;
 
     public event Action OnRevivePress;
     public event Action OnReturnPress;
@@ -29,15 +29,15 @@ public class GameOverUI : MonoBehaviour
         returnButton.onClick -= Return;
     }
 
-    public void Show()
+    public void Show(bool showReviveButton, int reviveCost)
     {
-        reviveButton.gameObject.SetActive(exp.Value >= reviveCost);
+        reviveButton.gameObject.SetActive(showReviveButton);
+        reviveLabel.text = $"Revive -{reviveCost}Exp";
         popup.Show();
     }
 
     private void Revive()
     {
-        exp.Value -= reviveCost;
         popup.Hide(null, OnRevivePress);
     }
 

@@ -10,15 +10,18 @@ using GooglePlayGames;
 
 public class Spawner : MonoBehaviour
 {
+    static Spawner instance;
+    public static Spawner Instance => instance;
+
     Dictionary<string, ObjectPool> pools = new Dictionary<string, ObjectPool>();
-    //ObjectPool enemyPool;
 
     [SerializeField] LongVariable killEnemiesAmount;
-    [SerializeField] Transform player;
     [SerializeField] Wave[] waves;
     [SerializeField] ExpDropManager expDropManager;
 
-    public event Action<int> OnNextWave; 
+    public static event Action onAllWavesEnd;
+    public static event Action onWaveEnd;
+    public static event Action<int> onNextWave; 
 
     Wave currentWave;
     int currentWaveNumber;
@@ -30,6 +33,7 @@ public class Spawner : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         SetupEnemies();
     }
 
@@ -102,35 +106,17 @@ public class Spawner : MonoBehaviour
 #endif
     }
 
-    IEnumerator ResetPlayerPosition()
-    {
-        yield return new WaitForEndOfFrame();
-        player.gameObject.SetActive(false);
-
-        if(player.TryGetComponent(out Rigidbody body))
-        {
-            body.isKinematic = true;
-            body.velocity -= body.velocity;
-            body.isKinematic = false;
-        }
-
-        player.position = MapGenerator.Instance.GetRandomPos() + Vector3.up * .5f;
-        player.rotation = Quaternion.identity;
-
-        player.gameObject.SetActive(true);
-    }
-
     void WaveEnd()
     {
         expDropManager.GrabAllActiveExpDrop();
 
         if (currentWaveNumber + 1 >= waves.Length)
-            Debug.Log("Ya no hay mas waves!!... Se termino el juego");
+            onAllWavesEnd?.Invoke();
         else
-            NextWave();
+            onWaveEnd?.Invoke();
     }
 
-    void NextWave()
+    public void NextWave()
     {
         currentWaveNumber++;
 
@@ -139,9 +125,7 @@ public class Spawner : MonoBehaviour
         enemiesRemainingToSpawn = currentWave.EnemyCount;
         enemiesRemainingAlive = enemiesRemainingToSpawn;
 
-        OnNextWave?.Invoke(currentWaveNumber);
-
-        StartCoroutine(ResetPlayerPosition());
+        onNextWave?.Invoke(currentWaveNumber);
     }
 }
 

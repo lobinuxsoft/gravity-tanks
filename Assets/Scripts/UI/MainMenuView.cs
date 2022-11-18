@@ -42,7 +42,7 @@ namespace HNW
 
         private void OnPlayClicked()
         {
-            TimelineUITransition.Instance.FadeStart(nextSceneName, 1.5f, fadeIn, fadeOut);
+            TimelineUITransitionScene.Instance.FadeStart(nextSceneName, 1.5f, fadeIn, fadeOut);
         }
 
         private void OnSettingsClicked()

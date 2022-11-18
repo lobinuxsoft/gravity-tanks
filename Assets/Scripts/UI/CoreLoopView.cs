@@ -39,7 +39,7 @@ namespace HNW
 
         private void OnPlayClicked()
         {
-            TimelineUITransition.Instance.FadeStart(gameplayScene, 1, fadeIn, fadeOut);
+            TimelineUITransitionScene.Instance.FadeStart(gameplayScene, 1, fadeIn, fadeOut);
         }
 
         private void OnShopClicked()

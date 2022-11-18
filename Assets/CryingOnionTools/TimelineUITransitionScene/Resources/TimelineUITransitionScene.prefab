@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 7105533907706736977}
   - component: {fileID: 5267223532457840019}
   m_Layer: 5
-  m_Name: TimelineUITransition
+  m_Name: TimelineUITransitionScene
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +512,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -531,7 +531,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 11400000, guid: 49ea8ceb4be68164ebff5979d43708d4, type: 2}
   m_InitialState: 1
   m_WrapMode: 0
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 3851001541289320606, guid: 70a2e399d38693e47bf671fb370668bd, type: 2}
@@ -553,7 +553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6638004753823697473}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 194e642a7e322e847b8348468f607605, type: 3}
+  m_Script: {fileID: 11500000, guid: 96b35e04f8e97ca4a8dcd813727467be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: {fileID: 11400000, guid: 49ea8ceb4be68164ebff5979d43708d4, type: 2}

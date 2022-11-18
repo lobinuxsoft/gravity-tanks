@@ -1,14 +1,8 @@
-using CryingOnionTools.ScriptableVariables;
-using System.Collections;
-using System.Runtime.Remoting.Channels;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RadialHPBar : MonoBehaviour
+public class HolographicRadialProgressBar : MonoBehaviour
 {
-    [SerializeField] IntVariable cur;
-    [SerializeField] IntVariable max;
-
     [Header("Base Settings")]
     [SerializeField] Material baseMaterial;
     [SerializeField] Sprite mainTex;
@@ -16,47 +10,19 @@ public class RadialHPBar : MonoBehaviour
     [SerializeField] Vector2 tilingUV;
     [SerializeField] Vector2 offsetUV;
 
-    [Header("Red Channel")]
+    [Header("Channels Settings")]
     [SerializeField] RadialBarStruct redChannel;
-
-    [Header("Green Channel")]
     [SerializeField] RadialBarStruct greenChannel;
-
-    [Header("Blue Channel")]
     [SerializeField] RadialBarStruct blueChannel;
 
-    [Header("Icon")]
+    [Header("Icon Settings")]
     [SerializeField] RadialIconStruct icon;
 
-    bool isInited = false;
     Image image;
 
-    private void OnValidate()
-    {
-        UpdateView();
-    }
+    private void OnValidate() => UpdateView();
 
-    private void Awake() 
-    {
-        UpdateView();
-        cur.onValueChange += OnValueChange;
-        max.onValueChange += OnValueChange;
-    }
-
-    private void Start() 
-    {
-        image.material.SetFloat("_FillAmountR", 0);
-        image.material.SetFloat("_FillAmountG", 0);
-        image.material.SetFloat("_FillAmountB", 0);
-
-        StartCoroutine(InitHPBar(1f));
-    }
-
-    private void OnDestroy()
-    {
-        cur.onValueChange -= OnValueChange;
-        max.onValueChange -= OnValueChange;
-    }
+    private void Awake() => UpdateView();
 
     void UpdateView()
     {
@@ -109,53 +75,16 @@ public class RadialHPBar : MonoBehaviour
         }
     }
 
-    public void SetFillChannelR(float amount)
+    public float GetFillAmountR() => redChannel.fillAmount;
+    public float GetFillAmountG() => greenChannel.fillAmount;
+    public float GetFillAmountB() => blueChannel.fillAmount;
+
+    public void SetFillChanneldRGB(float rAmount, float gAmount, float bAmount)
     {
-        redChannel.fillAmount = amount;
+        redChannel.fillAmount = rAmount;
+        greenChannel.fillAmount = gAmount;
+        blueChannel.fillAmount = bAmount;
         UpdateView();
-    }
-
-    public void SetFillChannelG(float amount)
-    {
-        greenChannel.fillAmount = amount;
-        UpdateView();
-    }
-
-    public void SetFillChannelB(float amount)
-    {
-        blueChannel.fillAmount = amount;
-        UpdateView();
-    }
-
-    IEnumerator InitHPBar(float speed)
-    {
-        yield return StartCoroutine(AnimBarEffect("_FillAmountR", 1f, speed));
-        yield return StartCoroutine(AnimBarEffect("_FillAmountB", 1f, speed));
-        yield return StartCoroutine(AnimBarEffect("_FillAmountG", 1f, speed));
-        isInited = true;
-    }
-
-    IEnumerator AnimBarEffect(string shaderPropertyName, float targetValue, float speed)
-    {
-        float lerp = 0;
-
-        float curValue = image.material.GetFloat(shaderPropertyName);
-
-        while (lerp < 1f)
-        {
-            lerp +=Time.unscaledDeltaTime * speed;
-            image.material.SetFloat(shaderPropertyName, Mathf.Lerp(curValue, targetValue, lerp));
-            yield return null;
-        }
-
-        image.material.SetFloat(shaderPropertyName, targetValue);
-    }
-
-    private void OnValueChange(int value)
-    {
-        if(!isInited) return;
-
-        StartCoroutine(AnimBarEffect("_FillAmountG", (float)cur.Value / max.Value, 2f));
     }
 }
 

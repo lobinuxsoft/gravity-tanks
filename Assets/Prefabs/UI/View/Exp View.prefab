@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -128}
-  m_SizeDelta: {x: 0, y: 164.04004}
+  m_SizeDelta: {x: 0, y: 164}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2851599183515703252
 MonoBehaviour:
@@ -292,8 +292,7 @@ MonoBehaviour:
   m_text: 9999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4f99925f5f98306489141e1c272c8046, type: 2}
-  m_sharedMaterial: {fileID: -835517333043797691, guid: 4f99925f5f98306489141e1c272c8046,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 48b09ddef89cc8143a15e268ad813c5a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

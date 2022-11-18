@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class ExpDrop : MonoBehaviour
@@ -11,21 +12,33 @@ public class ExpDrop : MonoBehaviour
     [SerializeField] float distanceToStartFollow = 5;
     [SerializeField] MeshRenderer meshRenderer;
     [SerializeField] TrailRenderer trailRenderer;
+    [SerializeField] TextMeshPro textMesh;
+
+    int expToGive;
 
     Coroutine followRoutine;
 
     public Color ExpDropColor
     {
-        get => meshRenderer.material.GetColor("_EmissionColor");
+        get => meshRenderer.material.GetColor("_Color");
         set
         {
-            meshRenderer.material.SetColor("_EmissionColor", value);
+            meshRenderer.material.SetColor("_Color", value);
             trailRenderer.startColor = value;
             trailRenderer.endColor = value;
+            textMesh.color = value;
         }
     }
 
-    [field:SerializeField] public int ExpToGive { get; set; }
+    public int ExpToGive 
+    {
+        get => expToGive;
+        set
+        {
+            expToGive = value;
+            textMesh.text = $"{expToGive}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGB(textMesh.color)}>";
+        }
+    }
 
     public Transform Target { get; set; }
 
@@ -74,7 +87,7 @@ public class ExpDrop : MonoBehaviour
     {
         while ((Target.position - transform.position).sqrMagnitude > 0)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref velocity, Time.deltaTime * modifier);
+            transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref velocity, Time.unscaledDeltaTime * modifier);
             yield return null;
         }
     }

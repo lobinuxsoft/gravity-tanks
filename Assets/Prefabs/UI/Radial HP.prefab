@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7683208727185348435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7683208727185348432}
+  - component: {fileID: 7683208727185348438}
+  - component: {fileID: 7683208727185348433}
+  - component: {fileID: 7683208727185348439}
+  - component: {fileID: 7683208727185348436}
+  m_Layer: 5
+  m_Name: Radial HP
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7683208727185348432
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683208727185348435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 2, y: -60}
+  m_SizeDelta: {x: 256, y: 256}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &7683208727185348438
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683208727185348435}
+  m_CullTransparentMesh: 1
+--- !u!114 &7683208727185348433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683208727185348435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9b38449a778276b40801fc1966d09fec, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 0
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7683208727185348439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683208727185348435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b01627eab4359064293e049b44c95e96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseMaterial: {fileID: 2100000, guid: 90256f2e6b541f84b93a81ef3678a5b0, type: 2}
+  mainTex: {fileID: 21300000, guid: 9b38449a778276b40801fc1966d09fec, type: 3}
+  rollUV: -127
+  tilingUV: {x: 1, y: 1.5}
+  offsetUV: {x: 0, y: 0.25}
+  redChannel:
+    color: {r: 2.9960785, g: 0.20257318, b: 0, a: 1}
+    offset: {x: 0, y: 0}
+    scale: 0.15
+    rotationSpeed: 0.3
+    gradientScale: 0
+    fillOrientation: 180
+    fillAmount: 1
+  greenChannel:
+    color: {r: 0, g: 0.68235296, b: 1.4980392, a: 1}
+    offset: {x: 0, y: 0.1}
+    scale: 0.5
+    rotationSpeed: 0.05
+    gradientScale: 1.7
+    fillOrientation: 0
+    fillAmount: 1
+  blueChannel:
+    color: {r: 1.4980392, g: 0.11764706, b: 0, a: 1}
+    offset: {x: 0, y: 0.15}
+    scale: 1.5
+    rotationSpeed: -0.3
+    gradientScale: 2.25
+    fillOrientation: 180
+    fillAmount: 1
+  icon:
+    iconTex: {fileID: 21300000, guid: 1cd48aef069ab8c4c9593d792b2dbb30, type: 3}
+    color: {r: 0, g: 2.7294118, b: 5.992157, a: 1}
+    scale: 1.7
+    rotation: 90
+    offset: {x: 0, y: 0.15}
+--- !u!114 &7683208727185348436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7683208727185348435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56367f986b526c04e84e2aa34783e5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cur: {fileID: 11400000, guid: 781a75a8dc2cd5740b8fcebc917962a2, type: 2}
+  max: {fileID: 11400000, guid: 128ae0dd41f5d5142829ef3ac53a6059, type: 2}

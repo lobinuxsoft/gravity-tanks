@@ -6,9 +6,7 @@ namespace HNW
     public class ExpDropManager : MonoBehaviour
     {
         [SerializeField] LongVariable exp;
-        [SerializeField, GradientUsage(true)] Gradient gradient;
-        [SerializeField] int minExp = 10;
-        [SerializeField] int maxExp = 1000;
+        public ExpData[] exps;
         ObjectPool pool;
 
         private void Awake()
@@ -25,9 +23,9 @@ namespace HNW
 
             if(temp.TryGetComponent(out ExpDrop drop))
             {
-                float rnd = Random.Range(0f, 1f);
-                drop.ExpToGive = (int)Mathf.Lerp(minExp, maxExp, rnd);
-                drop.ExpDropColor = gradient.Evaluate(rnd);
+                int rnd = Random.Range(0, exps.Length);
+                drop.ExpDropColor = exps[rnd].color;
+                drop.ExpToGive = exps[rnd].value;
                 drop.onTouchPlayer += OnTouchPlayer;
             }
 
@@ -51,4 +49,11 @@ namespace HNW
             pool.ReturnToPool(drop.gameObject);
         }
     }
+}
+
+[System.Serializable]
+public struct ExpData
+{
+    public int value;
+    public Color color;
 }

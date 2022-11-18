@@ -1,5 +1,4 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Playables;
@@ -7,16 +6,16 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 using UnityEngine.UI;
 
-public class TimelineUITransition : MonoBehaviour
+public class TimelineUITransitionScene : MonoBehaviour
 {
-    private static TimelineUITransition instance;
+    private static TimelineUITransitionScene instance;
 
-    public static TimelineUITransition Instance
+    public static TimelineUITransitionScene Instance
     {
         get
         {
             if (instance == null)
-                instance = Instantiate(Resources.Load<TimelineUITransition>(nameof(TimelineUITransition)));
+                instance = Instantiate(Resources.Load<TimelineUITransitionScene>(nameof(TimelineUITransitionScene)));
 
             return instance;
         }

@@ -218,7 +218,7 @@ PlayableDirector:
   m_PlayableAsset: {fileID: 0}
   m_InitialState: 0
   m_WrapMode: 2
-  m_DirectorUpdateMode: 1
+  m_DirectorUpdateMode: 2
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 6337093370051116784, guid: e34ba5ef2f9d9a440aa18b46100a664f, type: 2}
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d27a1ffc55b9b64bb6725ab08631f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: {fileID: 11400000, guid: 5a0525ff63e52f349a7c72b4b587c93b, type: 2}
   reviveButton: {fileID: 7952062213358778748}
   returnButton: {fileID: 1774596426276921060}
+  reviveLabel: {fileID: 7952062214611286200}
 --- !u!1 &4374393410426785034
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,5 +727,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9755ad4dc1785114aad96d4a882c068a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7952062214611286200 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
+    type: 3}
+  m_PrefabInstance: {fileID: 7803148979027858156}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
