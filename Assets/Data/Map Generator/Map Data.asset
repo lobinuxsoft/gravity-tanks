@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e602c86328b06348847e27196bf67fe, type: 3}
+  m_Name: Map Data
+  m_EditorClassIdentifier: 
+  maps:
+  - mapSize: {x: 10, y: 10}
+    obstaclePercent: 0.5
+    seed: 123
+    minObstacleHeight: 0.25
+    maxObstacleHeight: 5
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 1, g: 0, b: 0.03137255, a: 0}
+    topColor: {r: 0, g: 0.007843494, b: 1, a: 0}
+  - mapSize: {x: 10, y: 25}
+    obstaclePercent: 0.75
+    seed: 456
+    minObstacleHeight: 0.25
+    maxObstacleHeight: 5
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 1, g: 0.06666667, b: 0, a: 0}
+    topColor: {r: 1, g: 0.86274517, b: 0, a: 0}
+  - mapSize: {x: 20, y: 20}
+    obstaclePercent: 0.5
+    seed: 666
+    minObstacleHeight: 4
+    maxObstacleHeight: 7
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 0, g: 0, b: 0, a: 0}
+    topColor: {r: 1, g: 1, b: 1, a: 0}
+  - mapSize: {x: 30, y: 40}
+    obstaclePercent: 0.5
+    seed: 666
+    minObstacleHeight: 0.1
+    maxObstacleHeight: 8
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 0, g: 0, b: 0, a: 0}
+    topColor: {r: 1, g: 0.32941177, b: 0, a: 0}
+  - mapSize: {x: 20, y: 20}
+    obstaclePercent: 0.1
+    seed: 1000
+    minObstacleHeight: 0.1
+    maxObstacleHeight: 10
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 0, g: 0, b: 0, a: 0}
+    topColor: {r: 0.5826187, g: 0, b: 1, a: 0}
+  - mapSize: {x: 10, y: 30}
+    obstaclePercent: 0.25
+    seed: 666
+    minObstacleHeight: 1
+    maxObstacleHeight: 10
+    tileMaterial: {fileID: 2100000, guid: adc4839a5ec3d344e8fbccd34a9a6d98, type: 2}
+    obstacleMaterial: {fileID: 2100000, guid: a111426057e6d9b478b2e01a7bd91b57, type: 2}
+    bottomColor: {r: 0, g: 0.112698555, b: 1, a: 0}
+    topColor: {r: 0, g: 1, b: 0.8028641, a: 0}

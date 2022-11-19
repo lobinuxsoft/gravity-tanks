@@ -1,34 +1,48 @@
+using CryingOnionTools.ScriptableVariables;
+using HNW;
 using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(UIPopup))]
 public class GameOverUI : MonoBehaviour
 {
-    [SerializeField] Button reviveButton;
+    [SerializeField] HolographicButton reviveButton;
+    [SerializeField] HolographicButton returnButton;
+    [SerializeField] TextMeshProUGUI reviveLabel;
 
     public event Action OnRevivePress;
+    public event Action OnReturnPress;
 
     private UIPopup popup;
 
     private void Awake()
     {
         popup = GetComponent<UIPopup>();
-        reviveButton.onClick.AddListener(Revive);
+        reviveButton.onClick += Revive;
+        returnButton.onClick += Return;
     }
 
     private void OnDestroy()
     {
-        reviveButton.onClick.RemoveListener(Revive);
+        reviveButton.onClick -= Revive;
+        returnButton.onClick -= Return;
     }
 
-    public void Show()
+    public void Show(bool showReviveButton, int reviveCost)
     {
+        reviveButton.gameObject.SetActive(showReviveButton);
+        reviveLabel.text = $"Revive ${reviveCost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(reviveLabel.color)}>";
         popup.Show();
     }
 
     private void Revive()
     {
         popup.Hide(null, OnRevivePress);
+    }
+
+    private void Return()
+    {
+        popup.Hide(null, OnReturnPress);
     }
 }

@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a04f632fcd690e24c952d31584dcfa20, type: 3}
   m_Name: Rocket Launcher
   m_EditorClassIdentifier: 
+  cost: 5000
   layerToDamage:
     serializedVersion: 2
     m_Bits: 129
-  shotDamage: 4
+  attackMultiplier: 4
   emmitAmount: 1
   shotRate: 2
   shotAngle: 0

@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: cbf044adbb33f6d449507f785bf2f267, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 15
+    - _RotSpeedB: -0.3
+    - _RotSpeedG: 0.15
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 3.9999995, g: 0.3141361, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 3.9999995, g: 0.3141361, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.15, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.15, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0.25, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.7, b: 0, a: 0}
+  m_BuildTextureStacks: []

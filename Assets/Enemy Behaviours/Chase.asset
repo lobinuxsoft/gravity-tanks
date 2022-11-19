@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenAttacks: 1
   attackDistanceThreshold: 2
-  damageAmount: 1
+  damageAmount: 2
   refreshTargetPositionRate: 0.25
   moveSpeed: 5
   turnSpeed: 2.5

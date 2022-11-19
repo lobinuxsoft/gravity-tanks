@@ -45,6 +45,7 @@ Material:
     - _MinHeight: 0
     - _SquareRound: 0.1
     - _SquareSize: 0.96
+    - _VertexScale: 1
     m_Colors:
     - Color_c1318e252cbf438f84c7e77aafe96a2c: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.49056596, g: 0.49056596, b: 0.49056596, a: 0}

@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea9daa1736299eb40804f022728cb959, type: 3}
+  m_Name: Enemy Factory Data
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyCount: 20
+    timeBetweenSpawns: 1
+    enemies:
+    - {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd, type: 3}
+  - enemyCount: 50
+    timeBetweenSpawns: 0.5
+    enemies:
+    - {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd, type: 3}
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
+  - enemyCount: 100
+    timeBetweenSpawns: 0.25
+    enemies:
+    - {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd, type: 3}
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
+  - enemyCount: 200
+    timeBetweenSpawns: 0.1
+    enemies:
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
+  - enemyCount: 500
+    timeBetweenSpawns: 0.025
+    enemies:
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}
+  - enemyCount: 600
+    timeBetweenSpawns: 0.05
+    enemies:
+    - {fileID: 5128695635110145610, guid: 00643eb1a94a3a84d9cea389a79d9cbd, type: 3}
+    - {fileID: 4452833807296238862, guid: 3428b0e625905354096e1724a8d4e0d9, type: 3}

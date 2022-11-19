@@ -1,20 +1,23 @@
+using System;
 using UnityEngine;
 
 namespace HNW
 {
     public class Weapon : MonoBehaviour
     {
-        private int shotDamage;
+        private float attackMultiplier;
         private int emmitAmount;
         private float shotRate;
         private int shotAngle;
         private LayerMask layerToDamage;
         WeaponProjectile[] projectiles;
 
-        public int ShotDamage
+        public event Action<GameObject, float> onProjectileHit;
+
+        public float AttackMultiplier
         {
-            get => shotDamage;
-            set => shotDamage = value;
+            get => attackMultiplier;
+            set => attackMultiplier = value;
         }
 
         public int EmmitAmount
@@ -104,6 +107,6 @@ namespace HNW
             }
         }
 
-        private void OnProjectileHit(GameObject obj) => Damager.DamageTo(obj, shotDamage);
+        private void OnProjectileHit(GameObject obj) => onProjectileHit?.Invoke(obj, attackMultiplier);
     }
 }

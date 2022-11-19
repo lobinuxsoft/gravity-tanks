@@ -61,6 +61,20 @@
             },
             "m_InputSlot": {
                 "m_Node": {
+                    "m_Id": "6ed42a896f2f4dda824ad466c4d3571f"
+                },
+                "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "003c5d9cf71942de809550e6cd52fcd2"
+                },
+                "m_SlotId": 3
+            },
+            "m_InputSlot": {
+                "m_Node": {
                     "m_Id": "d5270a359e32404282b81e30aa86b0e1"
                 },
                 "m_SlotId": 2
@@ -399,6 +413,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "664bceec0eac4317b88aa33ec7bd0e8f",
+    "m_Id": 2,
+    "m_DisplayName": "Mask",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Mask",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SubGraphOutputNode",
     "m_ObjectId": "6ed42a896f2f4dda824ad466c4d3571f",
     "m_Group": {
@@ -418,6 +447,9 @@
     "m_Slots": [
         {
             "m_Id": "7e30cdaeea8a4b0bb8ce0fc3a92f2741"
+        },
+        {
+            "m_Id": "664bceec0eac4317b88aa33ec7bd0e8f"
         }
     ],
     "synonyms": [],

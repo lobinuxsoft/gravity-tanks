@@ -1,64 +1,55 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace HNW
 {
-    public class Damageable : MonoBehaviour
+    public abstract class Damageable : MonoBehaviour
     {
-        [SerializeField] private int health = 5;
-        [SerializeField] private int maxHealth = 5;
         [SerializeField, GradientUsage(true)] Gradient damageGradient;
         [SerializeField] GameObject deathEffect;
 
-        public UnityEvent<int> onHealthChanged;
-        public UnityEvent<int> onMaxHealthChanged;
-        public UnityEvent onDie;
+        public UnityEvent<GameObject> onDie;
 
-        Renderer[] renderers;
+        protected Renderer[] renderers;
 
-        private void Awake() => renderers = GetComponentsInChildren<Renderer>();
+        public virtual int Health { get; set; }
+        public virtual int MaxHealth { get; set; }
 
-        public int Health
+        private void Awake()
         {
-            get => health;
-            set
-            {
-                health = value;
-
-                if (health <= 0)
-                {
-                    if(deathEffect != null)
-                        Instantiate(deathEffect, transform.position, transform.rotation);
-
-                    StopAllCoroutines();
-                    onDie?.Invoke();
-                }
-                else
-                    onHealthChanged?.Invoke(health);
-            }
+            renderers = GetComponentsInChildren<Renderer>();
+            onDie.AddListener(ExplodeEffect);
+            FullHeal();
         }
 
-        public int MaxHealth
+        private void OnDestroy()
         {
-            get => maxHealth;
-            set
-            {
-                maxHealth = value;
-                onMaxHealthChanged?.Invoke(maxHealth);
-            }
+            onDie.RemoveListener(ExplodeEffect);
         }
 
-        public void SetDamage(int value)
+        private void ExplodeEffect(GameObject obj)
         {
-            if(isActiveAndEnabled)
+            if (deathEffect != null)
+                Instantiate(deathEffect, obj.transform.position, obj.transform.rotation);
+
+            StopAllCoroutines();
+
+            #if UNITY_ANDROID
+            Handheld.Vibrate();
+            #endif
+        }
+
+        public virtual void SetDamage(int value)
+        {
+            if (isActiveAndEnabled)
                 StartCoroutine(BlinkEffect());
 
             Health -= value;
         }
 
-        public void FullHeal() 
-        { 
+        public void FullHeal()
+        {
             Health = MaxHealth;
 
             for (int i = 0; i < renderers.Length; i++)
@@ -67,12 +58,12 @@ namespace HNW
             }
         }
 
-        IEnumerator BlinkEffect(float duration = 1)
+        protected IEnumerator BlinkEffect(float duration = 1)
         {
             float lerp = 0;
             float blinkSpeed = 4;
 
-            while(lerp < duration)
+            while (lerp < duration)
             {
                 for (int i = 0; i < renderers.Length; i++)
                 {
