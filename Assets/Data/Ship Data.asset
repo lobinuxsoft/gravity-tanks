@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value:
     maxHp: 10
-    attack: 10
+    attack: 1
     defense: 1
-    speed: 20
+    speed: 15
     chassisName: Normal Chassis
     engineName: Mark1
     weaponsNames:

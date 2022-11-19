@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396f220f2f69e3446bae577aca45bb13, type: 3}
   m_Name: Exp
   m_EditorClassIdentifier: 
-  value: 120110
+  value: 993270
   redeableFile: 0
   fileExtention: .save

@@ -43,7 +43,7 @@ namespace HNW
             if (isActiveAndEnabled)
                 StartCoroutine(BlinkEffect());
 
-            int toDamage = Mathf.RoundToInt(value * (100 / (100 + (ship.Defense * ship.Chassis.DefenseMultiplier))));
+            int toDamage = Mathf.CeilToInt(value * (100 / (100 + (ship.Defense * ship.Chassis.DefenseMultiplier))));
             Health -= toDamage < 0 ? 0 : toDamage;
         }
     }

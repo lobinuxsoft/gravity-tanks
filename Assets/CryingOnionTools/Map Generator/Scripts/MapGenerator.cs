@@ -27,17 +27,17 @@ namespace HNW
         private void Awake()
         {
             Instance = this;
-            Spawner.onNextWave += NewWave;
+            EnemyFactory.onNextWave += NewWave;
         }
 
         private void OnDestroy()
         {
-            Spawner.onNextWave -= NewWave;
+            EnemyFactory.onNextWave -= NewWave;
         }
 
         void NewWave(int waveNumber)
         {
-            mapIndex = Mathf.Clamp(waveNumber - 1, 0, maps.Length);
+            mapIndex = (waveNumber - 1) % maps.Length;  //Mathf.Clamp(waveNumber - 1, 0, maps.Length);
             StartCoroutine(GenerateMapRoutine());
         }
 

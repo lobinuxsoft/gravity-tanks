@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -7,18 +8,38 @@ namespace HNW
     {
         [SerializeField] LongVariable expVariable;
         [SerializeField] TextMeshProUGUI label;
-        [SerializeField] HolographicButton icon;
+        [SerializeField] AnimationCurve animBehaviour;
+        [SerializeField] float animationSpeed = 1f;
 
         private void Awake() => expVariable.onValueChange += OnValueChange;
 
-        private void Start() => label.text = expVariable.Value.ToString();
+        private void Start() => SetText(expVariable.Value);
 
         private void OnDestroy() => expVariable.onValueChange -= OnValueChange;
 
         private void OnValueChange(long value)
         {
-            icon.PlayAnimation(1.5f);
-            label.text = value.ToString();
+            StartCoroutine(PlayAnimation(animationSpeed));
+            SetText(value);
+        }
+
+        private void SetText(long value)
+        {
+            label.text = $"{value.ToString()}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(label.color)}>";
+        }
+
+        IEnumerator PlayAnimation(float speed)
+        {
+            float lerp = 0;
+
+            while (lerp < 1f)
+            {
+                lerp += Time.unscaledDeltaTime * speed;
+                label.transform.localScale = Vector3.one * animBehaviour.Evaluate(lerp);
+                yield return null;
+            }
+
+            label.transform.localScale = Vector3.one * animBehaviour.Evaluate(1);
         }
     }
 }

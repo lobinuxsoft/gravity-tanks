@@ -46,8 +46,8 @@ namespace HNW
             nextWaveUI.onNextClicked += OnNextClicked;
             nextWaveUI.onReturnClicked += OnReturnClicked;
 
-            Spawner.onWaveEnd += OnWaveEnd;
-            Spawner.onAllWavesEnd += OnAllWavesEnd;
+            EnemyFactory.onWaveEnd += OnWaveEnd;
+            EnemyFactory.onAllWavesEnd += OnAllWavesEnd;
         }
 
         private void OnDestroy()
@@ -65,8 +65,8 @@ namespace HNW
             nextWaveUI.onNextClicked -= OnNextClicked;
             nextWaveUI.onReturnClicked -= OnReturnClicked;
 
-            Spawner.onWaveEnd -= OnWaveEnd;
-            Spawner.onAllWavesEnd -= OnAllWavesEnd;
+            EnemyFactory.onWaveEnd -= OnWaveEnd;
+            EnemyFactory.onAllWavesEnd -= OnAllWavesEnd;
 
             killEnemiesAmount.EraseData();
         }
@@ -110,7 +110,7 @@ namespace HNW
         private void OnNextClicked()
         {
             Time.timeScale = 1;
-            Spawner.Instance.NextWave();
+            EnemyFactory.Instance.NextWave();
 
             StartCoroutine(ResetPlayerPosition());
         }

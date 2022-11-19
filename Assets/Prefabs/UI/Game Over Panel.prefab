@@ -425,7 +425,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 45.2
+      value: 44
       objectReference: {fileID: 0}
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -460,7 +460,7 @@ PrefabInstance:
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -587,7 +587,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 48.3
+      value: 39.65
       objectReference: {fileID: 0}
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -622,7 +622,7 @@ PrefabInstance:
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -632,7 +632,7 @@ PrefabInstance:
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 148967147457358751, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
