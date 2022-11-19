@@ -32,7 +32,7 @@ public class GameOverUI : MonoBehaviour
     public void Show(bool showReviveButton, int reviveCost)
     {
         reviveButton.gameObject.SetActive(showReviveButton);
-        reviveLabel.text = $"Revive -{reviveCost}Exp";
+        reviveLabel.text = $"Revive ${reviveCost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(reviveLabel.color)}>";
         popup.Show();
     }
 

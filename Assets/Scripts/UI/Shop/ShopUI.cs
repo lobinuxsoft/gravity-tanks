@@ -12,6 +12,7 @@ public class ShopUI : MonoBehaviour
     [SerializeField] HolographicButton enginesButton;
 
     [SerializeField] WeaponsShopUI weaponsUI;
+    [SerializeField] EnginesShopUI enginesUI;
 
 
     public Transform Owner
@@ -19,6 +20,7 @@ public class ShopUI : MonoBehaviour
         set
         {
             weaponsUI.Owner = value;
+            enginesUI.Owner = value;
         }
     }
 
@@ -26,6 +28,7 @@ public class ShopUI : MonoBehaviour
 
     public event Action onBackClicked;
     public event Action<string, int> onWeaponBuyClicked;
+    public event Action<string, int> onEngineBuyClicked;
 
     private void Awake()
     {
@@ -36,6 +39,7 @@ public class ShopUI : MonoBehaviour
         enginesButton.onClick += OnEnginesClicked;
 
         weaponsUI.onBuyClicked += OnWeaponBuyClicked;
+        enginesUI.onBuyClicked += OnEngineBuyClicked;
     }
 
     private void OnDestroy()
@@ -45,6 +49,7 @@ public class ShopUI : MonoBehaviour
         enginesButton.onClick += OnEnginesClicked;
 
         weaponsUI.onBuyClicked += OnWeaponBuyClicked;
+        enginesUI.onBuyClicked += OnEngineBuyClicked;
     }
 
     private void OnBackClicked() => onBackClicked?.Invoke();
@@ -61,12 +66,15 @@ public class ShopUI : MonoBehaviour
 
     private void OnWeaponBuyClicked(string weaponName, int cost) => onWeaponBuyClicked?.Invoke(weaponName, cost);
 
+    private void OnEngineBuyClicked(string engineName, int cost) => onEngineBuyClicked?.Invoke(engineName, cost);
+
     private void ShowWeapons()
     {
         weaponCamera.SetActive(true);
         engineCamera.SetActive(false);
 
         weaponsUI.Show();
+        enginesUI.Hide();
     }
 
     private void ShowEngines()
@@ -75,12 +83,16 @@ public class ShopUI : MonoBehaviour
         engineCamera.SetActive(true);
 
         weaponsUI.Hide();
+        enginesUI.Show();
     }
 
     public void UpdateCostLabel(string value)
     {
         if (weaponsUI.IsVisible)
             weaponsUI.UpdateCostLabel(value);
+
+        if (enginesUI.IsVisible)
+            enginesUI.UpdateCostLabel(value);
     }
 
     public void Show()
@@ -95,6 +107,8 @@ public class ShopUI : MonoBehaviour
         engineCamera.SetActive(false);
 
         if (weaponsUI.IsVisible) weaponsUI.Hide();
+
+        if (enginesUI.IsVisible) enginesUI.Hide();
 
         popup.Hide();
     }

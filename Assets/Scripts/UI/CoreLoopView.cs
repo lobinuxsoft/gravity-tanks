@@ -49,6 +49,7 @@ namespace HNW
 
             shopUI.onBackClicked += OnCloseShop;
             shopUI.onWeaponBuyClicked += OnBuyWeapon;
+            shopUI.onEngineBuyClicked += OnBuyEngine;
 
             shopUI.Owner = avatarOwner;
 
@@ -61,7 +62,6 @@ namespace HNW
             levelUpUI.DefenseValue = shipData.Value.defense;
             levelUpUI.SpeedValue = shipData.Value.speed;
         }
-
 
         private void OnDestroy()
         {
@@ -78,6 +78,7 @@ namespace HNW
 
             shopUI.onBackClicked -= OnCloseShop;
             shopUI.onWeaponBuyClicked -= OnBuyWeapon;
+            shopUI.onEngineBuyClicked -= OnBuyEngine;
         }
 
         private void OnPlayClicked()
@@ -183,6 +184,13 @@ namespace HNW
 
         private void OnCloseShop()
         {
+            for (int i = 0; i < avatarOwner.childCount; i++)
+            {
+                Destroy(avatarOwner.GetChild(i).gameObject);
+            }
+
+            ship = shipData.BuildShip(avatarOwner);
+
             shopUI.Hide();
             popup.Show();
         }
@@ -228,6 +236,33 @@ namespace HNW
                     PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_war_machine, 100.0f, (bool success) => { });
 
                 #endif
+            }
+        }
+
+        private void OnBuyEngine(string engineName, int cost)
+        {
+            if (shipData.Value.engineName.Contains(engineName)) return;
+
+            if (exp.Value >= cost)
+            {
+
+                var temp = shipData.Value;
+                temp.engineName = engineName;
+
+                shipData.Value = temp;
+                shipData.SaveData();
+
+                exp.Value -= cost;
+                exp.SaveData();
+
+                for (int i = 0; i < avatarOwner.childCount; i++)
+                {
+                    Destroy(avatarOwner.GetChild(i).gameObject);
+                }
+
+                ship = shipData.BuildShip(avatarOwner);
+
+                shopUI.UpdateCostLabel("Equiped");
             }
         }
     }

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 683a726754a849c4ab69f26b1c7dd4b5, type: 3}
   m_Name: Mark3
   m_EditorClassIdentifier: 
-  moveForceMultiplier: 3
-  turnSpeedMultiplier: 3
+  cost: 15000
+  moveForceMultiplier: 1.5
+  turnSpeedMultiplier: 1.5
   engineBody: {fileID: 1766227437505379061, guid: 1d603a420e289fe4086a5f7ffb504a59,
     type: 3}

@@ -28,6 +28,8 @@ namespace HNW
 
         Damageable player;
 
+        public int ReviveCost => (maxHp.Value - curHp.Value) * 100;
+
         private void Awake()
         {
             player = GameObject.FindGameObjectWithTag("Player").GetComponent<Damageable>();
@@ -78,7 +80,7 @@ namespace HNW
         {
             farCamera.SetActive(false);
             nearCamera.SetActive(true);
-            gameOverUI.Show(exp.Value >= maxHp.Value * 10, maxHp.Value * 10);
+            gameOverUI.Show(exp.Value >= ReviveCost, ReviveCost);
 
 #if UNITY_ANDROID
             PlayGamesPlatform.Instance.ReportScore(killEnemiesAmount.Value, GPGSIds.leaderboard_psico_killer, (bool success) => { });
@@ -91,7 +93,7 @@ namespace HNW
         {
             StartCoroutine(ResetPlayerPosition());
 
-            exp.Value -= maxHp.Value * 10;
+            exp.Value -= ReviveCost;
             player.FullHeal();
 
             nearCamera.SetActive(false);
@@ -115,13 +117,13 @@ namespace HNW
 
         private void OnHealClicked()
         {
-            exp.Value -= (maxHp.Value - curHp.Value) * 10;
+            exp.Value -= ReviveCost;
             curHp.Value = maxHp.Value;
         }
 
         private void OnWaveEnd()
         {
-            nextWaveUI.Show((curHp.Value < maxHp.Value && exp.Value >= (maxHp.Value - curHp.Value) * 10), (maxHp.Value - curHp.Value) * 10);
+            nextWaveUI.Show((curHp.Value < maxHp.Value && exp.Value >= ReviveCost), ReviveCost);
             Time.timeScale = 0;
         }
 
