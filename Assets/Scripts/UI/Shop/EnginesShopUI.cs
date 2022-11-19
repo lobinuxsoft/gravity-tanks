@@ -26,8 +26,6 @@ namespace HNW
 
         Ship ship;
 
-        Engine engineSelected;
-
         CanvasGroup canvasGroup;
 
         public event Action<string, int> onBuyClicked;
@@ -62,9 +60,10 @@ namespace HNW
 
         public void Hide()
         {
-            if (engineSelected != null)
-                Destroy(engineSelected.gameObject);
+            if (ship != null && ship.Engine != null)
+                Destroy(ship.Engine.gameObject);
 
+            ship = null;
             canvasGroup.alpha = 0;
             canvasGroup.blocksRaycasts = false;
             canvasGroup.interactable = false;
@@ -86,8 +85,8 @@ namespace HNW
 
         private void OnBuyClicked()
         {
-            if (engineSelected != null)
-                onBuyClicked?.Invoke(engineSelected.name, enginesShopData.GetEngineDataByName(engineSelected.name).Cost);
+            if (ship.Engine != null)
+                onBuyClicked?.Invoke(ship.Engine.name, enginesShopData.GetEngineDataByName(ship.Engine.name).Cost);
         }
 
         private void ViewSelectedEngine()

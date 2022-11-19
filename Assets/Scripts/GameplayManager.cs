@@ -121,16 +121,24 @@ namespace HNW
             curHp.Value = maxHp.Value;
         }
 
-        private void OnWaveEnd()
+        private void OnWaveEnd(int waveNumber)
         {
-            nextWaveUI.Show((curHp.Value < maxHp.Value && exp.Value >= ReviveCost), ReviveCost);
+            nextWaveUI.Title = $"Wave {waveNumber} \nCompleted!!";
+            nextWaveUI.ShowNextButton = true;
+            nextWaveUI.ShowHealtButton = (curHp.Value < maxHp.Value && exp.Value >= ReviveCost);
+            nextWaveUI.HealthCost = ReviveCost;
+            nextWaveUI.Show();
             Time.timeScale = 0;
         }
 
         private void OnAllWavesEnd()
         {
-            // TODO pantalla final.
-            Debug.Log("END GAME!!!");
+            nextWaveUI.Title = $"All Waves \nCompleted!!";
+            nextWaveUI.ShowNextButton = false;
+            nextWaveUI.ShowHealtButton = false;
+            nextWaveUI.HealthCost = ReviveCost;
+            nextWaveUI.Show();
+            Time.timeScale = 0;
         }
 
         IEnumerator ResetPlayerPosition()

@@ -10,7 +10,28 @@ namespace HNW
         [SerializeField] HolographicButton healButton;
         [SerializeField] HolographicButton nextButton;
         [SerializeField] HolographicButton returnButton;
+        [SerializeField] TextMeshProUGUI titleLabel;
         [SerializeField] TextMeshProUGUI healLabel;
+
+        public string Title
+        {
+            set => titleLabel.text = value;
+        }
+
+        public bool ShowHealtButton
+        {
+            set => healButton.gameObject.SetActive(value);
+        }
+
+        public int HealthCost
+        {
+            set => healLabel.text = $"Heal ${value}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(healLabel.color)}>";
+        }
+
+        public bool ShowNextButton
+        {
+            set => nextButton.gameObject.SetActive(value);
+        }
 
         UIPopup popup;
 
@@ -33,13 +54,7 @@ namespace HNW
             returnButton.onClick += OnReturnClicked;
         }
 
-        public void Show(bool showHealButton, int healCost)
-        {
-            healLabel.text = $"Heal -{healCost}Exp";
-            healButton.gameObject.SetActive(showHealButton);
-            popup.Show();
-        }
-
+        public void Show() => popup.Show();
 
         private void OnHealClicked()
         {

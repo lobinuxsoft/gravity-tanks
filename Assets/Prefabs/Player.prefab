@@ -230,7 +230,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   rotationSpeed: 10
-  detectionDistance: 10
+  detectionDistance: 16
   minAngleToShot: 15
   aimOffset: {x: 0, y: 1, z: 0}
   aim: {fileID: 7172380640553267765}

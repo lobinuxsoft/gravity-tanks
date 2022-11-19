@@ -20,7 +20,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] ExpDropManager expDropManager;
 
     public static event Action onAllWavesEnd;
-    public static event Action onWaveEnd;
+    public static event Action<int> onWaveEnd;
     public static event Action<int> onNextWave; 
 
     Wave currentWave;
@@ -110,10 +110,10 @@ public class Spawner : MonoBehaviour
     {
         expDropManager.GrabAllActiveExpDrop();
 
-        if (currentWaveNumber + 1 >= waves.Length)
+        if (currentWaveNumber >= waves.Length)
             onAllWavesEnd?.Invoke();
         else
-            onWaveEnd?.Invoke();
+            onWaveEnd?.Invoke(currentWaveNumber);
     }
 
     public void NextWave()

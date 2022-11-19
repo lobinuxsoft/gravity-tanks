@@ -108,7 +108,7 @@ PlayableDirector:
   m_GameObject: {fileID: 7807805972494636271}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 84d8e023e04981c4baedaae8a8959b77, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 7c965406b08938448aec1a5d5593bcb7, type: 2}
   m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 2
@@ -172,6 +172,7 @@ MonoBehaviour:
   healButton: {fileID: 4518649711285309265}
   nextButton: {fileID: 5023263408374693917}
   returnButton: {fileID: 5210299211810253001}
+  titleLabel: {fileID: 7807805973721463585}
   healLabel: {fileID: 4518649712318697109}
 --- !u!1 &7807805972806577929
 GameObject:
@@ -295,7 +296,7 @@ GameObject:
   - component: {fileID: 7807805973721463586}
   - component: {fileID: 7807805973721463585}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,12 +379,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 95
+  m_fontSize: 80
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 95
+  m_fontSizeMax: 80
   m_fontStyle: 18
   m_HorizontalAlignment: 32
   m_VerticalAlignment: 4096
@@ -435,7 +436,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 55.75
+      value: 55.8
       objectReference: {fileID: 0}
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -819,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 45.2
+      value: 45.15
       objectReference: {fileID: 0}
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
@@ -981,7 +982,7 @@ PrefabInstance:
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
       propertyPath: m_fontSize
-      value: 45.2
+      value: 45.15
       objectReference: {fileID: 0}
     - target: {fileID: 148967146559269460, guid: 1a114461e6724314b8fbc1843cac37bd,
         type: 3}
