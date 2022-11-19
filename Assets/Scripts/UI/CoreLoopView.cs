@@ -1,5 +1,6 @@
 using GooglePlayGames;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace HNW
@@ -23,6 +24,10 @@ namespace HNW
         [Header("Levelup settings")]
         [SerializeField] LevelUpUI levelUpUI;
 
+        [Space(10)]
+        [Header("Shop settings")]
+        [SerializeField] ShopUI shopUI;
+
         Ship ship;
 
         UIPopup popup;
@@ -40,8 +45,14 @@ namespace HNW
             levelUpUI.onAttackClicked += OnAttackClicked;
             levelUpUI.onDefenseClicked += OnDefenseClicked;
             levelUpUI.onSpeedClicked += OnSpeedClicked;
-            levelUpUI.onBackClicked += OnBackClicked;
+            levelUpUI.onBackClicked += OnCloseLevelUpUI;
 
+            shopUI.onBackClicked += OnCloseShop;
+            shopUI.onWeaponBuyClicked += OnBuyWeapon;
+
+            shopUI.Owner = avatarOwner;
+
+            shipData.LoadData();
             exp.LoadData();
 
             ship = shipData.BuildShip(avatarOwner);
@@ -50,6 +61,7 @@ namespace HNW
             levelUpUI.DefenseValue = shipData.Value.defense;
             levelUpUI.SpeedValue = shipData.Value.speed;
         }
+
 
         private void OnDestroy()
         {
@@ -62,7 +74,10 @@ namespace HNW
             levelUpUI.onAttackClicked -= OnAttackClicked;
             levelUpUI.onDefenseClicked -= OnDefenseClicked;
             levelUpUI.onSpeedClicked -= OnSpeedClicked;
-            levelUpUI.onBackClicked -= OnBackClicked;
+            levelUpUI.onBackClicked -= OnCloseLevelUpUI;
+
+            shopUI.onBackClicked -= OnCloseShop;
+            shopUI.onWeaponBuyClicked -= OnBuyWeapon;
         }
 
         private void OnPlayClicked()
@@ -72,7 +87,8 @@ namespace HNW
 
         private void OnShopClicked()
         {
-            throw new NotImplementedException();
+            shopUI.Show();
+            popup.Hide();
         }
 
         private void OnStatsClicked()
@@ -101,7 +117,7 @@ namespace HNW
 
         private void OnAttackClicked()
         {
-            var cost = shipData.Value.attack * 10;
+            var cost = shipData.Value.attack * 100;
 
             if(exp.Value >= cost)
             {
@@ -121,7 +137,7 @@ namespace HNW
 
         private void OnDefenseClicked()
         {
-            var cost = shipData.Value.defense * 10;
+            var cost = shipData.Value.defense * 100;
 
             if (exp.Value >= cost)
             {
@@ -141,7 +157,7 @@ namespace HNW
 
         private void OnSpeedClicked()
         {
-            var cost = shipData.Value.speed * 10;
+            var cost = shipData.Value.speed * 100;
 
             if (exp.Value >= cost)
             {
@@ -159,10 +175,60 @@ namespace HNW
             }
         }
 
-        private void OnBackClicked()
+        private void OnCloseLevelUpUI()
         {
             levelUpUI.Hide();
             popup.Show();
+        }
+
+        private void OnCloseShop()
+        {
+            shopUI.Hide();
+            popup.Show();
+        }
+
+        private void OnBuyWeapon(string weaponName, int cost)
+        {
+            if (shipData.Value.weaponsNames.Contains(weaponName)) return;
+
+            if (exp.Value >= cost)
+            {
+                var weaponsList = shipData.Value.weaponsNames.ToList();
+                weaponsList.Add(weaponName);
+
+                var temp = shipData.Value;
+                temp.weaponsNames = weaponsList.ToArray();
+
+                shipData.Value = temp;
+                shipData.SaveData();
+
+                exp.Value -= cost;
+                exp.SaveData();
+
+                for (int i = 0; i < avatarOwner.childCount; i++)
+                {
+                    Destroy(avatarOwner.GetChild(i).gameObject);
+                }
+
+                ship = shipData.BuildShip(avatarOwner);
+
+                shopUI.UpdateCostLabel("Equiped");
+
+                #if UNITY_ANDROID
+
+                int count = shipData.Value.weaponsNames.Length;
+
+                if (count > 1)
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_secondary_weapon, 100.0f, (bool success) => { });
+
+                if (count > 2)
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_gun_lover, 100.0f, (bool success) => { });
+
+                if (count > 3)
+                    PlayGamesPlatform.Instance.ReportProgress(GPGSIds.achievement_war_machine, 100.0f, (bool success) => { });
+
+                #endif
+            }
         }
     }
 }

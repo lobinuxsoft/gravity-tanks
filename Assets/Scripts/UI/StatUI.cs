@@ -19,7 +19,7 @@ namespace HNW
 
         public int CostValue
         {
-            set => costLabel.text = $"Buy ${value}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(costLabel.color)}>";
+            set => costLabel.text = $"${value}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(costLabel.color)}>";
         }
 
         private void Awake()

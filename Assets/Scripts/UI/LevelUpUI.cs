@@ -15,7 +15,7 @@ namespace HNW
             set
             {
                 attackStat.StatValue = value;
-                attackStat.CostValue = value * 10;
+                attackStat.CostValue = value * 100;
             }
         }
 
@@ -24,7 +24,7 @@ namespace HNW
             set
             {
                 defenseStat.StatValue = value;
-                defenseStat.CostValue = value * 10;
+                defenseStat.CostValue = value * 100;
             }
         }
 
@@ -33,7 +33,7 @@ namespace HNW
             set
             {
                 speedStat.StatValue = value;
-                speedStat.CostValue = value * 10;
+                speedStat.CostValue = value * 100;
             }
         }
 
