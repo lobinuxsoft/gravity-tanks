@@ -10,7 +10,7 @@ namespace HNW
     {
         public static MapGenerator Instance;
 
-        [SerializeField] Map[] maps;
+        [SerializeField] MapData mapData;
         [SerializeField] int mapIndex;
         [SerializeField] Transform tilePref;
         [SerializeField] Transform obstaclePref;
@@ -21,7 +21,7 @@ namespace HNW
         Queue<Vector2Int> shuffleTileCoords;
         Queue<Vector3> shufflePositions;
 
-        Map currentMap;
+        MapStruct currentMap;
         BoxCollider boxCollider;
 
         private void Awake()
@@ -37,7 +37,7 @@ namespace HNW
 
         void NewWave(int waveNumber)
         {
-            mapIndex = (waveNumber - 1) % maps.Length;  //Mathf.Clamp(waveNumber - 1, 0, maps.Length);
+            mapIndex = (waveNumber - 1) % mapData.Maps.Length;  //Mathf.Clamp(waveNumber - 1, 0, mapData.Maps.Length);
             StartCoroutine(GenerateMapRoutine());
         }
 
@@ -56,7 +56,7 @@ namespace HNW
                 boxCollider = gameObject.AddComponent<BoxCollider>();
 
 
-            currentMap = maps[mapIndex];
+            currentMap = mapData.Maps[mapIndex];
 
             boxCollider.isTrigger = true;
 
@@ -152,8 +152,9 @@ namespace HNW
             // Combine Obstacles------------------------------------------------------
             Material obstMaterial = new Material(currentMap.obstacleMaterial);
 
-            obstMaterial.SetFloat("_MinHeight", currentMap.minObstacleHeight);
-            obstMaterial.SetFloat("_MaxHeight", currentMap.maxObstacleHeight * 1.25f);
+            //obstMaterial.SetFloat("_MinHeight", currentMap.minObstacleHeight);
+            obstMaterial.SetFloat("_MinHeight", 0);
+            obstMaterial.SetFloat("_MaxHeight", currentMap.maxObstacleHeight);
             obstMaterial.SetColor("_BottomColor", currentMap.bottomColor);
             obstMaterial.SetColor("_TopColor", currentMap.topColor);
 
@@ -277,21 +278,5 @@ namespace HNW
             if (other.TryGetComponent(out Damageable damageable))
                 damageable.Health -= damageable.Health;
         }
-    }
-
-    [System.Serializable]
-    public class Map
-    {
-        public Vector2Int mapSize = Vector2Int.one * 10;
-        [Range(0, 1)] public float obstaclePercent = .25f;
-        public int seed = "CryingOnion".GetHashCode();
-        [Min(.1f)] public float minObstacleHeight = 1;
-        public float maxObstacleHeight = 3;
-        public Material tileMaterial;
-        public Material obstacleMaterial;
-        public Color bottomColor;
-        public Color topColor;
-
-        public Vector2Int MapCentre => new Vector2Int(mapSize.x / 2, mapSize.y / 2);
     }
 }
