@@ -45,6 +45,7 @@ namespace HNW
             levelUpUI.onAttackClicked += OnAttackClicked;
             levelUpUI.onDefenseClicked += OnDefenseClicked;
             levelUpUI.onSpeedClicked += OnSpeedClicked;
+            levelUpUI.onHPClicked += OnHPClicked;
             levelUpUI.onBackClicked += OnCloseLevelUpUI;
 
             shopUI.onBackClicked += OnCloseShop;
@@ -61,6 +62,7 @@ namespace HNW
             levelUpUI.AttackValue = shipData.Value.attack;
             levelUpUI.DefenseValue = shipData.Value.defense;
             levelUpUI.SpeedValue = shipData.Value.speed;
+            levelUpUI.HPValue = shipData.Value.maxHp;
         }
 
         private void OnDestroy()
@@ -74,6 +76,7 @@ namespace HNW
             levelUpUI.onAttackClicked -= OnAttackClicked;
             levelUpUI.onDefenseClicked -= OnDefenseClicked;
             levelUpUI.onSpeedClicked -= OnSpeedClicked;
+            levelUpUI.onHPClicked -= OnHPClicked;
             levelUpUI.onBackClicked -= OnCloseLevelUpUI;
 
             shopUI.onBackClicked -= OnCloseShop;
@@ -173,6 +176,26 @@ namespace HNW
                 exp.SaveData();
 
                 levelUpUI.SpeedValue = shipData.Value.speed;
+            }
+        }
+
+        private void OnHPClicked()
+        {
+            var cost = shipData.Value.maxHp * 100;
+
+            if (exp.Value >= cost)
+            {
+                var temp = shipData.Value;
+                temp.maxHp++;
+
+                shipData.Value = temp;
+
+                exp.Value -= cost;
+
+                shipData.SaveData();
+                exp.SaveData();
+
+                levelUpUI.HPValue = shipData.Value.maxHp;
             }
         }
 

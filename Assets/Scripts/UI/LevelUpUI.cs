@@ -8,6 +8,7 @@ namespace HNW
         [SerializeField] StatUI attackStat;
         [SerializeField] StatUI defenseStat;
         [SerializeField] StatUI speedStat;
+        [SerializeField] StatUI hpStat;
         [SerializeField] HolographicButton backButton;
 
         public int AttackValue
@@ -37,11 +38,21 @@ namespace HNW
             }
         }
 
+        public int HPValue
+        {
+            set
+            {
+                hpStat.StatValue = value;
+                hpStat.CostValue = value * 100;
+            }
+        }
+
         UIPopup popup;
 
         public event Action onAttackClicked;
         public event Action onDefenseClicked;
         public event Action onSpeedClicked;
+        public event Action onHPClicked;
         public event Action onBackClicked;
 
         private void Awake()
@@ -51,6 +62,7 @@ namespace HNW
             attackStat.onStatClicked += OnAttackClicked;
             defenseStat.onStatClicked += OnDefenseClicked;
             speedStat.onStatClicked += OnSpeedClicked;
+            hpStat.onStatClicked += OnHPClicked;
 
             backButton.onClick += OnBackClicked;
         }
@@ -60,6 +72,7 @@ namespace HNW
             attackStat.onStatClicked -= OnAttackClicked;
             defenseStat.onStatClicked -= OnDefenseClicked;
             speedStat.onStatClicked -= OnSpeedClicked;
+            hpStat.onStatClicked -= OnHPClicked;
 
             backButton.onClick -= OnBackClicked;
         }
@@ -71,6 +84,8 @@ namespace HNW
         private void OnSpeedClicked() => onSpeedClicked?.Invoke();
 
         private void OnBackClicked() => onBackClicked?.Invoke();
+
+        private void OnHPClicked() => onHPClicked?.Invoke();
 
         public void Show() => popup.Show();
 
