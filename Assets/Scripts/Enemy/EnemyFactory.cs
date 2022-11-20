@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 #if UNITY_ANDROID
 using GooglePlayGames;
@@ -86,7 +87,9 @@ namespace HNW
 
             Vector3 pos = MapGenerator.Instance.GetRandomPos();
             GameObject spawnedEnemy = pools[currentWave.Enemies[UnityEngine.Random.Range(0, currentWave.Enemies.Length)].name].GetFromPool();
-            spawnedEnemy.transform.position = pos;
+
+            if(spawnedEnemy.TryGetComponent(out NavMeshAgent agent))
+                agent.Warp(pos);
 
             if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
                 damageable.onDie.AddListener(OnEnemyDeath);
