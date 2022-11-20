@@ -20,6 +20,8 @@ namespace HNW
         [SerializeField] EnemyFactoryData factoryData;
         [SerializeField] ExpDropManager expDropManager;
 
+        public static event Action<int> onMaxEnemyChange;
+        public static event Action<int> onEnemyRemainingAliveChange;
         public static event Action onAllWavesEnd;
         public static event Action<int> onWaveEnd;
         public static event Action<int> onNextWave;
@@ -31,6 +33,16 @@ namespace HNW
         int enemiesRemainingAlive;
 
         float nextSpawnTime;
+
+        public int EnemiesRemainingAlive
+        {
+            get => enemiesRemainingAlive;
+            set
+            {
+                enemiesRemainingAlive = value;
+                onEnemyRemainingAliveChange?.Invoke(enemiesRemainingAlive);
+            }
+        }
 
         private void Awake()
         {
@@ -84,7 +96,7 @@ namespace HNW
 
         void OnEnemyDeath(GameObject spawnedEnemy)
         {
-            enemiesRemainingAlive--;
+            EnemiesRemainingAlive--;
             expDropManager.DropExpInPlace(spawnedEnemy.transform.position);
 
             if (spawnedEnemy.TryGetComponent(out EnemyDamageControl damageable))
@@ -95,7 +107,7 @@ namespace HNW
 
             pools[spawnedEnemy.name].ReturnToPool(spawnedEnemy);
 
-            if (enemiesRemainingAlive == 0)
+            if (EnemiesRemainingAlive == 0)
                 WaveEnd();
 
             killEnemiesAmount.Value++;
@@ -124,7 +136,9 @@ namespace HNW
             currentWave = factoryData.Waves[(currentWaveNumber - 1) % factoryData.Waves.Length];
 
             enemiesRemainingToSpawn = currentWave.EnemyCount;
-            enemiesRemainingAlive = enemiesRemainingToSpawn;
+            EnemiesRemainingAlive = enemiesRemainingToSpawn;
+
+            onMaxEnemyChange?.Invoke(currentWave.EnemyCount);
 
             onNextWave?.Invoke(currentWaveNumber);
         }
