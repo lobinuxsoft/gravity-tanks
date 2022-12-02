@@ -123,9 +123,9 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &91740234
+--- !u!21 &105241058
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,7 +133,96 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: ca1a1cdf4b3ac814ba7c9efea4582275, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: -48
+    - _RotIcon: 50
+    - _RotSpeedB: -0.3
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0.15
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0.25
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &165167566
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -163,6 +252,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -207,9 +297,9 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &202028703
+--- !u!21 &173944570
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -217,7 +307,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -247,6 +339,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -263,37 +356,37 @@ Material:
     - _RedChannelRotationSpeed: 0
     - _RollUV: 0
     - _RotIcon: 0
-    - _RotSpeedB: 0
+    - _RotSpeedB: -0.3
     - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0.15
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0.25
     - _UVRoll: 127
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
+    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
     - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!21 &240836785
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -301,7 +394,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -331,6 +426,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -375,9 +471,9 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &259411888
+--- !u!21 &247105151
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -385,7 +481,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -415,90 +513,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 500
-    - _GlitchSpeed: 2
-    - _GlitchStrenght: 0.05
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0.05
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 0, g: 0.0627451, b: 1.4980392, a: 1}
-    - _ColorG: {r: 0.007843138, g: 1.4980392, b: 0, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 1.4980392, g: 0.08627451, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0.005, g: -0.005, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: -0.005, g: 0.005, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &265948468
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -586,6 +601,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -608,7 +624,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 93e64f00c8c15184f8dc47897cdec8c7, type: 3}
 --- !u!21 &289139548
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -616,7 +632,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -646,6 +664,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -771,6 +790,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -842,9 +862,9 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!21 &385154602
+--- !u!21 &386646598
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -852,7 +872,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -863,7 +885,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
+        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -882,6 +904,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -909,22 +932,109 @@ Material:
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
+    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
+    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
     - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
+    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
     - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &403341684
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: 39cc081a8bae8b047b823415d9ac4cb7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: -0.3
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0.15
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0.25
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
     - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!1 &410087039
 GameObject:
@@ -1016,6 +1126,7 @@ Transform:
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1032,10 +1143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 1
   m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!21 &472827203
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1043,7 +1161,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1073,6 +1193,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1117,90 +1238,6 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &478006200
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
-    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &533667502
 GameObject:
   m_ObjectHideFlags: 3
@@ -1230,6 +1267,7 @@ Transform:
   m_LocalRotation: {x: 0.19677942, y: -0.6529577, z: 0.18134484, w: -0.7085465}
   m_LocalPosition: {x: -2.746035, y: 6.201079, z: 35.13851}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1816689593}
   m_RootOrder: 0
@@ -1297,7 +1335,7 @@ MonoBehaviour:
   m_AngularDamping: 0
 --- !u!21 &552651733
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1305,7 +1343,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1335,6 +1375,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1379,9 +1420,9 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &571591450
+--- !u!21 &567550517
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1389,7 +1430,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1419,90 +1462,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: -0.3
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0.15
-    - _ScaleB: 0.3
-    - _ScaleG: 0.15
-    - _ScaleIcon: 1.5
-    - _ScaleR: 0.25
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
-    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &608451362
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1530,26 +1490,26 @@ Material:
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
-    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
+    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
     - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
+    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &623025786
+--- !u!21 &571591450
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1557,7 +1517,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1587,6 +1549,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1660,7 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isGlobal: 1
+  m_IsGlobal: 1
   priority: 0
   blendDistance: 0
   weight: 1
@@ -1675,94 +1638,11 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &846529375
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
-    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
-  m_BuildTextureStacks: []
 --- !u!1 &862643513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,13 +1669,14 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!21 &873528670
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1803,7 +1684,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1833,6 +1716,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1877,9 +1761,96 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
+--- !u!21 &890699468
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!21 &894322449
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1887,7 +1858,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -1917,6 +1890,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -1961,9 +1935,9 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &941955008
+--- !u!21 &909920005
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1971,7 +1945,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2001,90 +1977,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &992425077
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: 39cc081a8bae8b047b823415d9ac4cb7, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2131,7 +2024,7 @@ Material:
   m_BuildTextureStacks: []
 --- !u!21 &1052467917
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2139,7 +2032,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2169,6 +2064,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2213,9 +2109,9 @@ Material:
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
     - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!21 &1059138281
+--- !u!21 &1138471255
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2223,7 +2119,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2253,6 +2151,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2269,121 +2168,37 @@ Material:
     - _RedChannelRotationSpeed: 0
     - _RollUV: 0
     - _RotIcon: 0
-    - _RotSpeedB: -0.3
+    - _RotSpeedB: 0
     - _RotSpeedG: 0
-    - _RotSpeedR: 0.15
-    - _ScaleB: 0.3
-    - _ScaleG: 0.15
-    - _ScaleIcon: 1.5
-    - _ScaleR: 0.25
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
     - _UVRoll: 127
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
-    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1091145598
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: -0.3
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0.15
-    - _ScaleB: 0.3
-    - _ScaleG: 0.15
-    - _ScaleIcon: 1.5
-    - _ScaleR: 0.25
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
-    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!21 &1140212373
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2391,7 +2206,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2421,6 +2238,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2491,13 +2309,14 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1481683383
+--- !u!21 &1306015654
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2505,7 +2324,96 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: 3c8c282994f94364482b25e81364b3db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 48
+    - _RotIcon: -50
+    - _RotSpeedB: -0.3
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0.15
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0.25
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &1364879809
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2535,6 +2443,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2687,9 +2596,11 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1852921955}
   - {fileID: 1493249430}
+  - {fileID: 1994794480}
   - {fileID: 1965949310}
   m_Father: {fileID: 0}
   m_RootOrder: 10
@@ -2699,9 +2610,9 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!21 &1559844583
+--- !u!21 &1572012363
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2709,7 +2620,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2720,7 +2633,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _IconTex:
-        m_Texture: {fileID: 2800000, guid: 3c8c282994f94364482b25e81364b3db, type: 3}
+        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -2739,6 +2652,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2747,41 +2661,41 @@ Material:
     - _FillOrientationB: 0
     - _FillOrientationG: 0
     - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
+    - _GlitchScale: 500
+    - _GlitchSpeed: 2
+    - _GlitchStrenght: 0.05
     - _RedChannelFill: 0.301
     - _RedChannelFillOrientation: 0
     - _RedChannelRotationSpeed: 0
-    - _RollUV: 48
-    - _RotIcon: -50
-    - _RotSpeedB: -0.3
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
     - _RotSpeedG: 0
-    - _RotSpeedR: 0.15
-    - _ScaleB: 0.3
-    - _ScaleG: 0.15
-    - _ScaleIcon: 1.5
-    - _ScaleR: 0.25
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0.05
     - _UVRoll: 127
     m_Colors:
     - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
     - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
-    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorB: {r: 0, g: 0.0627451, b: 1.4980392, a: 1}
+    - _ColorG: {r: 0.007843138, g: 1.4980392, b: 0, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 1.4980392, g: 0.08627451, b: 0, a: 1}
     - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
     - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
     - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetB: {r: 0.005, g: -0.005, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: -0.005, g: 0.005, b: 0, a: 0}
     - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
     - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
     - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
     - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!1 &1592186439
 GameObject:
@@ -2809,13 +2723,14 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1624313587
+--- !u!21 &1617295277
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2823,7 +2738,96 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &1624313587
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -2853,6 +2857,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -2869,342 +2874,6 @@ Material:
     - _RedChannelRotationSpeed: 0
     - _RollUV: 0
     - _RotIcon: 0
-    - _RotSpeedB: -0.3
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0.15
-    - _ScaleB: 0.3
-    - _ScaleG: 0.15
-    - _ScaleIcon: 1.5
-    - _ScaleR: 0.25
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
-    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
-    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1706529460
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1718166814
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1773646959
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: 0
-    - _RotIcon: 0
-    - _RotSpeedB: 0
-    - _RotSpeedG: 0
-    - _RotSpeedR: 0
-    - _ScaleB: 0
-    - _ScaleG: 0
-    - _ScaleIcon: 0
-    - _ScaleR: 0
-    - _UVRoll: 127
-    m_Colors:
-    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
-    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
-    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
-    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
-    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
-    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
-    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
-    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
-    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
-    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
-    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
-    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
-    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
-  m_BuildTextureStacks: []
---- !u!21 &1777915960
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: HolographicUI
-  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
-    type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _IconTex:
-        m_Texture: {fileID: 2800000, guid: ca1a1cdf4b3ac814ba7c9efea4582275, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
-    - _FillAmountB: 1
-    - _FillAmountG: 1
-    - _FillAmountR: 1
-    - _FillOrientationB: 0
-    - _FillOrientationG: 0
-    - _FillOrientationR: 0
-    - _GlitchScale: 0
-    - _GlitchSpeed: 0
-    - _GlitchStrenght: 0
-    - _RedChannelFill: 0.301
-    - _RedChannelFillOrientation: 0
-    - _RedChannelRotationSpeed: 0
-    - _RollUV: -48
-    - _RotIcon: 50
     - _RotSpeedB: -0.3
     - _RotSpeedG: 0
     - _RotSpeedR: 0.15
@@ -3298,6 +2967,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 533667503}
   m_Father: {fileID: 0}
@@ -3309,6 +2979,93 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3978832813677999363}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1871742713
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 1.8640716, g: 0.14639306, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 4.9209166, b: 10.680627, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 5.3403134, g: 0.41939634, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1897241049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,10 +3092,98 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1940394363
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
+    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
 --- !u!1 &1965949309
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,9 +3212,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -165, y: -366.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1531960306}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1965949311
 MonoBehaviour:
@@ -3383,6 +3229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
@@ -3410,6 +3257,7 @@ MonoBehaviour:
     type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
+  m_CursorLockBehavior: 0
 --- !u!114 &1965949312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3451,6 +3299,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -3467,9 +3316,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b95ae165fd6844aac56c62c9c0a5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!21 &2035199634
+--- !u!224 &1994794480 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
+    type: 3}
+  m_PrefabInstance: {fileID: 8052420720640891857}
+  m_PrefabAsset: {fileID: 0}
+--- !u!21 &2023074467
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3477,7 +3332,96 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: 0
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0
+    - _ScaleB: 0
+    - _ScaleG: 0
+    - _ScaleIcon: 0
+    - _ScaleR: 0
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 0, g: 1.3176471, b: 11.984314, a: 0.2509804}
+    - _ColorG: {r: 0, g: 1.8509804, b: 4, a: 1}
+    - _ColorIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorR: {r: 7.999999, g: 0.6282722, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: -0.025, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0.025, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.1, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &2035199634
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -3507,6 +3451,94 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
+    - _FillAmountB: 1
+    - _FillAmountG: 1
+    - _FillAmountR: 1
+    - _FillOrientationB: 0
+    - _FillOrientationG: 0
+    - _FillOrientationR: 0
+    - _GlitchScale: 0
+    - _GlitchSpeed: 0
+    - _GlitchStrenght: 0
+    - _RedChannelFill: 0.301
+    - _RedChannelFillOrientation: 0
+    - _RedChannelRotationSpeed: 0
+    - _RollUV: 0
+    - _RotIcon: 0
+    - _RotSpeedB: -0.3
+    - _RotSpeedG: 0
+    - _RotSpeedR: 0.15
+    - _ScaleB: 0.3
+    - _ScaleG: 0.15
+    - _ScaleIcon: 1.5
+    - _ScaleR: 0.25
+    - _UVRoll: 127
+    m_Colors:
+    - _BlueChannelColor: {r: 0, g: 0.37357622, b: 3.9011774, a: 0.2509804}
+    - _BlueChannelOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _ColorB: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _ColorG: {r: 0, g: 0.97608465, b: 2.1185474, a: 1}
+    - _ColorIcon: {r: 0, g: 3.6858635, b: 7.999999, a: 1}
+    - _ColorR: {r: 2.1185474, g: 0.16637807, b: 0, a: 1}
+    - _GreenChannelColor: {r: 0.616242, g: 4.8428407, b: 0, a: 0.4}
+    - _GreenChannelOffset: {r: 0, g: 0.2, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0.25, b: 0, a: 0}
+    - _OffsetB: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetG: {r: 0, g: 0.05, b: 0, a: 0}
+    - _OffsetIcon: {r: 0, g: 0.1, b: 0, a: 0}
+    - _OffsetR: {r: 0, g: 0, b: 0, a: 0}
+    - _OffsetUV: {r: 0, g: 0, b: 0, a: 0}
+    - _RedChannelColor: {r: 11.984314, g: 1.0753385, b: 0, a: 1}
+    - _RedChannelOffset: {r: 0, g: 0.1, b: 0, a: 0}
+    - _Tiling: {r: 1, g: 1.5, b: 0, a: 0}
+    - _TilingUV: {r: 1, g: 1.25, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!21 &2046645374
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HolographicUI
+  m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
+    type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _IconTex:
+        m_Texture: {fileID: 2800000, guid: d4213bcdaa031444fa37811581a6eafc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -3622,7 +3654,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 2ddf2d4cc0d53cb4caa8cca38e4a0dca, type: 3}
 --- !u!21 &2127305569
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3630,7 +3662,9 @@ Material:
   m_Name: HolographicUI
   m_Shader: {fileID: -6465566751694194690, guid: 0fd79babd8d4d914cb29c47a76f7052f,
     type: 3}
-  m_ShaderKeywords: ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3_A
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -3660,6 +3694,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - ENUM_AB7F74C5EB784DFCB86B1E07BAF1F9A3: 0
     - _FillAmountB: 1
@@ -3715,7 +3750,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 385154602}
+      objectReference: {fileID: 890699468}
     - target: {fileID: 119098644222779714, guid: c8bfdc10ed431aa498d7db90044881fb,
         type: 3}
       propertyPath: m_fontSize
@@ -3821,6 +3856,11 @@ PrefabInstance:
       propertyPath: debugView
       value: 
       objectReference: {fileID: 1994794470}
+    - target: {fileID: 3488435390414313656, guid: c8bfdc10ed431aa498d7db90044881fb,
+        type: 3}
+      propertyPath: creditsView
+      value: 
+      objectReference: {fileID: 1994794470}
     - target: {fileID: 3488435390662272762, guid: c8bfdc10ed431aa498d7db90044881fb,
         type: 3}
       propertyPath: m_Material
@@ -3830,7 +3870,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 265948468}
+      objectReference: {fileID: 1940394363}
     - target: {fileID: 6313499989047731680, guid: c8bfdc10ed431aa498d7db90044881fb,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -3861,6 +3901,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7924526231854827427, guid: c8bfdc10ed431aa498d7db90044881fb,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 1617295277}
     - target: {fileID: 8140117616655593344, guid: c8bfdc10ed431aa498d7db90044881fb,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3895,7 +3940,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 91740234}
+      objectReference: {fileID: 2046645374}
     - target: {fileID: 9052903940887163606, guid: c8bfdc10ed431aa498d7db90044881fb,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4088,7 +4133,7 @@ PrefabInstance:
     - target: {fileID: 3978832812571795791, guid: 4c461ec1ca20c2343ad36659742af1f7,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 272.50003
+      value: 272.49997
       objectReference: {fileID: 0}
     - target: {fileID: 3978832812571795791, guid: 4c461ec1ca20c2343ad36659742af1f7,
         type: 3}
@@ -4286,7 +4331,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1531960306}
     m_Modifications:
     - target: {fileID: 6165461475629367682, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
@@ -4412,65 +4457,25 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1718166814}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 567550517}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_Pivot.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
@@ -4481,41 +4486,6 @@ PrefabInstance:
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8052420719858794034, guid: ccb16affc36d53c4b8ad44d277988c94,
@@ -4536,13 +4506,18 @@ PrefabInstance:
     - target: {fileID: 8052420719858794035, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_Name
-      value: Debug View
+      value: Credits View
       objectReference: {fileID: 0}
     - target: {fileID: 8052420720161619325, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 571591450}
+    - target: {fileID: 8052420720228720454, guid: ccb16affc36d53c4b8ad44d277988c94,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8052420720228720455, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4561,18 +4536,23 @@ PrefabInstance:
     - target: {fileID: 8052420720386417507, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8052420720386417507, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000091552734
+      value: 0.000061035156
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052420720689769649, guid: ccb16affc36d53c4b8ad44d277988c94,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8052420720990388845, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 846529375}
+      objectReference: {fileID: 2023074467}
     - target: {fileID: 8052420721077887420, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4602,12 +4582,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1059138281}
+      objectReference: {fileID: 173944570}
     - target: {fileID: 8368248350476500112, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 202028703}
+      objectReference: {fileID: 1871742713}
     - target: {fileID: 8368248350476500126, guid: ccb16affc36d53c4b8ad44d277988c94,
         type: 3}
       propertyPath: m_AnchorMax.y

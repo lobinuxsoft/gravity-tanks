@@ -6,7 +6,8 @@ namespace HNW
     public class SettingsView : MonoBehaviour
     {
         [SerializeField] HolographicButton closeButton;
-        [SerializeField] HolographicButton debugButton;
+        [SerializeField] HolographicButton creditsButton;
+        [SerializeField] CreditsView creditsView;
 
         UIPopup popup;
 
@@ -15,22 +16,18 @@ namespace HNW
             popup = GetComponent<UIPopup>();
 
             closeButton.onClick += Hide;
-            debugButton.onClick += ShowDebugLogs;
+            creditsButton.onClick += ShowCredits;
         }
 
         private void OnDestroy()
         {
             closeButton.onClick -= Hide;
-            debugButton.onClick -= ShowDebugLogs;
         }
 
         public void Show() => popup.Show();
 
         private void Hide() => popup.Hide();
 
-        private void ShowDebugLogs()
-        {
-            popup.Hide(null, () => DebugView.Instance.Show(), 2);
-        }
+        private void ShowCredits() => popup.Hide(()=> creditsView.Show());
     }
 }
