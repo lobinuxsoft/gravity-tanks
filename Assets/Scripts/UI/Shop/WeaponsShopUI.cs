@@ -3,7 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class WeaponsShopUI : MonoBehaviour
@@ -99,13 +99,9 @@ namespace HNW
 
             
             if (shipdata.Value.weaponsNames.Contains(wd.name))
-            {
                 buyLabel.text = $"Equiped";
-            }
             else
-            {
                 buyLabel.text = $"Buy ${wd.Cost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(buyLabel.color)}>";
-            }
 
             weaponSelected = wd.BuildWeapon(Owner);
         }

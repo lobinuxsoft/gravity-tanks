@@ -1,7 +1,7 @@
 using UnityEngine;
 using CryingOnionTools.ScriptableVariables;
 using System.Collections;
-using System;
+using HNW.UI;
 
 #if UNITY_ANDROID
 using GooglePlayGames;

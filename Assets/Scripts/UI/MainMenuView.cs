@@ -2,7 +2,7 @@ using GooglePlayGames;
 using GooglePlayGames.BasicApi;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     public class MainMenuView : MonoBehaviour
     {

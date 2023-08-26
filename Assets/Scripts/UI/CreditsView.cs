@@ -1,11 +1,9 @@
 using HNW.Utils;
-using System;
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace HNW
+namespace HNW.UI
 {
     [RequireComponent(typeof(UIPopup))]
     public class CreditsView : MonoBehaviour

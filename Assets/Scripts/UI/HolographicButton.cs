@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace HNW
+namespace HNW.UI
 {
     [RequireComponent(typeof(Image))]
     public class HolographicButton : MonoBehaviour, IPointerClickHandler

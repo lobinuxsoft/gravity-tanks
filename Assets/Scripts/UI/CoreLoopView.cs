@@ -3,7 +3,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     public class CoreLoopView : MonoBehaviour
     {

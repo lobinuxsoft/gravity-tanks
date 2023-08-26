@@ -1,48 +1,43 @@
-using CryingOnionTools.ScriptableVariables;
-using HNW;
 using System;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(UIPopup))]
-public class GameOverUI : MonoBehaviour
+namespace HNW.UI
 {
-    [SerializeField] HolographicButton reviveButton;
-    [SerializeField] HolographicButton returnButton;
-    [SerializeField] TextMeshProUGUI reviveLabel;
-
-    public event Action OnRevivePress;
-    public event Action OnReturnPress;
-
-    private UIPopup popup;
-
-    private void Awake()
+    [RequireComponent(typeof(UIPopup))]
+    public class GameOverUI : MonoBehaviour
     {
-        popup = GetComponent<UIPopup>();
-        reviveButton.onClick += Revive;
-        returnButton.onClick += Return;
-    }
+        [SerializeField] HolographicButton reviveButton;
+        [SerializeField] HolographicButton returnButton;
+        [SerializeField] TextMeshProUGUI reviveLabel;
 
-    private void OnDestroy()
-    {
-        reviveButton.onClick -= Revive;
-        returnButton.onClick -= Return;
-    }
+        public event Action OnRevivePress;
+        public event Action OnReturnPress;
 
-    public void Show(bool showReviveButton, int reviveCost)
-    {
-        reviveButton.gameObject.SetActive(showReviveButton);
-        reviveLabel.text = $"Revive ${reviveCost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(reviveLabel.color)}>";
-        popup.Show();
-    }
+        private UIPopup popup;
 
-    private void Revive()
-    {
-        popup.Hide(null, OnRevivePress);
-    }
+        private void Awake()
+        {
+            popup = GetComponent<UIPopup>();
+            reviveButton.onClick += Revive;
+            returnButton.onClick += Return;
+        }
 
-    private void Return()
-    {
-        popup.Hide(null, OnReturnPress);
+        private void OnDestroy()
+        {
+            reviveButton.onClick -= Revive;
+            returnButton.onClick -= Return;
+        }
+
+        public void Show(bool showReviveButton, int reviveCost)
+        {
+            reviveButton.gameObject.SetActive(showReviveButton);
+            reviveLabel.text = $"Revive ${reviveCost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(reviveLabel.color)}>";
+            popup.Show();
+        }
+
+        private void Revive() => popup.Hide(null, OnRevivePress);
+
+        private void Return() => popup.Hide(null, OnReturnPress);
     }
 }

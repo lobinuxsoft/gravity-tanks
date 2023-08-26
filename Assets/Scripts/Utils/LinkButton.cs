@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace HNW
+namespace HNW.UI
 {
     public class LinkButton : MonoBehaviour, IPointerClickHandler
     {

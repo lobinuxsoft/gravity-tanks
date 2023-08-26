@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     public class StatUI : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     public class LevelUpUI : MonoBehaviour
     {

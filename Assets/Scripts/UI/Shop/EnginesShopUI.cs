@@ -1,11 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     [RequireComponent(typeof(CanvasGroup))]
     public class EnginesShopUI : MonoBehaviour
@@ -102,13 +99,9 @@ namespace HNW
 
 
             if (shipdata.Value.engineName.Contains(ed.name))
-            {
                 buyLabel.text = $"Equiped";
-            }
             else
-            {
                 buyLabel.text = $"Buy ${ed.Cost}<sprite name=\"token_icon\" color=#{ColorUtility.ToHtmlStringRGBA(buyLabel.color)}>";
-            }
 
             ship.Engine = ed.BuildEngine(ship.transform);
         }
@@ -116,4 +109,3 @@ namespace HNW
         public void UpdateCostLabel(string value) => buyLabel.text = value;
     }
 }
-

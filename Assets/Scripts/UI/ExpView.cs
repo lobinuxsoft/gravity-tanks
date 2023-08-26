@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace HNW
+namespace HNW.UI
 {
     public class ExpView : MonoBehaviour
     {
