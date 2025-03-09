@@ -21,7 +21,7 @@ namespace HNW.Enemy.Behaviour
             if (!body)
             {
                 body = owner.GetComponent<Rigidbody>();
-                body.angularDrag = 100;
+                body.angularDamping = 100;
             }
         }
 
@@ -30,7 +30,7 @@ namespace HNW.Enemy.Behaviour
             if (gDetector.OnGround)
             {
                 if (timer > jumpTimer)
-                    body.velocity = Vector3.up * jumpForce;
+                    body.linearVelocity = Vector3.up * jumpForce;
                 else
                     timer += Time.deltaTime;
             }

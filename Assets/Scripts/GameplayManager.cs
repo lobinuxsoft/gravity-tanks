@@ -149,7 +149,7 @@ namespace HNW
             if (player.TryGetComponent(out Rigidbody body))
             {
                 body.isKinematic = true;
-                body.velocity -= body.velocity;
+                body.linearVelocity -= body.linearVelocity;
                 body.isKinematic = false;
             }
 

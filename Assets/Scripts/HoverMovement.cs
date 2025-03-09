@@ -48,8 +48,8 @@ namespace HNW
             rb = GetComponent<Rigidbody>();
 
             rb.mass = 1;
-            rb.drag = 1;
-            rb.angularDrag = 2;
+            rb.linearDamping = 1;
+            rb.angularDamping = 2;
 
             if(anchors == null)
                 anchors = GetComponents<Transform>();
